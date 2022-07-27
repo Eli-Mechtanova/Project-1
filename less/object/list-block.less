@@ -1,0 +1,105 @@
+// *************************************
+//
+//   List Block
+//
+// *************************************
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.o-list-block {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+// ----- Tiny ----- //
+
+.o-list-block--tiny {
+    > .o-list-block__item {
+        &:not(:last-child) {
+            margin-bottom: @spacing-unit--tiny;
+            padding-bottom: @spacing-unit--tiny;
+        }
+    }
+}
+
+// ----- Small ----- //
+
+.o-list-block--small {
+    > .o-list-block__item {
+        &:not(:last-child) {
+            margin-bottom: @spacing-unit--small;
+            padding-bottom: @spacing-unit--small;
+        }
+    }
+}
+
+// ----- Large ----- //
+
+.o-list-block--large {
+    > .o-list-block__item {
+        &:not(:last-child) {
+            margin-bottom: @spacing-unit--large;
+            padding-bottom: @spacing-unit--large;
+        }
+    }
+}
+
+// ----- Huge ----- //
+
+.o-list-block--huge {
+    > .o-list-block__item {
+        &:not(:last-child) {
+            margin-bottom: @spacing-unit--huge;
+            padding-bottom: @spacing-unit--huge;
+        }
+    }
+}
+
+// ----- Giga ----- //
+
+.o-list-block--giga {
+    > .o-list-block__item {
+        &:not(:last-child) {
+            margin-bottom: @spacing-unit--giga;
+            padding-bottom: @spacing-unit--giga;
+        }
+    }
+}
+
+// ----- Divided ----- //
+
+.o-list-block--divided {
+    > .o-list-block__item {
+        &:not(:last-child) {
+            border-bottom: 1px solid @color-divider;
+        }
+    }
+}
+
+// ----- Celled ----- //
+
+.o-list-block--celled {
+    > .o-list-block__item {
+        border-bottom: 1px solid @color-divider;
+        &:not(:first-child) {
+            margin-bottom: @spacing-unit;
+            padding-bottom: @spacing-unit;
+        }
+    }
+}
+
+// -------------------------------------
+//   Item
+// -------------------------------------
+
+.o-list-block__item {
+    display: block;
+
+    &:not(:last-child) {
+        margin-bottom: @spacing-unit;
+        padding-bottom: @spacing-unit;
+    }
+}

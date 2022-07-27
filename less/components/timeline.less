@@ -1,0 +1,149 @@
+// *************************************
+//
+//   Timeline
+//
+// *************************************
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-timeline {
+    position: relative;
+    margin: 0;
+    padding: 0;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 2px;
+        height: 100%;
+        background-color: @color-divider;
+
+        @media (min-width: @screen-sm-min) {
+            left: @spacing-unit--large;
+        }
+    }
+}
+
+// -------------------------------------
+//   Year
+// -------------------------------------
+
+.c-timeline__year {
+    position: relative;
+    z-index: 10;
+    margin-bottom: 0;
+    text-align: center;
+    background-color: @color-white;
+    font-weight: @font-weight-semi;
+
+    @media (min-width: @screen-sm-min) {
+        text-align: left;
+    }
+}
+
+// -------------------------------------
+//   Item
+// -------------------------------------
+
+.c-timeline__item {
+    position: relative;
+    padding: @spacing-unit;
+    border: 2px solid @color-divider;
+    border-radius: @border-radius-base;
+    background-color: @color-white;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    // less than 768px
+    @media (max-width: @screen-xs-max) {
+        margin-top: 35px;
+        margin-bottom: 35px;
+    }
+
+    // 768px and up
+    @media (min-width: @screen-sm-min) {
+        margin-top: @spacing-unit;
+        margin-bottom: @spacing-unit;
+        margin-left: 70px;
+
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -19px;
+            height: 0;
+            width: 0;
+            pointer-events: none;
+            border: solid transparent;
+            border-right-color: @color-white;
+            border-width: @spacing-unit;
+        }
+
+        &:before {
+            border-right-color: @color-divider;
+            left: -22px;
+        }
+    }
+}
+
+// -------------------------------------
+//   Title
+// -------------------------------------
+
+.c-timeline__title {
+    margin: 0;
+    font-size: @cs-font-size-large;
+    font-weight: @font-weight-normal;
+}
+
+// -------------------------------------
+//   Subtitle
+// -------------------------------------
+
+.c-timeline__subtitle {
+    margin-top: @spacing-unit;
+    margin-bottom: @spacing-unit--small;
+    font-size: @cs-font-size-default;
+    font-weight: @font-weight-semi;
+    color: @mute-color;
+}
+
+// -------------------------------------
+//   Date
+// -------------------------------------
+
+.c-timeline__date {
+    position: absolute;
+    background-color: @color-white;
+
+    // less than 768px
+    @media (max-width: @screen-xs-max) {
+        top: -29px;
+        transform: translateX(-50%);
+        left: 50%;
+    }
+
+    // 768px and up
+    @media (min-width: @screen-sm-min) {
+        top: 50%;
+        transform: translateY(-50%);
+        left: -65px;
+    }
+}
+
+// -------------------------------------
+//   Meta
+// -------------------------------------
+
+.c-timeline__meta {
+    margin-bottom: 0;
+}

@@ -1,0 +1,560 @@
+// *************************************
+//
+//   RA MARKETING
+//
+// *************************************
+
+// -------------------------------------
+//   VARIABLES
+// -------------------------------------
+
+@color-divider-dark-blue: fadeout(@color-logo-dark-blue, 85%);
+
+// -------------------------------------
+//   BASE
+// -------------------------------------
+
+.c-ra-marketing {
+    margin-top: -30px;
+    // color: @color-logo-dark-blue;
+    color: @color-gray-80;
+}
+
+.c-ra-marketing__title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: @font-weight-bold;
+    .u-text-upcase;
+}
+
+// -------------------------------------
+//   SECTION
+// -------------------------------------
+
+.c-ra-marketing-section {
+    margin-bottom: 80px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.c-ra-marketing-section--no-gutter {
+    @media screen and (max-width: 1080px) {
+        margin-right: -@grid-gutter-width;
+        margin-left: -@grid-gutter-width;
+    }
+}
+
+.c-ra-marketing-section__header {
+    text-align: center;
+    margin: 0 0 64px 0;
+    // < 640px
+    @media (max-width: @palm) {
+        margin-bottom: 40px;
+    }
+}
+
+.c-ra-marketing-section__title {
+    margin: 0;
+    font-size: 42px;
+    line-height: 1.2;
+    font-weight: @font-weight-bold;
+    // < 640px
+    @media (max-width: @palm) {
+        font-size: 31px;
+    }
+}
+
+.c-ra-marketing-section__subtitle {
+    margin: 24px 0 0;
+    font-size: 21px;
+    line-height: 1.4;
+    // < 640px
+    @media (max-width: @palm) {
+        font-size: 18px;
+        margin-top: 16px;
+    }
+
+    a {
+        color: @color-logo-dark-blue;
+        text-decoration: underline !important;
+    }
+}
+
+.c-ra-marketing-section__text {
+    margin: 16px 0 0;
+    font-size: 18px;
+    line-height: 1.5;
+
+    @media (max-width: @palm) {
+        font-size: 16px;
+    }
+}
+
+// -------------------------------------
+//   INTRO
+// -------------------------------------
+
+.c-ra-marketing-intro {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: @placeholder-bg;
+
+    // < 640px
+    @media (max-width: @palm) {
+        background-position: right;
+    }
+}
+
+.c-ra-marketing-intro__content {
+    max-width: 640px;
+    width: 100%;
+    min-height: 428px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 88px 64px;
+    color: #fff;
+
+    // < 640px
+    @media (max-width: @palm) {
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    // < 480px
+    @media (max-width: @mobile) {
+        padding: 32px 24px;
+    }
+}
+
+.c-ra-marketing-intro__title {
+    margin: 0;
+    font-size: 68px;
+    font-weight: @font-weight-bold;
+
+    @media (max-width: @palm) {
+        font-size: 40px;
+    }
+}
+
+// -------------------------------------
+//   CARDS
+// -------------------------------------
+
+.c-ra-marketing-cards {
+    display: grid;
+    column-gap: 16px;
+    row-gap: 16px;
+    justify-content: center;
+    @media screen and (max-width: 1020px) {
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(min-content, 408px)
+        ) !important;
+    }
+}
+
+// Why
+.c-ra-marketing-cards--why {
+    grid-template-columns: repeat(auto-fit, minmax(min-content, 488px));
+}
+
+// Pricing
+.c-ra-marketing-cards--pricing {
+    grid-template-columns: repeat(auto-fit, minmax(min-content, 348px));
+}
+
+// Card
+
+.c-ra-marketing-card {
+    margin: 0;
+    padding: 32px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+
+    @media screen and (min-width: 1080px) {
+        transition: box-shadow 0.15s;
+        &:hover {
+            box-shadow: 0px 5px 21px #00437433;
+        }
+    }
+}
+
+// Card Header
+
+.c-ra-marketing-card__header {
+    text-align: center;
+
+    p {
+        margin: 0;
+        font-size: 17px;
+        // < 640px
+        @media (max-width: @palm) {
+            font-size: 15px;
+        }
+    }
+}
+
+.c-ra-marketing-card__subtitle {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: @font-weight-bold;
+    .u-text-upcase;
+    // < 640px
+    @media (max-width: @palm) {
+        font-size: 16px;
+    }
+}
+
+.c-ra-marketing-card__price {
+    margin: 16px 0 0;
+    color: @color-light-blue-50;
+    font-size: 40px;
+    font-weight: @font-weight-bold;
+    line-height: 1.1;
+    // < 640px
+    @media (max-width: @palm) {
+        font-size: 31px;
+    }
+}
+
+.c-ra-marketing-card__price-old {
+    position: relative;
+    padding: 0 8px;
+    color: fadeout(@color-logo-dark-blue, 60%);
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        right: 0;
+        height: 5px;
+        border-radius: 2.5px;
+        background-color: @color-logo-dark-blue;
+        transform: rotate(-3deg);
+    }
+}
+
+.c-ra-marketing-card__interval {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.c-ra-marketing-card__icon {
+    margin: 24px 0;
+    font-size: 42px;
+    color: @color-light-blue-50;
+}
+
+// Card Body
+
+.c-ra-marketing-card__body {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px dashed @color-divider-dark-blue;
+    flex-grow: 1;
+}
+
+// Card Features
+
+.c-ra-marketing-card-features {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+    &:not(:last-child) {
+        margin-bottom: 24px;
+    }
+}
+
+.c-ra-marketing-card-features__icon {
+    margin: 0 16px 0 0;
+    width: 24px;
+    font-size: 24px;
+    color: @color-light-blue-50;
+    // < 640px
+    @media (max-width: @palm) {
+        margin-top: 1px;
+        width: 20px;
+        font-size: 20px;
+    }
+}
+
+.c-ra-marketing-card-features__content {
+    flex: 1;
+}
+
+.c-ra-marketing-card-features__title {
+    margin: 0 0 8px;
+    font-size: 17px;
+    font-weight: @font-weight-semi;
+    line-height: 1.45;
+    // < 640px
+    @media (max-width: @palm) {
+        font-size: 15px;
+    }
+}
+
+.c-ra-marketing-card-features__list {
+    margin: 0;
+    padding-left: 24px;
+    font-size: 15px;
+    // < 640px
+    @media (max-width: @palm) {
+        font-size: 14px;
+    }
+
+    li {
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+    }
+}
+
+.c-ra-marketing-card-features__list--dense {
+    padding-left: 18px;
+
+    li {
+        &:not(:last-child) {
+            margin-bottom: 6px;
+        }
+    }
+}
+
+// Card Footer
+
+.c-ra-marketing-card__footer {
+    margin: 32px 0 0;
+    text-align: center;
+}
+
+// -------------------------------------
+//   FEATURES
+// -------------------------------------
+
+.c-ra-marketing-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 16px;
+    row-gap: 32px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+
+    // < 640px
+    @media (max-width: @palm) {
+        grid-template-columns: repeat(auto-fit, minmax(min-content, 355px));
+        justify-content: center;
+    }
+}
+
+.c-ra-marketing-features__img {
+    margin-top: 32px;
+    display: block;
+}
+
+// -------------------------------------
+//   COMPONENTS
+// -------------------------------------
+
+.c-ra-marketing-components {
+    p {
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.5;
+        // < 480px
+        @media (max-width: @mobile) {
+            font-size: 18px;
+        }
+    }
+    // < 480px
+    @media (max-width: @mobile) {
+        text-align: center;
+    }
+}
+
+.c-ra-marketing-components__title {
+    margin: 0 0 12px;
+    font-size: 18px;
+    font-weight: @font-weight-bold;
+    .u-text-upcase;
+}
+
+// Glide Controls
+
+.glide__arrows {
+    display: flex;
+    justify-content: center;
+}
+
+.glide__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background-color: transparent;
+    font-size: 28px;
+    color: @color-light-blue-50 !important;
+
+    &:active {
+        outline: none !important;
+    }
+
+    &:hover {
+        background-color: @color-gray-20;
+        &:active {
+            background-color: @color-gray-30;
+        }
+    }
+}
+
+.glide__arrow--right {
+    margin-left: 8px;
+}
+
+.glide__arrow--left {
+    margin-right: 8px;
+}
+
+// -------------------------------------
+//   BANNER
+// -------------------------------------
+
+.c-ra-marketing-banner {
+    overflow: hidden;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: @placeholder-bg;
+}
+
+.c-ra-marketing-banner__content {
+    width: 100%;
+    max-width: 460px;
+    margin: 64px;
+    padding: 32px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+
+    // < 640px
+    @media (max-width: @palm) {
+        text-align: center;
+        max-width: 100%;
+        margin: 0;
+        padding: 88px 64px;
+        background-color: rgba(0, 0, 0, 0.4) !important;
+    }
+
+    // < 480px
+    @media (max-width: @mobile) {
+        padding: 64px 24px;
+    }
+}
+
+@supports (backdrop-filter: none) {
+    .c-ra-marketing-banner__content {
+        background-color: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(31px);
+
+        // < 640px
+        @media (max-width: @palm) {
+            backdrop-filter: none;
+        }
+    }
+}
+
+.c-ra-marketing-banner__footer {
+    margin-top: 32px;
+}
+
+// -------------------------------------
+//   CHECK FOR DELETION !!!!!!!!!!!!!
+// -------------------------------------
+
+@ra-marketing-gutter: 10px;
+
+.c-ra-marketing__section-old {
+    margin: 30px 0 0 0;
+    padding: 60px 0;
+    background-color: #fff;
+
+    @media (max-width: @screen-xs-max) {
+        padding: 40px 5px;
+    }
+}
+
+.c-ra-marketing__section--transparent {
+    background-color: transparent;
+}
+
+.c-ra-marketing__header {
+    margin: 0 0 60px 0;
+
+    @media (max-width: @screen-xs-max) {
+        margin-bottom: 40px;
+    }
+}
+
+.c-ra-marketing__row {
+    // 768px and up
+    @media (min-width: @screen-sm-min) {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin: 0 -@ra-marketing-gutter;
+    }
+}
+
+.c-ra-marketing__row--center {
+    // 768px and up
+    @media (min-width: @screen-sm-min) {
+        align-items: center;
+    }
+}
+
+.c-ra-marketing__start {
+    p {
+        margin-bottom: 15px;
+        font-size: 16px;
+        line-height: 1.4;
+        color: @mute-color;
+    }
+
+    // 768px and down
+    @media (max-width: @screen-xs-max) {
+        margin-bottom: 30px;
+    }
+
+    // 768px and up
+    @media (min-width: @screen-sm-min) {
+        padding: 0 @ra-marketing-gutter;
+        max-width: 500px;
+        flex: 1 1 0%;
+        margin-right: @ra-marketing-gutter * 2;
+    }
+}
+
+.c-ra-marketing__end {
+    overflow: hidden;
+    // 768px and up
+    @media (min-width: @screen-sm-min) {
+        padding: 0 @ra-marketing-gutter;
+        flex: 1 1 0%;
+    }
+}
+
+.c-ra-marketing__img {
+    border: 1px solid @color-divider;
+    padding: 8px;
+}

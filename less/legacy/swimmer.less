@@ -1,0 +1,130 @@
+.swimmer-teammates {
+	padding: 17px 0;
+
+	ul {
+		margin-bottom: 0;
+		clear: both;
+	}
+}
+
+.teammate {
+	display: inline-block;
+	text-decoration: none;
+	margin-bottom: 5px;
+	width: 100%;
+
+	&:hover {
+		text-decoration: none;
+
+		.teammate-name {color: #222;}
+	}
+
+	.teammate-image {
+		display: block;
+		width: 80px;
+		height: 80px;
+		text-align: center;
+		line-height: 76px;
+		border-radius: 50px;
+		overflow: hidden;
+		margin: 0 auto;
+		border: 1px solid #eee;
+		font-size: 16px;
+		background: #fff;
+
+		img {
+			width: 100%;
+
+		}
+	}
+
+	.teammate-name {
+		display: block;
+		text-transform: uppercase;
+		font-size: 12px;
+		color: @brand-primary;
+		font-weight: bold;
+		padding-top: 5px;
+		height: 20px;
+		line-height: 20px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		width: calc(100%);
+	}
+
+	.teammate-city {
+		display: block;
+		font-size: 11px;
+		color: #999;
+	}
+}
+
+.swimmer-name {
+	text-transform: uppercase;
+	font-size: 19px;
+	padding: 0 10px;
+	font-weight: bold;
+	margin-top: 7px;
+	margin-bottom: 5px;
+	position: relative;
+
+	a {
+		color: #fff;
+		text-decoration: none;
+	}
+}
+
+.swimmer-location {
+	font-size: 11px;
+	color: #777;
+	padding: 0 10px;
+}
+
+
+.times-loader {font-size: 40px; color: #999; padding: 50px 0;}
+
+.choose-meet-form {
+	padding: 10px;
+	background: #f9f9f9;
+	border-top: 1px solid #eee;
+
+	.add-team-autocomplete-name {
+		font-size: 12px;
+		color: #555;
+	}
+
+	.add-team-autocomplete-location {
+		font-size: 10px;
+		color: #999;
+	}
+
+	.add-team-autocomplete-swimmerscount {
+		position: absolute;
+		top: 50%;
+		margin-top: -7px;
+		right: 10px;
+		font-weight: bold;
+		font-size: 10px;
+		color: #999;
+		width: 40px;
+
+		i {
+			font-size: 9px;
+			margin-right: 1px;
+			position: relative;
+			top: -1px;
+		}
+	}
+
+	.add-team-autocomplete-coach {
+		font-size: 12px;
+		color: #222;
+	}
+}
+
+.choose-meet-form {
+	padding: 0;
+	border-top: none;
+	background: none;
+}

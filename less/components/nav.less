@@ -1,0 +1,250 @@
+// *************************************
+//
+//   Nav
+//
+// *************************************
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-nav {
+    margin: 0;
+    padding: @spacing-unit--large 0;
+}
+
+// ----- Inline ----- //
+
+.c-nav--inline {
+    display: flex;
+    padding: 0;
+
+    .c-nav__item {
+        float: left;
+        font-size: 16px;
+        height: 44px;
+        line-height: 44px;
+        color: @color-gray-70;
+
+        // 768px >
+        @media (min-width: @screen-sm-min) {
+            font-size: 18px;
+            height: 48px;
+            line-height: 48px;
+        }
+    }
+
+    // ----- Staff ----- //
+
+    .c-nav__item--staff {
+        color: @brand-danger;
+        opacity: 1;
+
+        &:hover,
+        &:focus {
+            color: @brand-danger;
+        }
+
+        &.c-nav__item--active {
+            &:before {
+                background-color: @brand-danger;
+            }
+        }
+    }
+
+    .c-nav__item--active {
+        background-color: transparent;
+
+        &:before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            width: 100%;
+            background-color: @brand-primary;
+        }
+    }
+}
+
+// ----- Compact ----- //
+
+.c-nav--compact {
+    .c-nav__item {
+        height: @nav-item-height-compact;
+        line-height: @nav-item-height-compact;
+    }
+}
+
+// ----- Dense ----- //
+
+.c-nav--dense {
+    .c-nav__item {
+        margin: 0;
+        padding-right: @spacing-unit;
+        padding-left: @spacing-unit;
+        height: @nav-item-height-dense;
+        line-height: @nav-item-height-dense;
+        font-size: @cs-font-size-small;
+    }
+}
+
+// ----- Responsive  ----- //
+
+.c-nav--responsive {
+    width: 100%;
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+// ----- Global ----- //
+
+.c-nav--global {
+    .c-nav__item {
+        padding-right: 8px;
+        padding-left: 8px;
+        height: @header-height;
+        line-height: @header-height;
+        font-size: 13px;
+        font-weight: @font-weight-semi;
+        justify-content: center;
+        min-width: 40px;
+    }
+}
+
+// ----- Electron  ----- //
+
+.c-nav--electron {
+    .c-nav__item {
+        height: @nav-item-height-dense;
+        line-height: @nav-item-height-dense;
+        color: @color-gray-30;
+        padding-right: 14px;
+        padding-left: 14px;
+        gap: 6px;
+        font-size: 14px;
+
+        &:hover,
+        &:focus {
+            color: @color-white;
+        }
+
+        &.c-nav__item--active {
+            color: @color-white !important;
+            font-weight: @font-weight-normal;
+            background-color: @color-gray-70;
+            border-radius: @border-radius-base;
+
+            &:hover,
+            &:focus {
+                color: @color-white;
+            }
+
+            &:before {
+                height: 0;
+            }
+        }
+
+        .is-connected {
+            color: @color-green-A700;
+        }
+    }
+}
+
+// -------------------------------------
+//   Item
+// -------------------------------------
+
+.c-nav__item {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 16px;
+    height: @nav-item-height;
+    color: @nav-item-color;
+    fill: @nav-item-color;
+    font-weight: @font-weight-normal;
+    line-height: @nav-item-height;
+    user-select: none;
+    border: none;
+    background: none;
+    white-space: nowrap;
+
+    &:hover,
+    &:focus {
+        color: @brand-primary;
+        fill: @brand-primary;
+
+        .c-nav__icon {
+            opacity: 1;
+        }
+    }
+}
+
+// ----- Active ----- //
+
+.c-nav__item--active {
+    color: @brand-primary !important;
+    font-weight: @font-weight-semi;
+    opacity: 1;
+
+    &:hover,
+    &:focus {
+        color: @brand-primary;
+    }
+
+    .c-nav__icon {
+        opacity: 1;
+    }
+}
+
+// -------------------------------------
+//   Group
+// -------------------------------------
+
+.c-nav__group {
+    margin: 25px 0 0;
+    padding: 0;
+}
+
+// -------------------------------------
+//  Subheader
+// -------------------------------------
+
+.c-nav__subheader {
+    .c-nav__item();
+    .u-text-upcase();
+    color: @color-gray-70;
+    font-size: 12px;
+    font-weight: @font-weight-semi;
+    height: 28px;
+    line-height: 28px;
+
+    &:not(a) {
+        color: @color-gray-70 !important;
+    }
+}
+
+// -------------------------------------
+//   Icon
+// -------------------------------------
+
+.c-nav__icon {
+    min-width: 20px;
+    margin-right: 15px;
+    font-size: 16px;
+    text-align: center;
+    line-height: inherit;
+    opacity: 0.64;
+}
+
+// -------------------------------------
+//   Upgrade
+// -------------------------------------
+
+.c-nav__upgrade {
+    color: @brand-warning !important;
+}

@@ -1,0 +1,78 @@
+// *************************************
+//
+//   Tweet
+//
+// *************************************
+
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+@tweet-avatar-dimension: 48px;
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-tweet {
+    .u-clearfix();
+}
+
+
+// -------------------------------------
+//   Avatar
+// -------------------------------------
+
+.c-tweet__avatar {
+    display: block;
+    width: @tweet-avatar-dimension;
+    height: @tweet-avatar-dimension;
+    border-radius: @border-radius-base;
+    background: @color-white;
+}
+
+
+// -------------------------------------
+//   Username
+// -------------------------------------
+
+.c-tweet__user-name {
+    color: #292f33;
+    font-weight: @font-weight-semi;
+
+    &:hover {
+        color: #292f33;
+        text-decoration: underline;
+    }
+
+}
+
+
+// -------------------------------------
+//   Screen name
+// -------------------------------------
+
+.c-tweet__screen-name {
+    color: @mute-color;
+
+    &:hover {
+        color: @mute-color;
+    }
+
+}
+
+
+// -------------------------------------
+//   Date
+// -------------------------------------
+
+.c-tweet__date {
+    color: @mute-color;
+
+    &:hover {
+        color: @mute-color;
+    }
+
+}

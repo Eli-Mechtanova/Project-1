@@ -1,0 +1,87 @@
+// *************************************
+//
+//   About
+//
+// *************************************
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-about {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+// -------------------------------------
+//   Map
+// -------------------------------------
+
+.c-about__map {
+    border-radius: 10px;
+
+    // < 640px
+    @media (max-width: @palm) {
+        margin: 0 -45px -45px;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+    }
+}
+
+// -------------------------------------
+//   Table
+// -------------------------------------
+
+.c-about__table {
+    thead,
+    tbody {
+        th,
+        td {
+            font-size: 15px;
+
+            &:first-child {
+                padding-left: 0;
+            }
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+}
+
+// -------------------------------------
+//   Text
+// -------------------------------------
+
+.c-about__text {
+    max-width: 48ch;
+}
+
+// -------------------------------------
+//   Typeset
+// -------------------------------------
+
+.c-about__typeset {
+    max-width: 75ch;
+    margin: 0 auto;
+
+    h2 {
+        margin: 45px 0 15px;
+        font-size: 20px;
+        line-height: 1.35;
+        font-weight: @font-weight-semi;
+    }
+
+    p,
+    ol,
+    ul,
+    blockquote {
+        margin-bottom: 18px;
+    }
+
+    blockquote {
+        font-size: inherit;
+        padding: 0px 18px;
+        margin-bottom: 18px;
+    }
+}

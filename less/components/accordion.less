@@ -1,0 +1,187 @@
+// *************************************
+//
+//   Accordion
+//
+// *************************************
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+@accordion-caret-height: 42px;
+@accordion-title-font-size: @cs-font-size-large;
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-accordion {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+// ----- Raised ----- //
+
+.c-accordion--raised {
+    .shadow-2dp();
+    border-radius: @border-radius-large;
+    background-color: @color-white;
+
+    .c-accordion__item {
+        &:last-child {
+            border-bottom-width: 0;
+        }
+    }
+
+    .c-accordion__link {
+        padding-left: @spacing-unit;
+    }
+
+    .c-accordion__body {
+        padding-right: @spacing-unit;
+        padding-left: @spacing-unit;
+    }
+}
+
+// ----- Standalone ----- //
+
+.c-accordion--standalone {
+    background: none;
+
+    .c-accordion__content {
+        .c-accordion__item {
+            .shadow-2dp();
+            border-radius: @border-radius-large;
+            background-color: @color-white;
+
+            &:not(:first-child) {
+                margin-top: @spacing-unit;
+                border-top: none;
+            }
+        }
+    }
+}
+
+// -------------------------------------
+//   Content
+// -------------------------------------
+
+.c-accordion__content {
+    // 992px and up
+    @media (min-width: @screen-md-min) {
+        height: initial !important;
+    }
+
+    .c-accordion__item {
+        border-bottom: 1px solid @color-divider;
+        border-radius: 0;
+    }
+}
+
+// -------------------------------------
+//   Item
+// -------------------------------------
+
+.c-accordion__item {
+    margin: 0;
+    padding: 0;
+
+    // Reset bootstrap default .panel styles
+    background: none;
+    margin-bottom: 0;
+    border: 0;
+    box-shadow: none;
+}
+
+// -------------------------------------
+//   Link
+// -------------------------------------
+
+.c-accordion__link {
+    display: block;
+    position: relative;
+    padding: @spacing-unit @spacing-unit--giga @spacing-unit 0;
+    font-size: @accordion-title-font-size;
+    color: @color-text;
+
+    &:hover,
+    &:focus {
+        color: @color-text;
+        &:before {
+            color: @mute-color;
+        }
+    }
+
+    &:before {
+        font: var(--fa-font-regular);
+        content: @fa-var-angle-down;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: @spacing-unit--giga;
+        height: @accordion-caret-height;
+        line-height: @accordion-caret-height;
+        text-align: center;
+        color: @color-hint;
+    }
+
+    &[aria-expanded="true"] {
+        font-weight: @font-weight-semi;
+        &:before {
+            content: @fa-var-angle-up;
+        }
+    }
+}
+
+// -------------------------------------
+//   Button
+// -------------------------------------
+
+.c-accordion__button {
+    display: block;
+    width: 100%;
+    padding: @spacing-unit @spacing-unit--huge @spacing-unit 0;
+    font-size: @accordion-title-font-size;
+    color: @color-text;
+    border: 0;
+    background-color: transparent;
+    text-align: left;
+
+    &:hover,
+    &:focus {
+        outline: 0;
+    }
+}
+
+// -------------------------------------
+//   Meta
+// -------------------------------------
+
+.c-accordion__meta {
+    color: @mute-color;
+    font-size: @cs-font-size-xsmall;
+    line-height: 1.3;
+    font-weight: @font-weight-normal;
+
+    &:empty {
+        display: none;
+    }
+}
+
+// -------------------------------------
+//   Body
+// -------------------------------------
+
+.c-accordion__body {
+    padding: 0 0 @spacing-unit 0;
+}
+
+// -------------------------------------
+//   Footer
+// -------------------------------------
+
+.c-accordion__footer {
+    margin: 0;
+    padding: @spacing-unit--large 0;
+}

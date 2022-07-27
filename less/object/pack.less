@@ -1,0 +1,159 @@
+// *************************************
+//
+//   Pack
+//   -> Causes any number of elements pack up horizontally to automatically
+//      fill an equal, fluid width of their parent.
+//
+// *************************************
+
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+@pack-gutter:           @spacing-unit;
+@pack-gutter--small:    @spacing-unit--small;
+@pack-gutter--large:    @spacing-unit--large;
+@pack-gutter--huge:     @spacing-unit--huge;
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+// 1. Fill all available space.
+// 2. Cause children to be automatically equally sized.
+
+.o-pack {
+    width: 100%; // [1]
+    display: table;
+    table-layout: fixed; // [2]
+}
+
+    // ----- Auto ----- //
+
+    .o-pack--auto {
+        table-layout: auto;
+    }
+
+    // ----- Top ----- //
+
+    .o-pack--top {
+        > .o-pack__item {
+            vertical-align: top;
+        }
+    }
+
+    // ----- Middle ----- //
+
+    .o-pack--middle {
+        > .o-pack__item {
+            vertical-align: middle;
+        }
+    }
+
+    .o-pack--middle-first-child {
+        > .o-pack__item {
+            &:first-child {
+                vertical-align: middle;
+            }
+        }
+    }
+
+    // ----- Bottom ----- //
+
+    .o-pack--bottom {
+        > .o-pack__item {
+            vertical-align: bottom;
+        }
+    }
+
+    // ----- Divided Horizontal (992px and up) ----- //
+
+    @media (min-width: @screen-md-min) {
+        .o-pack--divided-horizontal\@md {
+            > .o-pack__item {
+                &:not(:last-child) {
+                    border-right: 1px solid @border-divider-color;
+                }
+            }
+        }
+    }
+
+    // ----- Divided Horizontal (768px and up) ----- //
+
+    @media (min-width: @screen-sm-min) {
+        .o-pack--divided-horizontal\@sm {
+            > .o-pack__item {
+                &:not(:last-child) {
+                    border-right: 1px solid @border-divider-color;
+                }
+            }
+        }
+    }
+
+    // ----- Divided Vertical (less than 992px) ----- //
+
+    @media (max-width: @screen-sm-max) {
+        .o-pack--divided-vertical\@sm {
+            > .o-pack__item {
+                &:not(:last-child) {
+                    border-bottom: 1px solid @border-divider-color;
+                }
+            }
+        }
+    }
+
+    // ----- Divided Vertical (less than 768px) ----- //
+
+    @media (max-width: @screen-xs-max) {
+        .o-pack--divided-vertical\@xs {
+            > .o-pack__item {
+                &:not(:last-child) {
+                    border-bottom: 1px solid @border-divider-color;
+                }
+            }
+        }
+    }
+
+    // ----- Responsive (less than 992px)  ----- //
+
+    @media (max-width: @screen-sm-max) {
+        .o-pack--responsive\@sm {
+            &.o-pack,
+            > .o-pack__item {
+                display: block;
+            }
+        }
+    }
+
+    // ----- Responsive (less than 768px)  ----- //
+
+    @media (max-width: @screen-xs-max) {
+        .o-pack--responsive\@xs {
+            &.o-pack,
+            > .o-pack__item {
+                display: block;
+            }
+        }
+    }
+
+    // ----- Responsive @palm (less than 640px) ----- //
+
+    @media (max-width: @palm) {
+        .o-pack--responsive\@palm {
+            &.o-pack,
+            > .o-pack__item {
+                display: block;
+            }
+        }
+    }
+
+
+// -------------------------------------
+//   Item
+// -------------------------------------
+
+.o-pack__item {
+    display: table-cell;
+}

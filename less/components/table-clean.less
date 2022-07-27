@@ -1,0 +1,520 @@
+// *************************************
+//
+//   Table Clean
+//
+// *************************************
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-table-clean {
+    thead {
+        th,
+        td {
+            .table-column-header();
+        }
+    }
+
+    tbody {
+        th,
+        td {
+            font-size: @cs-font-size-small;
+        }
+    }
+
+    // Form group (remove margins)
+    .form-group {
+        margin-bottom: 0;
+    }
+
+    // Nesting (fixes tooltip background color).
+    .c-table-clean {
+        background-color: @color-white;
+    }
+}
+
+// ----- Large ----- //
+
+.c-table-clean--large {
+    thead {
+        th,
+        td {
+            font-size: 14px;
+        }
+    }
+
+    tbody {
+        th,
+        td {
+            font-size: 15px;
+        }
+    }
+
+    > thead,
+    > tbody {
+        > tr {
+            > th,
+            > td {
+                padding-top: 12px;
+                padding-bottom: 12px;
+            }
+        }
+    }
+}
+
+// ----- Middle ----- //
+
+.c-table-clean--middle {
+    thead,
+    tbody {
+        tr > td {
+            vertical-align: middle;
+        }
+    }
+
+    .c-table-clean__actions,
+    .c-table-clean__actions-large,
+    .c-table-clean__actions-fit {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .c-table-clean__flags {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+// ----- Compact ----- //
+
+.c-table-clean--compact {
+    > thead,
+    > tbody {
+        > tr {
+            > th,
+            > td {
+                padding: @spacing-unit--small (@spacing-unit--large / 2);
+            }
+        }
+    }
+}
+
+// ----- Fixed ----- //
+
+.c-table-clean--fixed {
+    table-layout: fixed;
+
+    .c-table-clean__status {
+        width: (@spacing-unit--giga * 2);
+    }
+}
+
+// -------------------------------------
+//   Mixins
+// -------------------------------------
+
+.table-responsive-base() {
+    @media not print {
+        display: block;
+        position: relative;
+        width: 100%;
+        overflow-x: auto;
+        position: relative;
+        -webkit-overflow-scrolling: touch;
+
+        // Ensure the content doesn't wrap
+        table {
+            > thead,
+            > tbody {
+                > tr {
+                    > th,
+                    > td {
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+
+        > .c-table-clean--fixed {
+            table-layout: auto;
+        }
+    }
+}
+
+// -------------------------------------
+//   Responsive
+// -------------------------------------
+
+.c-table-clean--responsive {
+    .table-responsive-base();
+}
+
+// < 768px
+@media (max-width: @screen-xs-max) {
+    .c-table-clean--responsive\@xs {
+        .table-responsive-base();
+    }
+
+    // ----- Stacked ----- //
+
+    .c-table-clean--stacked\@xs {
+        border-bottom-width: 3px;
+        border-bottom-color: @color-gray-40;
+
+        thead {
+            position: absolute !important;
+            margin: -1px !important;
+            border: 0 !important;
+            padding: 0 !important;
+            width: 1px !important;
+            height: 1px !important;
+            overflow: hidden !important;
+            clip: rect(0 0 0 0) !important;
+        }
+
+        tr {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            border-top: 3px solid @color-gray-40;
+            padding-top: @spacing-unit;
+            padding-bottom: @spacing-unit;
+        }
+
+        th,
+        td {
+            max-width: 50%;
+            width: 50%;
+            padding-bottom: 0 !important;
+            border-top-width: 0 !important;
+            text-align: left;
+
+            &:before {
+                .table-column-header();
+                display: block;
+                padding-bottom: @spacing-unit--small;
+                content: attr(data-label);
+            }
+        }
+    }
+}
+
+// -------------------------------------
+//   Caption
+// -------------------------------------
+
+.c-table-clean__caption {
+    padding: 15px 15px 5px;
+    font-weight: @font-weight-normal;
+    color: @color-text;
+}
+
+// ----- Bottom ----- //
+
+.c-table-clean__caption--bottom {
+    padding-top: (@spacing-unit - 1);
+    padding-bottom: 10px;
+    caption-side: bottom;
+    border-top: 1px solid @table-border-color;
+    text-align: right;
+}
+
+// -------------------------------------
+//   Subheader
+// -------------------------------------
+
+.c-table-clean__subheader.c-table-clean__subheader {
+    padding-top: 20px;
+    padding-bottom: 7.5px;
+    font-size: 15px;
+    font-weight: @font-weight-semi;
+    background-color: @color-white;
+}
+
+// -------------------------------------
+//   Selection
+// -------------------------------------
+
+.c-table-clean__selection {
+    min-width: 40px;
+    width: 40px;
+    text-align: center;
+}
+
+// -------------------------------------
+//   Rank / Status
+// -------------------------------------
+
+.c-table-clean__rank,
+.c-table-clean__status {
+    width: 45px;
+    text-align: center;
+}
+
+// -------------------------------------
+//   Date
+// -------------------------------------
+
+.c-table-clean__date {
+    .text-truncate();
+    width: 115px;
+}
+
+// Dense
+.c-table-clean__date-dense {
+    width: 75px;
+}
+
+// -------------------------------------
+//   Points
+// -------------------------------------
+
+.c-table-clean__points {
+    width: 80px;
+    text-align: right;
+}
+
+// -------------------------------------
+//   Place, Score and Points
+// -------------------------------------
+
+.c-table-clean__score,
+.c-table-clean__place {
+    width: 66px;
+    text-align: right;
+}
+
+// -------------------------------------
+//   Medal
+// -------------------------------------
+
+.c-table-clean__medal {
+    width: 70px;
+    text-align: right;
+}
+
+// -------------------------------------
+//   Time
+// -------------------------------------
+
+.c-table-clean__time {
+    width: 80px;
+    text-align: right;
+}
+
+// -------------------------------------
+//   Class (SO, SR, JR ...)
+// -------------------------------------
+
+.c-table-clean__class {
+    width: 65px;
+}
+
+// -------------------------------------
+//   Actions Fit
+// -------------------------------------
+
+.c-table-clean__actions-fit {
+    width: 0.1px;
+}
+
+// -------------------------------------
+//   Actions
+// -------------------------------------
+
+.c-table-clean__actions {
+    width: 65px;
+    white-space: nowrap;
+    text-align: right;
+}
+
+.c-table-clean__actions-large {
+    width: 90px;
+    white-space: nowrap;
+    text-align: right;
+}
+
+// -------------------------------------
+//   Power Score
+// -------------------------------------
+
+.c-table-clean__power-score {
+    width: 90px;
+    text-align: right;
+}
+
+// -------------------------------------
+//   Power Index
+// -------------------------------------
+
+.c-table-clean__power-index {
+    width: 105px;
+    text-align: right;
+}
+
+// -------------------------------------
+//   Timeout (last)
+// -------------------------------------
+
+.c-table-clean__timeout {
+    width: 96px;
+    text-align: right;
+}
+
+// -------------------------------------
+//   Team Logo
+// -------------------------------------
+
+.c-table-clean__team-logo {
+    width: 60px;
+    text-align: center;
+}
+
+// -------------------------------------
+//   Performance
+// -------------------------------------
+
+.c-table-clean__perf {
+    width: 90px;
+    text-align: right;
+}
+
+// -------------------------------------
+//   Improvement
+// -------------------------------------
+
+.c-table-clean__imp {
+    width: 107px;
+    text-align: right;
+}
+
+// -------------------------------------
+//   Btn link
+// -------------------------------------
+
+.c-table-clean__btn-link {
+    margin-right: -@spacing-unit--small;
+}
+
+// -------------------------------------
+//   Cut
+// -------------------------------------
+
+.c-table-clean__cut {
+    width: 60px;
+    text-align: center;
+}
+
+// -------------------------------------
+//   Flags
+// -------------------------------------
+
+.c-table-clean__flags {
+    width: 65px;
+    white-space: nowrap;
+}
+
+// -------------------------------------
+//   Round
+// -------------------------------------
+
+.c-table-clean__round {
+    width: 95px;
+}
+
+// -------------------------------------
+//   Course
+// -------------------------------------
+
+.c-table-clean__course {
+    width: 70px;
+}
+
+// -------------------------------------
+//   Age
+// -------------------------------------
+
+.c-table-clean__age {
+    width: 50px;
+    text-align: right;
+}
+
+// -------------------------------------
+//   Events
+// -------------------------------------
+
+.c-table-clean__event {
+    width: 140px;
+}
+
+// -------------------------------------
+//   Individual Events
+// -------------------------------------
+
+.c-table-clean__ievent {
+    width: 85px;
+}
+
+// -------------------------------------
+//   RA Stamp Link
+// -------------------------------------
+
+.c-table-clean__stamp-link {
+    width: 55px;
+}
+
+// -------------------------------------
+//   Personal and Season Best
+// -------------------------------------
+
+.c-table-clean__pb-sb {
+    width: 45px;
+}
+
+// -------------------------------------
+//   Quantity input
+// -------------------------------------
+
+.c-table-clean__qty-input {
+    width: 115px;
+}
+
+// -------------------------------------
+//   Col Fit
+// -------------------------------------
+
+.c-table-clean__col-fit {
+    width: 0.1px;
+}
+
+// -------------------------------------
+//   List
+// -------------------------------------
+
+.c-table-clean__list {
+    margin: 0;
+    padding-top: 4px;
+    padding-left: 0;
+    list-style-position: inside;
+}
+
+// -------------------------------------
+//   Img
+// -------------------------------------
+
+.c-table-clean__img {
+    width: 26px;
+    max-height: 18px;
+    object-fit: contain;
+}
+
+.c-table-clean__img--small {
+    width: 20px;
+    height: 15px;
+}
+
+.c-table-clean__img--large {
+    width: 25px;
+    height: 25px;
+}

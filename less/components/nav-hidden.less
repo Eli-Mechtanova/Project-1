@@ -1,0 +1,127 @@
+// *************************************
+//
+//   Nav Hidden
+//
+// *************************************
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-nav-hidden {
+    .shadow-4dp();
+    display: none;
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: 89;
+    padding: @spacing-unit 0;
+    background-color: @color-white;
+}
+
+
+// -------------------------------------
+//   List
+// -------------------------------------
+
+.c-nav-hidden__list {
+    margin:  0;
+    padding: 0;
+    list-style: none;
+}
+
+
+// -------------------------------------
+//   Section
+// -------------------------------------
+
+.c-nav-hidden__section {
+    .u-clearfix();
+    padding: 0;
+    list-style: none;
+
+    &:not(:last-child) {
+        margin-bottom: @spacing-unit;
+    }
+
+}
+
+
+// -------------------------------------
+//   Title
+// -------------------------------------
+
+.c-nav-hidden__title {
+    margin: 0;
+    padding-left: @spacing-unit--small;
+    padding-right: @spacing-unit--small;
+    font-size: @cs-font-size-default;
+    line-height: 25px;
+    font-weight: @font-weight-semi;
+}
+
+
+// -------------------------------------
+//   Children
+// -------------------------------------
+
+.c-nav-hidden__children {
+    .u-clearfix();
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    float: left;
+    width: 14.2857142857%;
+    position: relative;
+    min-height: 1px;
+    padding-left: @spacing-unit--small;
+    padding-right: @spacing-unit--small;
+
+    @media (max-width: @screen-xs-max) {
+        width: 100%;
+    }
+
+    @media (max-width: @screen-xs-max) {
+        &.c-nav-hidden__link {
+            float: left;
+            width: 20%;
+        }
+    }
+
+    @media (max-width: @palm) {
+        &.c-nav-hidden__link {
+            width: 50%;
+        }
+    }
+
+}
+
+
+// -------------------------------------
+//   Child
+// -------------------------------------
+
+.c-nav-hidden__child {
+    @media (max-width: @screen-xs-max) {
+        float: left;
+        width: 20%;
+    }
+
+    @media (max-width: @palm) {
+        width: 50%;
+    }
+
+}
+
+
+// -------------------------------------
+//   Link
+// -------------------------------------
+
+.c-nav-hidden__link {
+    display: block;
+    line-height: 30px;
+    white-space: nowrap;
+}

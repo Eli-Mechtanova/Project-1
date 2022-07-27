@@ -1,0 +1,134 @@
+// *************************************
+//
+//   Tabs
+//
+// *************************************
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-tabs {
+    .u-clearfix();
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+// ----- Clear ----- //
+
+.c-tabs--clear {
+    .active {
+        > .c-tabs__link {
+            &:after {
+                border-bottom-width: 0;
+            }
+        }
+    }
+}
+
+// ----- Compact ----- //
+
+.c-tabs--compact {
+    .c-tabs__link {
+        font-size: @cs-font-size-xsmall;
+    }
+}
+
+// ----- Fit  ----- //
+
+.c-tabs--fit {
+    .c-tabs__item {
+        flex: 1;
+    }
+}
+
+// ----- Divider  ----- //
+
+.c-tabs--divider {
+    border-bottom: 1px solid @color-divider;
+}
+
+// ----- Responsive  ----- //
+
+.c-tabs--responsive {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+// -------------------------------------
+//   Item
+// -------------------------------------
+
+.c-tabs__item {
+    float: left;
+    flex-grow: 0;
+}
+
+// -------------------------------------
+//   Active
+// -------------------------------------
+
+.active {
+    > .c-tabs__link {
+        &,
+        &:hover {
+            color: @brand-primary;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            border-bottom: 3px solid @brand-primary;
+        }
+    }
+}
+
+// -------------------------------------
+//   Link
+// -------------------------------------
+
+.c-tabs__link {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0 @spacing-unit--large;
+    text-align: center;
+    font-size: @cs-font-size-default;
+    line-height: (@spacing-unit--huge * 2);
+    font-weight: @font-weight-semi;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    white-space: nowrap;
+
+    &,
+    &:hover {
+        color: @mute-color;
+    }
+
+    &:focus {
+        color: @brand-primary;
+    }
+}
+
+// -------------------------------------
+//   Section
+// -------------------------------------
+
+.c-tabs__section {
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}

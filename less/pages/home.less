@@ -1,0 +1,146 @@
+// *************************************
+//
+//   Homepage
+//
+// *************************************
+
+// -------------------------------------
+//  Variables
+// -------------------------------------
+
+@home-section-gutter: 35px;
+@home-section-gutter--small: 5px;
+
+// -------------------------------------
+//  Base
+// -------------------------------------
+
+.p-home {
+    display: grid;
+    grid-auto-flow: row;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+
+    // < 1200px
+    @media (max-width: @screen-md-max) {
+        margin-top: -30px;
+        margin-bottom: -30px;
+        row-gap: 15px;
+        padding: 0;
+    }
+
+    // 1200px >
+    @media (min-width: @screen-md-max) {
+        padding: 0 10px;
+        row-gap: 25px;
+        margin-top: -5px;
+        margin-bottom: -5px;
+    }
+}
+
+// -------------------------------------
+//   Section
+// -------------------------------------
+
+.p-home-section {
+    margin: 0;
+    padding: 60px @home-section-gutter--small;
+    background-color: #fff;
+    min-width: 100%;
+    .shadow-2dp;
+
+    // 1200px >
+    @media (min-width: @screen-md-max) {
+        border-radius: 18px;
+    }
+
+    // 992px >
+    @media (min-width: @screen-md-min) {
+        padding-left: @home-section-gutter;
+        padding-right: @home-section-gutter;
+    }
+}
+
+// Header
+.p-home-section__header {
+    margin-bottom: 40px;
+}
+
+// Title
+.p-home-section__title {
+    margin: 0;
+    font-weight: @font-weight-bold;
+    font-size: 28px;
+    line-height: 1.35;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 15px;
+}
+
+// Body
+.p-home-section__body {
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: 60px;
+
+    .c-section {
+        margin-bottom: 0;
+        min-width: 100%;
+    }
+
+    .c-card {
+        box-shadow: none;
+        border: 1px solid @color-divider;
+        overflow: hidden;
+
+        table {
+            border-top: 1px solid @color-divider;
+        }
+    }
+}
+
+// -------------------------------------
+//   Commitments
+// -------------------------------------
+
+.p-home-section--commitments {
+    background-color: transparent;
+    box-shadow: none;
+    overflow: hidden;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+// -------------------------------------
+//   Marketing
+// -------------------------------------
+
+.p-home-section--marketing {
+    background: linear-gradient(to bottom right, #939696, #007aab);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+// -------------------------------------
+//   Placeholder
+// -------------------------------------
+
+.p-home__region-placeholder {
+    display: block;
+    min-height: 40px;
+    max-width: 320px;
+    width: 100%;
+    cursor: wait;
+    background-color: @color-gray-30;
+    animation: glow 2s ease-in-out infinite;
+    border-radius: @border-radius-base;
+}
+
+@keyframes glow {
+    50% {
+        opacity: 0.7;
+    }
+}

@@ -1,0 +1,50 @@
+// *************************************
+//
+//   Facility Detail
+//
+// *************************************
+
+.c-facility-detail {
+    padding: 0;
+    margin: 0;
+}
+
+
+    .c-facility-detail__cover {
+        position: relative;
+        width: 100%;
+        background: @color-gray-20;
+    }
+
+        .c-facility-detail__background {
+            height: 300px;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+            background-position: 50% 50% !important;
+        }
+
+        .c-facility-detail__btn {
+            .shadow-2dp();
+            position: absolute;
+            right: @spacing-unit--large;
+            bottom: @spacing-unit--large;
+            border-color: transparent !important;
+        }
+
+
+    .c-facility-detail__map {
+        // 768px >
+        @media (min-width: @screen-sm-min) {
+            position: sticky;
+            top: 0;
+            padding-left: 55px !important;
+        }
+
+        // < 768px
+        @media (max-width: @screen-xs-max) {
+            margin-top: @spacing-unit--giga;
+            margin-right: -@spacing-unit--large;
+            margin-bottom: -@spacing-unit--large;
+            margin-left: -@spacing-unit--large;
+        }
+    }

@@ -1,0 +1,38 @@
+// *************************************
+//
+//   Meet Layout
+//
+// *************************************
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.o-meet-layout {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+// -------------------------------------
+//   Main
+// -------------------------------------
+
+.o-meet-layout__main {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-width: 74%;
+}
+
+// -------------------------------------
+//   Sidebar
+// -------------------------------------
+
+.o-meet-layout__sidebar {
+    // 992px >
+    @media (min-width: @screen-md-min) {
+        flex-basis: 255px;
+        align-self: flex-start;
+        flex-grow: 1;
+        margin-left: 20px;
+    }
+}

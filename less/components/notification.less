@@ -1,0 +1,36 @@
+// *************************************
+//
+//   Notification
+//
+// *************************************
+
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+@notification-size: 6px;
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-notification {
+    position: relative;
+    display: inline-block;
+    width: @notification-size;
+    height: @notification-size;
+    padding-left: @spacing-unit--small;
+
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 5px;
+        display: block;
+        width: @notification-size;
+        height: @notification-size;
+        border-radius: 100%;
+        background-color: @brand-primary;
+    }
+}

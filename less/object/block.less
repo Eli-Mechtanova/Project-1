@@ -1,0 +1,26 @@
+// *************************************
+//
+//   Block
+//   > stacks an image on top of some text-like content
+//
+// *************************************
+
+
+.o-block {
+    display: block;
+}
+
+
+    .o-block__img {
+        vertical-align: middle;
+        margin-bottom: @spacing-unit;
+
+        .o-block--small > & {
+            margin-bottom: @spacing-unit--small;
+        }
+    }
+
+
+    .o-block__body {
+        display: block;
+    }

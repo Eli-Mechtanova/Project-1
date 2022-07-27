@@ -1,0 +1,41 @@
+// *************************************
+//
+//   MEET FILES
+//
+// *************************************
+
+.c-meet-files {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.c-meet-files__nav {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 6px;
+}
+
+.c-meet-files__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid @color-divider;
+    border-radius: 4px;
+    padding: 6px 10px;
+    margin: 4px;
+    user-select: none;
+
+    &:hover {
+        background-color: @color-blue-fadeout-95;
+    }
+}
+
+.c-meet-files__label {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-left: 5px;
+}

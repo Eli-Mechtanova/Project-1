@@ -1,0 +1,187 @@
+// *************************************
+//
+//   Swimmer Meets
+//
+// *************************************
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+@swimmer-meets-gutter: 15px;
+@swimmer-meets-card-spacing: 20px;
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-swimmer-meets {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(345px, 1fr));
+    gap: 10px;
+
+    @media screen and (max-width: @mobile) {
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    }
+}
+
+// -------------------------------------
+//   Card
+// -------------------------------------
+
+.c-swimmer-meets__card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    border-radius: @border-radius-large;
+    background-color: @color-white;
+    .shadow-2dp();
+
+    &:hover {
+        .shadow-6dp();
+    }
+}
+
+// -------------------------------------
+//   Link
+// -------------------------------------
+
+.c-swimmer-meets__link-mask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+}
+
+// -------------------------------------
+//   Header
+// -------------------------------------
+
+.c-swimmer-meets__header {
+    flex: 1;
+    padding: @swimmer-meets-card-spacing;
+
+    &,
+    &:hover {
+        color: @text-color;
+    }
+}
+
+// -------------------------------------
+//   Content
+// -------------------------------------
+
+.c-swimmer-meets__content {
+    display: block;
+    overflow: hidden;
+}
+
+// -------------------------------------
+//   Logo
+// -------------------------------------
+
+.c-swimmer-meets__logo {
+    margin: 0 15px 15px 0;
+    width: 38px;
+    height: 38px;
+}
+
+// -------------------------------------
+//   Stats
+// -------------------------------------
+
+.c-swimmer-meets__stats {
+    display: grid;
+    grid-template-columns: repeat(5, max-content);
+    column-gap: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 15px;
+
+    li {
+        display: flex;
+        flex-flow: column;
+        white-space: nowrap;
+        line-height: 1.5;
+    }
+}
+
+// -------------------------------------
+//   Footer
+// -------------------------------------
+
+.c-swimmer-meets__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: @swimmer-meets-card-spacing;
+    padding-top: 10px;
+}
+
+// -------------------------------------
+//   Button
+// -------------------------------------
+
+.c-swimmer-meets__btn {
+    position: relative;
+    z-index: 10;
+}
+
+// -------------------------------------
+//   Button Leave
+// -------------------------------------
+
+.c-swimmer-meets__btn--leave {
+    &:after {
+        content: "Attending";
+    }
+
+    &:hover:after {
+        content: "Not Attending";
+    }
+}
+
+// -------------------------------------
+//   Button Video
+// -------------------------------------
+
+.c-swimmer-meets__btn--icon {
+    min-width: 40px;
+    min-height: 40px;
+    padding: 0;
+    margin-left: 10px;
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: @mute-color;
+    font-weight: @font-weight-normal;
+    border-radius: 100%;
+
+    &:hover {
+        color: @brand-primary;
+        background-color: @color-blue-fadeout-95;
+
+        &:active,
+        &:focus {
+            color: @brand-primary;
+            background-color: @color-blue-fadeout-90;
+        }
+    }
+
+    &:focus {
+        color: @mute-color;
+    }
+
+    > * {
+        font-size: 16px;
+    }
+}

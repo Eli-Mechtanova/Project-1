@@ -1,0 +1,102 @@
+// *************************************
+//
+//   Search Bar
+//
+// *************************************
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-search-bar {
+    // 768px and up
+    @media (min-width: @screen-sm-min) {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    > .c-search-bar__item {
+        // 768px and up
+        @media (min-width: @screen-sm-min) {
+            &:not(:first-child) {
+                border-left: 1px solid @color-divider;
+            }
+        }
+        // less than 768px
+        @media (max-width: @screen-xs-max) {
+            &:not(:last-child) {
+                border-bottom: 1px solid @color-divider;
+            }
+        }
+    }
+}
+
+
+// -------------------------------------
+//   Item
+// -------------------------------------
+
+.c-search-bar__item {
+    padding: @spacing-unit;
+
+    // 768px and up
+    @media (min-width: @screen-sm-min) {
+        flex: 1;
+    }
+
+    // less than 768px
+    @media (max-width: @screen-xs-max) {
+        display: flex;
+        align-items: center;
+    }
+}
+
+
+// -------------------------------------
+//   Action
+// -------------------------------------
+
+.c-search-bar__action {
+    padding: @spacing-unit;
+
+    // 768px and up
+    @media (min-width: @screen-sm-min) {
+        flex: 0.5;
+    }
+}
+
+
+
+// -------------------------------------
+//   Label
+// -------------------------------------
+
+.c-search-bar__label {
+    margin-bottom: 0;
+
+    // 768px and up
+    @media (min-width: @screen-sm-min) {
+        padding-left: 4px;
+    }
+
+    // less than 768px
+    @media (max-width: @screen-xs-max) {
+        width: 70px;
+    }
+}
+
+
+// -------------------------------------
+//   Control
+// -------------------------------------
+
+.c-search-bar__control {
+    padding: 0;
+    border-top-width: 0 !important;
+    border-right-width: 0 !important;
+    border-left-width: 0 !important;
+    border-radius: 0 !important;
+    border-color: transparent;
+    font-size: @cs-font-size-large;
+}

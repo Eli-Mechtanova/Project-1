@@ -1,0 +1,25 @@
+// *************************************
+//
+//   Sticky Filters
+//
+// *************************************
+
+.c-sticky-filters {
+    // 992px and up
+    @media (min-width: @screen-md-min) {
+        position: sticky;
+        top: (@header-height + 15px);
+    }
+}
+
+.c-sticky-filters__list {
+    // 992px and up
+    @media (min-width: @screen-md-min) {
+        overflow-y: auto;
+    }
+
+    // less than 992px
+    @media (max-width: @screen-sm-max) {
+        max-height: 100% !important;
+    }
+}

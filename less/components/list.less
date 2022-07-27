@@ -1,0 +1,187 @@
+// *************************************
+//
+//   List
+//
+// *************************************
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &:empty {
+        display: none;
+    }
+}
+
+// ----- Top ----- //
+
+.c-list--top {
+    .c-list__item {
+        align-items: flex-start;
+    }
+}
+
+// ----- Divided ----- //
+
+.c-list--divided {
+    .c-list__item {
+        &:not(:last-child) {
+            border-bottom: 1px solid @color-divider;
+        }
+    }
+}
+
+// ----- Celled ----- //
+
+.c-list--celled {
+    > .c-list__item {
+        border-bottom: 1px solid @color-divider;
+        &:not(:first-child) {
+            margin-bottom: @spacing-unit;
+            padding-bottom: @spacing-unit;
+        }
+    }
+}
+
+// ----- Multiline ----- //
+
+.c-list--multiline {
+    .c-list__primary-content,
+    .c-list__text {
+        display: block;
+    }
+}
+
+// ----- Compact ----- //
+
+.c-list--compact {
+    .c-list__title {
+        font-size: @cs-font-size-default;
+    }
+    .c-list__text {
+        font-size: @cs-font-size-xsmall;
+    }
+}
+
+// ----- Responsive @palm (less than 640px) ----- //
+
+@media (max-width: @palm) {
+    .c-list--responsive\@palm {
+        > .c-list__item {
+            display: block;
+        }
+
+        .c-list__secondary-content {
+            margin-top: @spacing-unit--small;
+            margin-left: 0;
+        }
+    }
+}
+
+// -------------------------------------
+//   Item
+// -------------------------------------
+
+.c-list__item {
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    &:not(:last-child) {
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+// -------------------------------------
+//   Primary content
+// -------------------------------------
+
+.c-list__primary-content {
+    order: 0;
+    flex-grow: 2;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+// -------------------------------------
+//   Avatar
+// -------------------------------------
+
+.c-list__avatar {
+    margin-right: @spacing-unit--large;
+    min-height: 40px;
+    min-width: 40px;
+}
+
+// -------------------------------------
+//   Numeric
+// -------------------------------------
+
+.c-list__numeric {
+    margin-right: @spacing-unit--large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: @font-weight-semi;
+    font-size: 13px;
+    min-height: 40px;
+    min-width: 40px;
+    border: 1px solid @color-divider;
+    border-radius: 50%;
+}
+
+// -------------------------------------
+//   Title
+// -------------------------------------
+
+.c-list__title {
+    margin: 0;
+    font-size: @cs-font-size-large;
+    font-weight: @font-weight-normal;
+    line-height: 1.35;
+}
+
+// -------------------------------------
+//   Text
+// -------------------------------------
+
+.c-list__text {
+    margin: 0;
+    color: @mute-color;
+    font-size: @cs-font-size-default;
+    line-height: 1.35;
+}
+
+// -------------------------------------
+//   Secondary content
+// -------------------------------------
+
+.c-list__secondary-content {
+    margin-left: @spacing-unit--large;
+}
+
+.c-list__button {
+    display: block;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: @color-hint;
+    border: 0;
+    background: none;
+    outline: none;
+
+    &:hover {
+        color: @mute-color;
+    }
+}

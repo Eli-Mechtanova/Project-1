@@ -1,0 +1,41 @@
+// *************************************
+//
+//   Medals
+//
+// *************************************
+
+.c-medals {
+    margin: 3px 0 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+}
+
+.c-medals__item {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    margin-left: 5px;
+
+    &:first-child {
+        margin-left: 10px;
+    }
+
+    &.is-gold {
+        color: #dab509;
+    }
+
+    &.is-silver {
+        color: #a1a1a1;
+    }
+
+    &.is-bronze {
+        color: #ae7058;
+    }
+}
+
+.c-medals__value {
+    margin-left: 2px;
+    font-size: 14px;
+    font-weight: @font-weight-semi;
+}

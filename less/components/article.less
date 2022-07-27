@@ -1,0 +1,274 @@
+// *************************************
+//
+//   Article
+//   -> news article styles
+//
+// *************************************
+
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+@article-line-height: 23px;
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-article {
+	margin: 0;
+	padding: 0;
+}
+
+
+// -------------------------------------
+//   Header
+// -------------------------------------
+
+.c-article__header {
+	margin-bottom: (@spacing-unit--huge * 2);
+}
+
+
+// -------------------------------------
+//   Title
+// -------------------------------------
+
+.c-article__title {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 24px;
+	line-height: 1.2;
+	font-weight: @font-weight-semi;
+}
+
+
+// -------------------------------------
+//   Date
+// -------------------------------------
+
+.c-article__date {
+	display: block;
+	color: @mute-color;
+}
+
+
+// -------------------------------------
+//   Body
+// -------------------------------------
+
+.c-article__body {
+	.u-clearfix();
+	margin-bottom: @spacing-unit--huge;
+
+	h2 {
+		margin-top: @article-line-height;
+		margin-bottom: @spacing-unit;
+		font-weight: @font-weight-semi;
+        font-size: 20px;
+        line-height: 1.35;
+	}
+
+	p,
+	ul,
+	ol {
+        font-size: 16px;
+        margin-bottom: @article-line-height;
+		line-height: @article-line-height;
+	}
+
+	ul,
+	ol {
+		list-style-position: outside;
+
+		> li:not(:last-child) {
+			margin-bottom: (@article-line-height / 2);
+		}
+
+	}
+
+	blockquote {
+		margin-bottom: @article-line-height;
+		font-style: italic;
+
+		p {
+			line-height: @article-line-height;
+		}
+
+	}
+
+	img {
+		max-width: 100%;
+		display: block;
+		margin: 0 auto;
+		clear: both;
+
+		// Fixed styles for old embeded images
+		&.embed {
+			float: left;
+			max-width: 30%;
+		}
+
+	}
+
+	.align-right {
+		@media (min-width: @palm) {
+			float: right;
+			max-width: 50%;
+			margin-left: @article-line-height;
+			margin-bottom: @article-line-height;
+		}
+	}
+
+	.align-left {
+		@media (min-width: @palm) {
+			float: left;
+			max-width: 50%;
+			margin-right: @article-line-height;
+			margin-bottom: @article-line-height;
+		}
+	}
+
+	.align-center {
+		text-align: center;
+		.u-clearfix();
+
+		> .c-article__figure {
+			display: block;
+		}
+
+	}
+
+
+    // ----- Figure ----- //
+
+    .c-article__figure {
+    	margin-bottom: @article-line-height;
+    	clear: both;
+
+    	img { padding: 0; }
+
+    	figcaption {
+    		margin-top: @spacing-unit--small;
+    		text-align: center;
+    		color: @mute-color;
+    		font-size: 12px;
+    	}
+
+    }
+
+    // ----- Embed ----- //
+
+	.c-article__embed {
+		margin-bottom: @article-line-height;
+		clear: both;
+
+		> div {
+			background-color: @color-hint;
+		}
+
+	}
+
+    // ----- Table (bootstrap) ----- //
+
+	th {
+		text-align: left;
+	}
+
+	table {
+	  width: 100%;
+	  max-width: 100%;
+	  margin-bottom: @line-height-computed;
+	  // Cells
+	  > thead,
+	  > tbody,
+	  > tfoot {
+	    > tr {
+	      > th,
+	      > td {
+	        padding: @table-cell-padding;
+	        line-height: @line-height-base;
+	        vertical-align: bottom;
+	        border-top: 1px solid @table-border-color;
+	      }
+	    }
+	  }
+	  // Bottom align for column headings
+	  > thead > tr > th {
+	    vertical-align: bottom;
+	    border-bottom: 2px solid @table-border-color;
+	  }
+	  // Remove top border from thead by default
+	  > caption + thead,
+	  > colgroup + thead,
+	  > thead:first-child {
+	    > tr:first-child {
+	      > th,
+	      > td {
+	        border-top: 0;
+	      }
+	    }
+	  }
+	  // Account for multiple tbody instances
+	  > tbody + tbody {
+	    border-top: 2px solid @table-border-color;
+	  }
+
+	  // Nesting
+	  table {
+	    background-color: @body-bg;
+	  }
+	}
+
+
+	// Table clean
+	table {
+		margin-bottom: @article-line-height;
+		display: block;
+		overflow-x: auto;
+		border: 0;
+
+		caption {
+			padding-top: 0;
+			padding-bottom: @spacing-unit;
+			text-align: left;
+			color: @text-color;
+			font-weight: @font-weight-normal;
+			font-size: 20px;
+            line-height: 1.15;
+		}
+
+	    th {
+	        border-right: 0;
+	        background-color: #fff;
+	    }
+
+	    thead > tr > th {
+	        border-bottom: 1px solid @table-border-color;
+	        color: @mute-color;
+	        font-size: 11px;
+	        text-transform: uppercase;
+	    }
+
+	    tr > td {
+	        border-right: 0;
+	    }
+
+	    tbody {
+	        tr {
+	            &:not(:last-child) {
+	                border-bottom: 1px solid @border-divider-color;
+	            }
+
+	            > td {
+	                border: 0;
+	            }
+	        }
+
+	    }
+
+	}
+
+}

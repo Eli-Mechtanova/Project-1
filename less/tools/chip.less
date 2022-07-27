@@ -1,0 +1,71 @@
+// *************************************
+//
+//   Chip
+//   -> mixin
+//
+// *************************************
+
+// -------------------------------------
+//   Variant
+// -------------------------------------
+
+.chip-variant(@color; @background) {
+    @active-background: darken(@background, 5%);
+
+    border-color: @background;
+    color: @color;
+    background-color: @background;
+
+    &:active {
+        background-color: @active-background;
+        border-color: @active-background;
+    }
+
+    .c-chip__action {
+        color: @color;
+    }
+
+    &.c-chip--button {
+        &:hover,
+        &:focus {
+            border-color: @active-background;
+            background-color: @active-background;
+            cursor: pointer;
+            color: @color;
+        }
+    }
+}
+
+// -------------------------------------
+//   Outline
+// -------------------------------------
+
+.chip-outline(@color) {
+    color: @color;
+    background-color: @color-white;
+}
+
+// -------------------------------------
+//   Size
+// -------------------------------------
+
+.chip-size(@height; @font-size; @action-height) {
+    height: @height;
+    line-height: (@height - 2); // keep in mind border
+    border-radius: (@height / 2);
+
+    .c-chip__text {
+        font-size: @font-size;
+    }
+
+    .c-chip__action {
+        height: @action-height;
+        width: @action-height;
+
+        .fa,
+        .far,
+        .fas {
+            font-size: @action-height;
+        }
+    }
+}

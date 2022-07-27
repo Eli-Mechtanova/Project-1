@@ -1,0 +1,113 @@
+// *************************************
+//
+//   Buttons
+//   -> mixin
+//
+// *************************************
+
+
+// -------------------------------------
+//   Base
+//   > extends default bootstrap button mixin
+//     override border color to match background-color
+// -------------------------------------
+
+.button-variant(@color; @background; @border) {
+    color: @color;
+    background-color: @background;
+    border-color: @border;
+
+    &:focus,
+    &.focus {
+        color: @color;
+        background-color: darken(@background, 6%);
+        border-color: darken(@border, 6%);
+    }
+    &:hover {
+        color: @color;
+        background-color: darken(@background, 6%);
+        border-color: darken(@border, 6%);
+    }
+    &:active,
+    &.active,
+    .open > .dropdown-toggle& {
+        color: @color;
+        background-color: darken(@background, 6%);
+        border-color: darken(@border, 6%);
+
+        &:hover,
+        &:focus,
+        &.focus {
+            color: @color;
+            background-color: darken(@background, 11%);
+            border-color: darken(@border, 11%);
+        }
+    }
+    &:active,
+    &.active,
+    .open > .dropdown-toggle& {
+        background-image: none;
+    }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        &:hover,
+        &:focus,
+        &.focus {
+            background-color: @background;
+            border-color: @border;
+        }
+    }
+
+    .badge {
+        color: @background;
+        background-color: @color;
+    }
+}
+
+
+// -------------------------------------
+//   Outline
+// -------------------------------------
+
+.button-outline(@color; @background) {
+    color: @color;
+    background-image: none;
+    background-color: transparent;
+    border-color: @color;
+
+    &:hover,
+    &:active,
+    &:focus,
+    &.focus {
+        color: @color;
+        background-color: @background;
+        border-color: @color;
+    }
+
+    &.active,
+    .open > &.dropdown-toggle {
+        color: @color-white;
+        background-color: @color;
+        border-color: @color;
+        &:hover,
+        &:focus,
+        &.focus {
+            color: @color-white;
+            background-color: @color;
+            border-color: @color;
+        }
+    }
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        &:hover,
+        &:focus,
+        &.focus {
+            color: @color;
+            background-color: transparent;
+            border-color: @color;
+        }
+    }
+}

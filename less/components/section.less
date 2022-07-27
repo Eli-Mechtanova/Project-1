@@ -1,0 +1,115 @@
+// *************************************
+//
+//   Section
+//
+// *************************************
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-section {
+    margin-bottom: @spacing-unit--giga;
+}
+
+// -------------------------------------
+//   Header
+// -------------------------------------
+
+.c-section__header {
+    margin-bottom: @spacing-unit--large;
+}
+
+// -------------------------------------
+//   Title
+// -------------------------------------
+
+.c-section__title {
+    margin: 0;
+    font-size: @cs-font-size-title;
+    line-height: 1.3;
+    font-weight: @font-weight-semi;
+}
+
+// ----- Small ----- //
+
+.c-section__title--small {
+    font-size: @cs-font-size-huge;
+}
+
+// *************************************
+//
+//   Section (Refactoring)
+//
+// *************************************
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.rf-section {
+    .shadow-2dp();
+    display: block;
+    margin: 0;
+    padding: 40px 30px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 16px;
+    background-color: #fff;
+
+    // 480px >
+    @media (min-width: @mobile) {
+        padding: 45px;
+    }
+}
+
+// Narrow
+.rf-section--narrow {
+    // 992px >
+    @media screen and (min-width: @screen-md-min) {
+        padding-right: 210px;
+        padding-left: 210px;
+    }
+}
+
+// -------------------------------------
+//   Header
+// -------------------------------------
+
+.rf-section__header {
+    margin-bottom: 35px;
+    text-align: center;
+
+    // 480px >
+    @media (min-width: @mobile) {
+        margin-bottom: 40px;
+    }
+}
+
+// -------------------------------------
+//   Title
+// -------------------------------------
+
+.rf-section__title {
+    font-size: 28px;
+    margin: 0;
+    line-height: 1.35;
+    font-weight: @font-weight-bold;
+}
+
+// -------------------------------------
+//   Locked
+// -------------------------------------
+
+.rf-section__locked {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.75);
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,79 @@
+// *************************************
+//
+//   Region Dashboard
+//
+// *************************************
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-region-dashboard {
+    display: grid;
+    column-gap: 15px;
+    row-gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(min-content, 350px));
+}
+
+// -------------------------------------
+//   Card
+// -------------------------------------
+
+.c-region-dashboard-card {
+    .shadow-2dp();
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    border-radius: @border-radius-large;
+    background-color: @color-white;
+    color: @color-gray-80;
+}
+
+// Header
+
+.c-region-dashboard-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: @spacing-unit--large;
+    border-bottom: 1px solid @color-divider;
+}
+
+.c-region-dashboard-card__header-group {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.c-region-dashboard-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    margin-right: @spacing-unit;
+    background-color: @color-blue-fadeout-90;
+    color: @brand-primary;
+    font-size: 16px;
+}
+
+.c-region-dashboard-card__view-all {
+    margin-left: @spacing-unit--giga;
+}
+
+// Body
+
+.c-region-dashboard-card__body {
+    display: flex;
+    align-items: flex-start;
+    padding: @spacing-unit--huge;
+}
+
+// Counter
+
+.c-region-dashboard-card__counter {
+    margin-right: @spacing-unit--huge;
+    font-size: 48px;
+    line-height: 1;
+}

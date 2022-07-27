@@ -1,0 +1,150 @@
+// *************************************
+//
+//   Type
+//   -> utilities
+//
+// *************************************
+
+// -------------------------------------
+//   Weight
+// -------------------------------------
+
+.u-text-normal {
+    font-weight: @font-weight-normal !important;
+}
+
+.u-text-semi {
+    font-weight: @font-weight-semi !important;
+}
+
+.u-text-bold {
+    font-weight: @font-weight-bold !important;
+}
+
+// -------------------------------------
+//   Size
+// -------------------------------------
+
+.u-text-default {
+    font-size: @cs-font-size-default !important;
+}
+
+.u-text-small {
+    font-size: @cs-font-size-small !important;
+}
+
+.u-text-xsmall {
+    font-size: @cs-font-size-xsmall !important;
+}
+
+.u-text-large {
+    font-size: @cs-font-size-large !important;
+}
+
+// less than 768px
+@media (max-width: @screen-xs-max) {
+    .u-text-large\@xs {
+        font-size: @cs-font-size-large !important;
+    }
+}
+
+.u-text-huge {
+    font-size: @cs-font-size-huge !important;
+}
+
+.u-text-headline {
+    font-size: @cs-font-size-headline !important;
+}
+
+.u-text-display {
+    font-size: @cs-font-size-display1 !important;
+}
+
+// -------------------------------------
+//   Aligment
+// -------------------------------------
+
+.u-text-center {
+    text-align: center !important;
+}
+
+.u-text-start {
+    text-align: left !important;
+}
+
+.u-text-end {
+    text-align: right !important;
+}
+
+// 768px and up
+@media (min-width: @screen-sm-min) {
+    .u-text-end\@sm {
+        text-align: right !important;
+    }
+}
+
+// less than 768px
+@media (max-width: @screen-xs-max) {
+    .u-text-end\@xs {
+        text-align: right !important;
+    }
+}
+
+.u-text-last-child-end {
+    &:last-child {
+        text-align: right !important;
+    }
+}
+
+// -------------------------------------
+//   Transform / Style
+// -------------------------------------
+
+.u-text-upcase {
+    text-transform: uppercase !important;
+    letter-spacing: 0.03em !important;
+}
+
+.u-text-lowercase {
+    text-transform: lowercase !important;
+}
+
+.u-text-transform-none {
+    text-transform: none !important;
+}
+
+.u-text-italic {
+    font-style: italic !important;
+}
+
+// -------------------------------------
+//   Truncate
+// -------------------------------------
+
+.u-text-truncate {
+    .text-truncate();
+}
+
+// -------------------------------------
+//   Line height
+// -------------------------------------
+
+.u-line-height-initial {
+    line-height: initial !important;
+}
+
+.u-line-height-inherit {
+    line-height: inherit !important;
+}
+
+.u-line-height-normal {
+    line-height: 1.5 !important;
+}
+
+// -------------------------------------
+//   Line height
+// -------------------------------------
+
+.u-text-decoration-none {
+    text-decoration: none !important;
+}

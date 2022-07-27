@@ -1,0 +1,70 @@
+// *************************************
+//
+//   List Inline
+//
+// *************************************
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.o-list-inline {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    > li {
+        display: inline-block;
+    }
+}
+
+// ----- Inverted ----- //
+
+.o-list-inline--inverted {
+    color: @mute-color-inverted;
+
+    &.o-list-inline--dotted {
+        > li {
+            &:after {
+                background-color: @mute-color-inverted;
+            }
+        }
+    }
+}
+
+// ----- Dotted ----- //
+
+.o-list-inline--dotted {
+    display: flex;
+    flex-wrap: wrap;
+
+    > li {
+        display: flex;
+        align-items: center;
+
+        &:after {
+            width: 3px;
+            height: 3px;
+            content: "";
+            margin-left: 6px;
+            margin-right: 6px;
+            border-radius: 100%;
+            background-color: @color-gray-60;
+        }
+
+        &:last-child {
+            margin-right: 0;
+            padding-right: 0;
+
+            &:after {
+                content: none;
+            }
+        }
+    }
+}
+
+// ----- Nowrap ----- //
+
+.o-list-inline--nowrap {
+    flex-wrap: nowrap;
+}

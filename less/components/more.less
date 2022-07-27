@@ -1,0 +1,32 @@
+// *************************************
+//
+//   More
+//
+// *************************************
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-more {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-size: @cs-font-size-default;
+    font-weight: @font-weight-normal;
+    white-space: nowrap;
+
+    &:after {
+        font: var(--fa-font-regular);
+        content: @fa-var-angle-right;
+        padding-left: 6px;
+        vertical-align: middle;
+    }
+}
+
+// ----- Small ----- //
+
+.c-more--small {
+    font-size: @cs-font-size-small;
+}

@@ -1,0 +1,354 @@
+.navbar {
+    line-height: 45px;
+
+    .nav-menu {
+        margin-bottom: 0;
+
+        li {
+            a {
+                color: #ccc;
+                display: block;
+                font-size: @cs-font-size-small;
+
+                &:hover {
+                    color: #fff;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .logo {
+        img {
+            max-width: 100%;
+        }
+    }
+
+    .nav-autocompleter {
+        flex: 0.9;
+        margin-left: @spacing-unit--large;
+        align-self: center;
+
+        // less than 992px
+        @media (max-width: @screen-sm-max) {
+            flex: 1;
+        }
+
+        > span {
+            position: absolute;
+            top: 4px;
+            right: 2px;
+            background: #e83b3b;
+            color: #fff;
+            padding: 0 3px;
+            border-radius: 5px;
+            display: block;
+            font-size: 6px;
+            font-weight: bold;
+            text-transform: uppercase;
+            height: 8px;
+            line-height: 8px;
+        }
+
+        &.ac-loading:after {
+            content: "\f110";
+            animation: fa-spin 2s infinite linear;
+        }
+
+        input {
+            padding: 0 @spacing-unit--giga 0 @spacing-unit;
+            width: 100%;
+            height: @spacing-unit--giga;
+            line-height: @spacing-unit--giga;
+            border: 0;
+            background: @color-gray-80;
+            color: @color-white;
+            transition: all 0.2s;
+            border-radius: @border-radius-base;
+
+            &:focus {
+                outline: 0;
+                background-color: @color-gray-70;
+                color: @color-white;
+
+                &::placeholder {
+                    color: @color-white;
+                    // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+                    opacity: 1;
+                }
+            }
+
+            &::placeholder {
+                color: @mute-color-inverted;
+                // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+                opacity: 1;
+            }
+
+            // less than 992px
+            @media (max-width: @screen-sm-max) {
+                height: (@spacing-unit--giga + 5);
+                line-height: (@spacing-unit--giga + 5);
+            }
+        }
+    }
+}
+
+.conference-nav {
+    height: 70px;
+    line-height: 70px;
+    background: #fff;
+
+    #map {
+        width: 60px;
+        height: 60px;
+        margin-top: 5px;
+        overflow: hidden;
+
+        i {
+            font-size: 25px;
+            margin: 0;
+        }
+    }
+
+    .conference-info {
+        float: left;
+
+        .conference-logo {
+            display: block;
+            height: 100%;
+            float: left;
+            margin-right: 10px;
+
+            img {
+                height: 45px;
+            }
+        }
+
+        .conference-name {
+            font-size: 13px;
+            color: #222;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: block;
+            padding: 0 20px 0 10px;
+            float: left;
+            position: relative;
+            border-left: 1px solid #fff;
+            border-right: 1px solid #fff;
+            position: relative;
+            z-index: 90;
+            cursor: pointer;
+            user-select: none;
+
+            &:after {
+                font: var(--fa-font-solid);
+                content: @fa-var-sort;
+                position: absolute;
+                top: 0px;
+                right: 10px;
+                font-size: 8px;
+            }
+
+            &:hover {
+                color: #999;
+            }
+
+            &.expanded {
+                border-left: 1px solid #eee;
+                border-right: 1px solid #eee;
+
+                &:before {
+                    content: "";
+                    border-bottom: 1px solid #fff;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    right: 0;
+                }
+            }
+        }
+
+        .conference-gender-filter {
+            float: left;
+            width: 80px;
+            font-size: 10px;
+            color: #aaa;
+            font-weight: medium;
+            height: 20px;
+            line-height: 20px;
+            padding: 0 5px;
+            border: 1px solid #ddd;
+            margin: 25px 10px;
+            outline: none;
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
+    }
+
+    .conference-nav-list {
+        float: right;
+        cursor: default;
+        margin: 0;
+
+        li {
+            vertical-align: top;
+
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+
+        a {
+            font-size: 12px;
+            color: #999;
+            text-decoration: none;
+            display: block;
+            padding: 0 5px;
+
+            &:hover {
+                color: #222;
+            }
+        }
+
+        .active {
+            a {
+                font-weight: bold;
+                color: #222;
+            }
+        }
+
+        .conference-disable {
+            a {
+                border-left: 1px solid rgba(238, 238, 238, 0.5);
+                border-right: 1px solid rgba(238, 238, 238, 0.5);
+                width: 50px;
+                text-align: center;
+
+                i {
+                    color: #222;
+                    opacity: 0.2;
+                    font-size: 14px;
+                }
+
+                &:hover {
+                    i {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.division-selector {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    line-height: 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 10px 10px 0;
+    border-top: 1px solid #eee;
+    z-index: 89;
+    padding: 10px 0;
+
+    .division-selector-grid-list {
+        > li {
+            width: 12.1%;
+        }
+    }
+
+    .division-selector-title {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    ul {
+        margin-bottom: 0;
+        line-height: 24px;
+
+        li {
+            vertical-align: top;
+
+            a {
+                font-size: 11px;
+                text-transform: uppercase;
+                font-weight: bold;
+                display: block;
+            }
+        }
+    }
+}
+
+.navbar-default .navbar-nav.nav-auth {
+    li {
+        a {
+            display: block;
+            height: 45px;
+            line-height: 45px;
+            color: #ddd;
+            font-size: 14px;
+            font-weight: @font-weight-semi;
+            text-transform: uppercase;
+            padding: 0 5px;
+
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+}
+
+.nav-logged {
+    position: relative;
+    transition: background 200ms;
+
+    &:hover {
+        background: #474747;
+        transition: none;
+
+        ul {
+            display: block;
+        }
+    }
+
+    .nav-logged-user {
+        .u-text-truncate();
+        display: block;
+        cursor: pointer;
+        text-align: right;
+        color: #fff;
+        font-size: 14px;
+        font-weight: @font-weight-semi;
+        text-transform: uppercase;
+        padding: 0 10px;
+    }
+
+    ul {
+        .shadow-4dp();
+        position: absolute;
+        top: 45px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        display: none;
+
+        li {
+            a {
+                display: block;
+                color: @text-color;
+                padding: 0 @spacing-unit;
+                height: (@spacing-unit--huge * 2);
+                line-height: (@spacing-unit--huge * 2);
+            }
+
+            &:hover {
+                background: @dropdown-link-hover-bg;
+            }
+        }
+    }
+}

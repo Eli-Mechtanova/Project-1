@@ -1,0 +1,57 @@
+// *************************************
+//
+//   Message Form
+//
+// *************************************
+
+
+.c-message-form {
+    border: 1px solid @color-divider;
+    border-radius: @border-radius-base;
+    background-color: @color-white;
+}
+
+    .c-message-form__group {
+        .c-message-form__control {
+            padding-left: 0;
+        }
+    }
+
+    .c-message-form__control.c-message-form__control {
+        border-top-width: 0;
+        border-bottom-width: 1px;
+        border-right-width: 0;
+        border-left-width: 0;
+        border-radius: 0;
+        border-color: @color-divider;
+
+        &:focus {
+            border-bottom-color: @brand-primary;
+        }
+    }
+
+    .c-message-form__addon.c-message-form__addon {
+        border-top-width: 0;
+        border-bottom-width: 1px;
+        border-right-width: 0;
+        border-left-width: 0;
+        border-radius: 0;
+        border-color: @color-divider;
+        background-color: @color-white;
+        color: @mute-color;
+    }
+
+    .c-message-form__body {
+        .form-group {
+            margin-bottom: 0;
+        }
+        .form-control-clear {
+            border-radius: 0;
+        }
+    }
+
+    .c-message-form__footer {
+        padding: @spacing-unit--small;
+        background-color: @color-gray-5;
+        text-align: right;
+    }

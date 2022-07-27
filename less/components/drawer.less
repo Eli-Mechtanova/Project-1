@@ -1,0 +1,187 @@
+// *************************************
+//
+//   Drawer
+//
+// *************************************
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+@drawer-width: 270px;
+@drawer-wide-width: 780px;
+@drawer-header-height: 45px;
+
+// -------------------------------------
+//   Mixin
+// -------------------------------------
+
+// ----- Base ----- //
+
+.drawer-base() {
+    .shadow-2dp();
+    position: fixed;
+    top: 0;
+    right: auto;
+    bottom: 0;
+    left: 0;
+    width: @drawer-width;
+    height: 100%;
+    max-height: 100%;
+
+    transform: translateX(-@drawer-width);
+    transition: all 0.25s linear;
+    background-color: @color-white;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+    z-index: @zindex-drawer;
+
+    transform-style: preserve-3d;
+    will-change: transform;
+
+    .animation-default();
+    transition-property: transform;
+
+    &.is-visible {
+        transform: translateX(0);
+    }
+}
+
+// ----- Header ----- //
+
+.drawer-header-base() {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: @drawer-header-height;
+    padding: 0 @spacing-unit;
+    background-color: @color-gray-90;
+}
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-drawer {
+    .drawer-base();
+}
+
+// ----- Wide ----- //
+
+.c-drawer--wide {
+    width: 100%;
+    max-width: @drawer-wide-width;
+    transform: translateX(@drawer-wide-width);
+}
+
+// ----- End ----- //
+
+.c-drawer--end {
+    right: 0;
+    left: auto;
+}
+
+// -------------------------------------
+//   Header
+// -------------------------------------
+
+.c-drawer__header {
+    .drawer-header-base();
+}
+
+.c-drawer__header--flush {
+    padding: 0;
+}
+
+// -------------------------------------
+//   Title
+// -------------------------------------
+
+.c-drawer__title {
+    margin: 0;
+    font-size: @cs-font-size-title;
+    color: @color-white;
+}
+
+// -------------------------------------
+//   Button
+// -------------------------------------
+
+.c-drawer__button.c-drawer__button {
+    padding-right: @spacing-unit;
+    padding-left: @spacing-unit;
+}
+
+// -------------------------------------
+//   Row / Column
+// -------------------------------------
+
+.c-drawer__row {
+    min-height: ~"calc(100% - @{drawer-header-height})";
+
+    // (768px and up)
+    @media (min-width: @screen-sm-min) {
+        display: flex;
+    }
+}
+
+.c-drawer__column {
+    @media (min-width: @screen-sm-min) {
+        flex: 1;
+        width: 50%;
+    }
+}
+
+// -------------------------------------
+//   Backdrop
+// -------------------------------------
+
+.c-drawer__backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-color: transparent;
+    visibility: hidden;
+    opacity: 0;
+    z-index: @zindex-drawer-backdrop;
+
+    &.is-visible {
+        background-color: @modal-backdrop-bg;
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+// -------------------------------------
+//   Responsive
+//   > 991px and down
+// -------------------------------------
+
+// ----- Header at @sm ----- //
+
+.c-drawer__header\@sm {
+    display: none;
+}
+
+@media only screen and (max-width: @screen-sm-max) {
+    // ----- Base at @sm ----- //
+
+    .c-drawer\@sm {
+        .drawer-base();
+    }
+
+    // ----- Header at @sm ----- //
+
+    .c-drawer__header\@sm {
+        .drawer-header-base();
+    }
+
+    // ----- Body at @sm ----- //
+
+    .c-drawer__body\@sm {
+        padding: @spacing-unit;
+    }
+}

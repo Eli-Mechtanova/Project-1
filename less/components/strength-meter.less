@@ -1,0 +1,87 @@
+// *************************************
+//
+//   Strength Meter
+//
+// *************************************
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-strength-meter {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    height: 120px;
+    max-width: 65px;
+    background-color: @color-gray-30;
+}
+
+
+// -------------------------------------
+//   Bar
+// -------------------------------------
+
+.c-strength-meter__bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0%;
+    background-color: @brand-primary;
+}
+
+    // ----- Just Starting ----- //
+
+    .c-strength-meter__bar--starting {
+        background-color: @brand-danger;
+    }
+
+    // ----- Beginner ----- //
+
+    .c-strength-meter__bar--beginner {
+        background-color: @brand-warning;
+    }
+
+    // ----- Intermediate ----- //
+
+    .c-strength-meter__bar--intermediate {
+        background-color: @brand-energized;
+    }
+
+    // ----- Advanced ----- //
+
+    .c-strength-meter__bar--advanced {
+        background-color: @brand-success;
+    }
+
+    // ----- Expert ----- //
+
+    .c-strength-meter__bar--expert {
+        background-color: @brand-info;
+    }
+
+    // ----- Star ----- //
+
+    .c-strength-meter__bar--star {
+        background-color: darken(@brand-info, 15%);
+    }
+
+
+
+// -------------------------------------
+//   Title
+// -------------------------------------
+
+.c-strength-meter__title {
+    position: absolute;
+    margin: 0;
+    padding-bottom: @spacing-unit--tiny;
+    padding-left: (@spacing-unit--huge * 4);
+    border-bottom: 2px solid @text-color;
+    white-space: nowrap;
+    color: @text-color;
+    font-size: @cs-font-size-default;
+    font-weight: @font-weight-normal;
+}

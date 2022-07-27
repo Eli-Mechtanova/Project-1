@@ -1,0 +1,140 @@
+// *************************************
+//
+//   Card
+//
+// *************************************
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+@breakpoints: {
+    height-md: 700px;
+    width-md: 992px;
+};
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-card {
+    .shadow-2dp();
+    display: block;
+    margin-bottom: @spacing-unit--large;
+    border-radius: @border-radius-large;
+    padding: 0;
+    width: 100%;
+    background-color: @color-white;
+}
+
+// ----- Fit ----- //
+
+.c-card--fit {
+    display: inline-block;
+    width: auto;
+}
+
+// ----- Active ----- //
+
+.c-card--active {
+    border-left: 4px solid @brand-primary;
+}
+
+// ----- Elevation ----- //
+
+.c-card--elevation {
+    // 768px and up
+    @media (min-width: @screen-sm-min) {
+        transition: transform 0.3s, box-shadow 0.3s;
+
+        &:hover,
+        &:focus {
+            transform: translate3d(0, -2px, 0);
+            .shadow-6dp();
+        }
+    }
+}
+
+// ----- Neutral ----- //
+
+.c-card--neutral {
+    background-color: @brand-neutral;
+}
+
+// ----- Divided ----- //
+
+.c-card--divided {
+    > .c-card__item {
+        &:not(:last-child) {
+            border-bottom: 1px solid @color-divider;
+        }
+    }
+}
+
+// ----- Large ----- //
+
+.c-card--large {
+    .c-card__item {
+        padding: @spacing-unit--large;
+    }
+}
+
+// ----- Alt ----- //
+
+.c-card--alt {
+    border-radius: 8px;
+    box-shadow: 0px 3px 15px #7575751a;
+}
+
+// -------------------------------------
+//   Tabs
+// -------------------------------------
+
+.c-card__tabs {
+    margin: 0;
+    padding: 0;
+
+    .c-tabs__link {
+        line-height: 48px;
+    }
+}
+
+// -------------------------------------
+//   Item
+// -------------------------------------
+
+.c-card__item {
+    padding: @spacing-unit;
+}
+
+// -------------------------------------
+//   Header Actions
+// -------------------------------------
+
+.c-card__header-actions {
+    margin-top: -5px;
+    margin-bottom: -5px;
+    margin-right: -5px;
+}
+
+// -------------------------------------
+//   Action Icons
+// -------------------------------------
+
+.c-card__action-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 @spacing-unit @spacing-unit;
+}
+
+// -------------------------------------
+//   Placeholder
+// -------------------------------------
+
+.c-card__placeholder {
+    width: 25px;
+    height: 5px;
+    background-color: @color-gray-50;
+    border-radius: 25px;
+}

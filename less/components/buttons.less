@@ -1,0 +1,194 @@
+// *************************************
+//
+//   Buttons
+//   -> extends/overrides bootstrap classes
+//
+// *************************************
+
+// ----- Icon ----- //
+
+.btn-icon {
+    min-width: @spacing-unit--giga;
+    min-height: @spacing-unit--giga;
+}
+
+// ----- Secondary ----- //
+
+.btn-secondary {
+    .button-variant(
+        @btn-secondary-color; @btn-secondary-bg; @btn-secondary-border
+    );
+}
+
+// ----- Neutral ----- //
+
+.btn-neutral {
+    .button-variant(@btn-neutral-color; @btn-neutral-bg; @btn-neutral-border);
+}
+
+// ----- Gray----- //
+
+.btn-gray {
+    .button-variant(@btn-gray-color; @btn-gray-bg; @btn-gray-border);
+}
+
+// ----- Dark----- //
+
+.btn-dark {
+    .button-variant(@btn-dark-color; @btn-dark-bg; @btn-dark-border);
+}
+
+// ----- Dark----- //
+
+.btn-dark-blue {
+    .button-variant(@color-white; @color-logo-dark-blue; @color-logo-dark-blue);
+}
+
+// ----- White ----- //
+
+.btn-white {
+    .button-variant(@color-text; @color-white; @color-white);
+}
+
+// ----- Plain----- //
+
+.btn-plain {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+// ----- Fab ----- //
+
+.btn-fab.btn-fab {
+    .shadow-6dp();
+    min-width: 88px;
+    padding-top: @spacing-unit;
+    padding-bottom: @spacing-unit;
+    position: fixed;
+    right: @spacing-unit;
+    bottom: @spacing-unit--large;
+    z-index: @zindex-btn-fab;
+    font-size: @cs-font-size-small;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    &:active {
+        .shadow-8dp();
+    }
+
+    &:focus {
+        outline: none;
+        &:not(:active) {
+            .shadow-8dp();
+        }
+    }
+}
+
+// ----- Impersonation ----- //
+
+.btn-impersonation.btn-impersonation {
+    bottom: (@spacing-unit--huge * 3.3);
+    background-color: #fff;
+}
+
+// -------------------------------------
+//   Icon
+// -------------------------------------
+
+.btn-icon {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: 0;
+
+    .fa,
+    .fas,
+    .fab,
+    .far {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.btn-icon-plain {
+    color: @mute-color;
+    font-weight: @font-weight-normal;
+    background-color: transparent;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: transparent;
+        color: @brand-primary;
+        text-decoration: none;
+    }
+}
+
+.btn-icon-danger {
+    &:hover,
+    &:active,
+    &:focus {
+        color: @brand-danger;
+    }
+}
+
+.btn-circle {
+    border-radius: 50%;
+}
+
+// -------------------------------------
+//   Outline
+// -------------------------------------
+
+.btn-outline {
+    // ----- Primary ----- //
+
+    &.btn-primary {
+        .button-outline(@btn-primary-bg, @color-blue-fadeout-95);
+    }
+
+    // ----- Neutral ----- //
+
+    &.btn-neutral {
+        .button-outline(@color-gray-60, @color-gray-10);
+    }
+
+    // ----- Success ----- //
+
+    &.btn-success {
+        .button-outline(@btn-success-bg, @color-green-5);
+    }
+
+    // ----- Info ----- //
+
+    &.btn-info {
+        .button-outline(@btn-info-bg, @color-blue-5);
+    }
+
+    // ----- Warning ----- //
+
+    &.btn-warning {
+        .button-outline(@btn-warning-bg, @color-orange-5);
+    }
+
+    // ----- Danger ----- //
+
+    &.btn-danger {
+        .button-outline(@btn-danger-bg, @color-red-fadeout-96);
+    }
+
+    // ----- Dark ----- //
+
+    &.btn-dark {
+        .button-outline(@btn-dark-bg, @color-gray-fadeout-96);
+    }
+
+    // ----- White ----- //
+
+    &.btn-white {
+        .button-outline(@color-white, @color-white-fadeout-96);
+    }
+}

@@ -1,0 +1,152 @@
+// *************************************
+//
+//   User Stories
+//
+// *************************************
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-user-stories {
+    display: block;
+    padding: 30px 0;
+    margin: 0 auto;
+
+    a {
+        color: @color-teal-5;
+        font-size: 15px;
+
+        &:any-link {
+            &:hover,
+            &:focus {
+                color: #fff;
+                font-weight: @font-weight-semi;
+            }
+        }
+    }
+}
+
+// -------------------------------------
+//   Header
+// -------------------------------------
+
+.c-user-stories__header {
+    margin-bottom: 60px;
+
+    // 641px >
+    @media (min-width: 641px) {
+        position: relative;
+        &:after {
+            position: absolute;
+            left: -99px;
+            bottom: -15px;
+            width: calc(100vw + 99px);
+            height: 1px;
+            margin: 0;
+            border: none;
+            background: linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 0.2),
+                rgba(255, 255, 255, 0.2) 50%,
+                transparent 0,
+                transparent
+            );
+            background-size: 8px 1px;
+            content: "";
+        }
+    }
+
+    // < 992px
+    @media (max-width: @screen-sm-max) {
+        margin-bottom: 50px;
+    }
+}
+
+// -------------------------------------
+//   Heading
+// -------------------------------------
+
+.c-user-stories__heading {
+    margin: 0;
+    font-size: 34px;
+    line-height: 1.3;
+    font-weight: @font-weight-bold;
+    padding-left: 15px;
+
+    // < 640px
+    @media (max-width: @palm) {
+        text-align: left;
+        padding-left: 0;
+    }
+}
+
+// -------------------------------------
+//   Body
+// -------------------------------------
+
+.c-user-stories__body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 50px;
+    align-items: baseline;
+    margin: 0;
+    padding: 0;
+
+    // < 992px
+    @media (max-width: @screen-sm-max) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    // < 640px
+    @media (max-width: @palm) {
+        grid-template-columns: 1fr;
+    }
+}
+
+// -------------------------------------
+//   Col
+// -------------------------------------
+
+.c-user-stories__col {
+    display: grid;
+    row-gap: 3px;
+    padding: 0 30px 0 15px;
+
+    // < 640px
+    @media (max-width: @palm) {
+        grid-template-columns: 1fr;
+        padding: 0;
+    }
+}
+
+// -------------------------------------
+//   Title
+// -------------------------------------
+
+.c-user-stories__title {
+    position: relative;
+    font-weight: @font-weight-bold;
+    margin-bottom: 5px;
+}
+
+// -------------------------------------
+//   Name
+// -------------------------------------
+
+.c-user-stories__name {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    line-height: 1.3;
+    min-height: 44px;
+}
+
+// -------------------------------------
+//   Icon
+// -------------------------------------
+
+.c-user-stories__icon {
+    margin-right: 15px;
+    color: @color-teal-A100;
+}

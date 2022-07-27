@@ -1,0 +1,186 @@
+// *************************************
+//
+//   #BOOTSTRAP CUSTOM VARIABLES
+//
+// *************************************
+
+//== Colors
+@brand-primary: @color-blue-80;
+
+//== Scaffolding
+@body-bg: @color-body;
+@text-color: @color-text;
+
+//== Typography
+@font-family-base: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-size-large: ceil((@font-size-base * 1.1)); // ~16px
+@font-size-small: ceil((@font-size-base * 0.9)); // ~13px
+
+@headings-font-weight: @font-weight-normal;
+
+//== Components
+@padding-base-vertical: 7px;
+@padding-base-horizontal: 9px;
+
+@padding-xs-vertical: 3px;
+
+@border-radius-base: 4px;
+@border-radius-small: @border-radius-base;
+@border-radius-large: 8px;
+
+//== Tables
+@table-cell-padding: @spacing-unit 15px;
+@table-bg-hover: @color-gray-10;
+@table-bg-active: @color-blue-5;
+@table-border-color: @color-gray-30;
+
+//== Buttons
+@btn-font-weight: @font-weight-semi;
+
+@btn-default-color: @color-text;
+@btn-default-border: @color-gray-40;
+
+@btn-primary-border: @btn-primary-bg;
+
+@btn-success-border: @btn-success-bg;
+
+@btn-info-border: @btn-info-bg;
+
+@btn-warning-border: @btn-warning-bg;
+
+@btn-danger-border: @btn-danger-bg;
+
+//== Forms
+@input-color: @color-text;
+@input-border: @color-gray-40;
+@input-border-focus: @brand-primary;
+@input-color-placeholder: @color-hint;
+@form-group-margin-bottom: @spacing-unit--large;
+
+//== Dropdowns
+@dropdown-border: transparent;
+@dropdown-divider-bg: @color-divider;
+
+@dropdown-link-color: @color-text;
+@dropdown-link-hover-bg: @color-hover;
+
+@dropdown-header-color: @text-color;
+
+//== Media queries breakpoints
+@import "./bootstrap-custom-breakpoints-variables.less";
+
+//== Grid system
+@grid-gutter-width: @spacing-unit;
+@grid-float-breakpoint: @screen-md-min;
+
+//== Container sizes
+// Small screen / tablet
+@container-tablet: ((90% + @grid-gutter-width));
+@container-sm: @container-tablet;
+
+// Medium screen / desktop
+@container-desktop: ((90% + @grid-gutter-width));
+@container-md: @container-desktop;
+
+// Large screen / wide desktop
+@container-large-desktop: ((90% + @grid-gutter-width));
+@container-lg: @container-large-desktop;
+
+//== Navbar
+@navbar-height: 45px;
+@navbar-margin-bottom: 0;
+@navbar-border-radius: 0;
+
+@navbar-default-bg: @color-white;
+
+//=== Inverted navbar
+@navbar-inverse-bg: @color-gray-90;
+@navbar-inverse-link-active-bg: @navbar-inverse-bg;
+
+// Inverted navbar links
+@navbar-inverse-link-color: rgba(255, 255, 255, 0.87);
+
+// Inverted navbar toggle
+@navbar-inverse-toggle-hover-bg: @navbar-inverse-bg;
+@navbar-inverse-toggle-border-color: @navbar-inverse-bg;
+
+//== Navs
+//=== Shared nav styles
+@nav-link-padding: 10px @spacing-unit--small;
+
+//== Form states and alerts
+@state-success-text: @brand-success;
+@state-success-bg: lighten(@brand-success, 36%);
+@state-success-border: darken(spin(@state-success-bg, -10), 6%);
+
+@state-info-text: @brand-info;
+@state-info-bg: lighten(@brand-info, 36%);
+@state-info-border: darken(spin(@state-info-bg, -10), 7%);
+
+@state-warning-text: @brand-warning;
+@state-warning-bg: lighten(@brand-warning, 23%);
+@state-warning-border: darken(spin(@state-warning-bg, -10), 4%);
+
+@state-danger-text: @brand-danger;
+@state-danger-bg: lighten(@brand-danger, 35%);
+@state-danger-border: darken(spin(@state-danger-bg, -10), 4%);
+
+//== Tooltips
+@tooltip-bg: @color-gray-80;
+@tooltip-color: @color-white;
+@tooltip-opacity: 1;
+
+//== Popovers
+@popover-arrow-outer-color: @color-divider;
+
+//== Modals
+@modal-inner-padding: @spacing-unit--huge;
+
+@modal-title-padding: @spacing-unit--huge;
+@modal-content-border-color: transparent;
+@modal-content-fallback-border-color: #fff;
+
+@modal-backdrop-bg: rgba(0, 0, 0, 0.75);
+@modal-backdrop-opacity: 1;
+@modal-header-border-color: #fff;
+
+//== Alerts
+@alert-padding: @spacing-unit;
+
+@alert-success-bg: @color-green-A100;
+@alert-success-text: @text-color;
+@alert-success-border: @alert-success-bg;
+
+@alert-info-bg: @color-blue-10;
+@alert-info-text: @text-color;
+@alert-info-border: @alert-info-bg;
+
+@alert-warning-bg: @color-orange-A100;
+@alert-warning-text: @text-color;
+@alert-warning-border: @alert-warning-bg;
+
+@alert-danger-bg: @color-red-10;
+@alert-danger-text: @text-color;
+@alert-danger-border: @alert-danger-bg;
+
+//== Progress bars
+@progress-bg: @color-gray-30;
+
+//== Panels
+@panel-body-padding: @spacing-unit;
+@panel-heading-padding: 0;
+
+@panel-inner-border: @color-divider;
+@panel-default-border: @color-divider;
+@panel-default-heading-bg: @color-gray-10;
+
+//== Breadcrumbs
+@breadcrumb-padding-vertical: 0;
+@breadcrumb-padding-horizontal: 0;
+@breadcrumb-bg: transparent;
+@breadcrumb-color: @color-gray-50;
+@breadcrumb-active-color: @color-gray-70;
+
+//== Type
+@blockquote-border-color: @color-gray-30;
+@hr-border: @color-divider;

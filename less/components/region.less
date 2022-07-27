@@ -1,0 +1,131 @@
+// *************************************
+//
+//   Region
+//
+// *************************************
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-region {
+    border: 1px solid @color-divider;
+    margin-bottom: 8px;
+    padding: 0;
+    border-radius: 2px;
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+// -------------------------------------
+//   Header
+// -------------------------------------
+
+.c-region__header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: @color-text;
+
+    &:hover,
+    &:focus {
+        background-color: @color-blue-fadeout-90;
+        color: @color-text;
+    }
+}
+
+.c-region__headline {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.3;
+    font-weight: @font-weight-normal;
+}
+
+.c-region__country-logo {
+    width: 24px;
+    height: 18px;
+    margin-right: 15px;
+}
+
+// -------------------------------------
+//   Body
+// -------------------------------------
+
+.c-region__body {
+    padding: 15px;
+    border-top: 1px solid @color-divider;
+}
+
+.c-region__subheader {
+    display: flex;
+    height: 38px;
+    align-items: center;
+    margin: 0;
+    font-size: 13px;
+    font-weight: @font-weight-semi;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+
+    a {
+        color: @color-text;
+    }
+}
+
+// -------------------------------------
+//   Items
+// -------------------------------------
+
+.c-region__items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: -20px;
+    margin-left: -20px;
+}
+
+.c-region__item {
+    padding: 0 10px;
+    width: 25%;
+
+    // < 768px
+    @media (max-width: @screen-xs-max) {
+        width: 33.333%;
+    }
+    //  < 640px
+    @media (max-width: @palm) {
+        width: 100%;
+    }
+}
+
+.c-region__link {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    border-radius: 2px;
+    align-items: center;
+    transition: background-color 150ms ease-in-out;
+    color: @color-text;
+
+    &:hover,
+    &:focus {
+        background-color: @color-blue-fadeout-90;
+        border-color: @brand-primary;
+        color: @color-text;
+    }
+}
+
+.c-region__logo {
+    width: 24px;
+    height: 18px;
+    object-fit: contain;
+    margin-right: 8px;
+}
+
+.c-region__title {
+    .u-text-truncate;
+    font-size: 14px;
+    line-height: 1.3;
+    font-weight: @font-weight-normal;
+    margin: 0;
+}

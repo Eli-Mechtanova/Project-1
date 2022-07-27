@@ -1,0 +1,43 @@
+// *************************************
+//
+//   Circle
+//   see https://progressbarjs.readthedocs.io/en/latest/api/shape/
+//
+// *************************************
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-circle {
+    width: 210px;
+    height: 210px;
+    margin: 0 auto;
+    margin-top: auto;
+}
+
+// Small
+.c-circle--small {
+    width: 130px;
+    height: 130px;
+
+    .c-circle__label {
+        font-size: 20px;
+    }
+}
+
+// -------------------------------------
+//   Label
+// -------------------------------------
+
+.c-circle__label {
+    font-size: 36px;
+    font-weight: @font-weight-semi;
+    color: @color-light-blue-50 !important;
+    letter-spacing: -0.5px;
+
+    .fa-lock {
+        font-size: 0.95em;
+        color: initial;
+    }
+}

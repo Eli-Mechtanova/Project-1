@@ -1,0 +1,29 @@
+// *************************************
+//
+//   Button row
+//
+// *************************************
+
+.o-btn-row {
+    display: flex;
+
+    > .btn {
+        &:not(:last-child) {
+            margin-right: @spacing-unit;
+        }
+    }
+}
+
+.o-btn-row--center {
+    justify-content: center;
+}
+
+.o-btn-row--end {
+    justify-content: flex-end;
+}
+
+.o-btn-row--fit {
+    .btn {
+        flex: 1 1 0%;
+    }
+}

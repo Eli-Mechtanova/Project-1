@@ -1,0 +1,86 @@
+// *************************************
+//
+//   Marketing
+//
+// *************************************
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-marketing {
+    position: relative;
+    margin-top: -@spacing-unit--giga;
+}
+
+// -------------------------------------
+//   Section
+// -------------------------------------
+
+.c-marketing__section {
+    position: relative;
+    padding-top: (@spacing-unit--huge * 4);
+    padding-bottom: (@spacing-unit--huge * 4);
+
+    &:nth-of-type(even) {
+        background-color: @color-white;
+    }
+
+    // less than 768px
+    @media (max-width: @screen-xs-max) {
+        padding-top: (@spacing-unit--huge * 2);
+        padding-bottom: (@spacing-unit--huge * 2);
+    }
+}
+
+// -------------------------------------
+//   Title
+// -------------------------------------
+
+.c-marketing__title {
+    margin-top: 0;
+    margin-bottom: @spacing-unit--huge;
+    font-size: 45px;
+
+    // less than 768px
+    @media (max-width: @screen-xs-max) {
+        margin-bottom: @spacing-unit;
+        font-size: @cs-font-size-display1;
+    }
+}
+
+// -------------------------------------
+//   Description
+// -------------------------------------
+
+.c-marketing__description {
+    margin-bottom: 0;
+    font-size: @cs-font-size-huge;
+    line-height: 1.5;
+    max-width: 70ch;
+
+    // less than 768px
+    @media (max-width: @screen-xs-max) {
+        font-size: @cs-font-size-large;
+    }
+}
+
+// -------------------------------------
+//   Image
+// -------------------------------------
+
+.c-marketing__img {
+    display: block;
+    max-width: 80%;
+    margin: 0 auto;
+
+    // less than 768px
+    @media (max-width: @screen-xs-max) {
+        margin-top: 30px;
+    }
+
+    // less than 640px
+    @media (max-width: @palm) {
+        max-width: 100%;
+    }
+}

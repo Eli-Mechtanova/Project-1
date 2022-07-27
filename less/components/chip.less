@@ -1,0 +1,122 @@
+// *************************************
+//
+//  Chip
+//
+// *************************************
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-chip {
+    padding: 0 @spacing-unit;
+    border: 0;
+    display: inline-block;
+    margin: 2px 0;
+    border: 1px solid transparent;
+    font-size: 0;
+    white-space: nowrap;
+    vertical-align: middle;
+    .chip-variant(@color-text; @chip-bg-color);
+    .chip-size(@chip-size; @cs-font-size-small; @chip-action-size);
+
+    &:focus {
+        .shadow-2dp();
+        outline: 0;
+    }
+}
+
+.c-chip__text {
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.c-chip__action {
+    background: transparent;
+    opacity: 0.54;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0;
+    margin: 0 0 0 @spacing-unit--small;
+    font-size: @cs-font-size-small;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    overflow: hidden;
+
+    .fa,
+    .far,
+    .fas {
+        vertical-align: top;
+    }
+}
+
+.c-chip--deletable {
+    padding-right: @spacing-unit--small;
+}
+
+// -------------------------------------
+//   Size
+// -------------------------------------
+
+.c-chip--small {
+    .chip-size(
+        @chip-size--small; @cs-font-size-small; @chip-action-size--small
+    );
+}
+
+.c-chip--tiny {
+    .chip-size(@chip-size--tiny; @cs-font-size-xsmall; @chip-action-size--tiny);
+}
+
+// -------------------------------------
+//   Variant
+// -------------------------------------
+
+.c-chip--primary {
+    .chip-variant(@btn-primary-color; @btn-primary-bg);
+}
+
+.c-chip--success {
+    .chip-variant(@btn-success-color; @btn-success-bg);
+}
+
+.c-chip--warning {
+    .chip-variant(@btn-warning-color; @btn-warning-bg);
+}
+
+.c-chip--danger {
+    .chip-variant(@btn-danger-color; @btn-danger-bg);
+}
+
+.c-chip--royal {
+    .chip-variant(@color-white; @brand-royal);
+}
+
+// -------------------------------------
+//   Outline
+// -------------------------------------
+
+.c-chip--outline {
+    &.c-chip {
+        .chip-outline(@color-text);
+    }
+
+    &.c-chip--primary {
+        .chip-outline(@brand-primary);
+    }
+
+    &.c-chip--success {
+        .chip-outline(@brand-success);
+    }
+
+    &.c-chip--warning {
+        .chip-outline(@brand-warning);
+    }
+
+    &.c-chip--danger {
+        .chip-outline(@brand-danger);
+    }
+}

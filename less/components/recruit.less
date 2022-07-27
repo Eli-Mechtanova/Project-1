@@ -1,0 +1,275 @@
+// *************************************
+//
+//   Recruit
+//
+// *************************************
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-recruit {
+    margin-top: -30px;
+    color: #2f3a48;
+
+    p,
+    ul {
+        margin-bottom: 24px;
+        font-size: 18px;
+        line-height: 1.6;
+    }
+}
+
+// -------------------------------------
+//   Section
+// -------------------------------------
+
+.c-recruit__section {
+    margin-bottom: 112px;
+
+    &:last-child {
+        margin-bottom: 16px;
+    }
+
+    // < 768px
+    @media (max-width: @screen-xs-max) {
+        margin-bottom: 80px;
+    }
+}
+
+.c-recruit-section--no-gutter {
+    @media screen and (max-width: 1080px) {
+        margin-right: -@grid-gutter-width;
+        margin-left: -@grid-gutter-width;
+    }
+}
+
+// -------------------------------------
+//   Headline
+// -------------------------------------
+
+.c-recruit__headline {
+    margin: 0 0 12px;
+    font-size: 56px;
+    font-weight: @font-weight-bold;
+    line-height: 1.25;
+
+    @media (max-width: @palm) {
+        font-size: 48px;
+    }
+}
+
+// -------------------------------------
+//   Title
+// -------------------------------------
+
+.c-recruit__title {
+    margin: 0 0 20px;
+    font-size: 36px;
+    font-weight: @font-weight-bold;
+    line-height: 1.25;
+
+    @media (max-width: @palm) {
+        font-size: 32px;
+    }
+}
+
+// -------------------------------------
+//   Subtitle
+// -------------------------------------
+
+.c-recruit__subtitle {
+    margin: 0;
+    font-size: 24px;
+    line-height: 1.4;
+}
+
+// -------------------------------------
+//   Hero
+// -------------------------------------
+
+.c-recruit-hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-size: cover;
+    background-position: center;
+    background-color: @placeholder-bg;
+    min-height: 480px;
+
+    // < 992px
+    @media (max-width: @screen-sm-max) {
+        min-height: 384px;
+    }
+}
+
+.c-recruit-hero__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    max-width: 680px;
+    width: 100%;
+    padding: 24px 64px;
+    color: #fff;
+
+    // < 992px
+    @media (max-width: @screen-sm-max) {
+        padding-right: 24px;
+        padding-left: 24px;
+        max-width: 600px;
+    }
+}
+
+.c-recruit-hero__desc {
+    margin: 0 !important;
+}
+
+// -------------------------------------
+//   Steps
+// -------------------------------------
+
+.c-recruit-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 24px;
+    padding: 24px;
+    margin: 0 !important;
+    width: 100%;
+    color: #fff;
+    list-style: none;
+    background-color: rgba(0, 67, 116, 0.46);
+    backdrop-filter: blur(27px);
+
+    // < 992px
+    @media (max-width: @screen-sm-max) {
+        display: none;
+    }
+}
+
+.c-recruit-steps__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.c-recruit-steps__icon {
+    font-size: 36px;
+}
+
+.c-recruit-steps__desc {
+    margin: 8px 0 0 !important;
+    font-weight: @font-weight-semi;
+}
+
+// -------------------------------------
+//   Article
+// -------------------------------------
+
+.c-recruit-article {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+    align-items: center;
+
+    // < 992px
+    @media (max-width: @screen-sm-max) {
+        padding-right: 14px;
+        padding-left: 14px;
+    }
+
+    // < 768px
+    @media (max-width: @screen-xs-max) {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+}
+
+.c-recruit-article__list {
+    margin-left: 26px;
+
+    li {
+        &:not(:last-child) {
+            margin-bottom: 4px;
+        }
+    }
+}
+
+// -------------------------------------
+//   Banner
+// -------------------------------------
+
+.c-recruit-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-size: cover;
+    background-position: center;
+    background-color: @placeholder-bg;
+    color: #fff;
+    min-height: 460px;
+
+    // < 768px
+    @media (max-width: @screen-xs-max) {
+        filter: grayscale(1);
+        min-height: 353px;
+    }
+}
+
+.c-recruit-banner__content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    padding: 48px;
+    background-color: rgba(0, 0, 0, 0.8);
+
+    @supports (backdrop-filter: none) {
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(31px);
+    }
+
+    // < 992px
+    @media (max-width: @screen-sm-max) {
+        width: 60%;
+    }
+
+    // < 768px
+    @media (max-width: @screen-xs-max) {
+        width: 100%;
+        padding-right: 24px;
+        padding-left: 24px;
+        backdrop-filter: none;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// -------------------------------------
+//   Conferences
+// -------------------------------------
+
+.c-recruit-conferences {
+    white-space: nowrap;
+    overflow-x: auto;
+    scroll-padding: 8px;
+    padding: 40px 0 16px 0;
+    -webkit-overflow-scrolling: touch;
+}
+
+.c-recruit-conferences__item {
+    display: inline-flex;
+    width: 96px;
+    height: 96px;
+    object-fit: contain;
+    padding: 16px;
+    margin: 4px;
+    background-color: #fff;
+    border-radius: 50%;
+    .shadow-2dp;
+}

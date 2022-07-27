@@ -1,0 +1,188 @@
+// *************************************
+//
+//   Select2
+//   -> override, extend styles
+//
+// *************************************
+
+// -------------------------------------
+//   Upgraded
+// -------------------------------------
+
+.select2-upgraded.select2-upgraded {
+    display: flex;
+    align-items: flex-start;
+
+    .select2-container {
+        flex: 1;
+    }
+}
+
+// -------------------------------------
+//   Default
+// -------------------------------------
+
+.select2-container--default.select2-container--default {
+    min-width: inherit;
+
+    // Inline
+    .select2-search--inline {
+        .select2-search__field {
+            margin-top: 0;
+        }
+    }
+
+    .select2-results__group {
+        padding: 0 @spacing-unit;
+        height: @nav-item-height;
+        color: @mute-color;
+    }
+
+    // Match form-control styles
+    .select2-selection--single,
+    .select2-selection--multiple {
+        // border: @input-border-width solid @input-border;
+        min-height: @input-height-base;
+        .form-control();
+        height: auto;
+    }
+
+    // Single
+    .select2-selection--single {
+        .select2-selection__rendered {
+            line-height: inherit;
+            padding-left: 0;
+        }
+        .select2-selection__placeholder {
+            color: @input-color-placeholder;
+        }
+
+        .select2-selection__arrow {
+            height: @input-height-base - 3px;
+        }
+    }
+
+    // Multiple
+    .select2-selection--multiple {
+        .select2-selection__rendered {
+            display: block;
+            padding-right: 0;
+            padding-left: 0;
+        }
+        .select2-selection__choice {
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+    }
+
+    &.select2-container--focus {
+        .select2-selection--multiple {
+            border: @input-border-width solid @input-border-focus;
+        }
+    }
+}
+
+// -------------------------------------
+//   Dropdown
+// -------------------------------------
+
+.select2-dropdown {
+    .shadow-4dp();
+    padding: @spacing-unit 0;
+    border: 0 !important;
+    z-index: @zindex-select2-dropdown !important;
+
+    // Don't set height, because it breaks nested options
+    .select2-results__option {
+        .text-truncate();
+        padding: @spacing-unit--small @spacing-unit !important;
+        line-height: @nav-item-height;
+        white-space: nowrap;
+
+        &[role="group"] {
+            padding: 0 !important;
+
+            &:not(:last-child) {
+                margin-bottom: @spacing-unit;
+                padding-bottom: @spacing-unit !important;
+                border-bottom: 1px solid @border-divider-color;
+            }
+        }
+
+        &[role="treeitem"] {
+            height: @nav-item-height;
+
+            .o-flag {
+                height: 100%;
+            }
+        }
+    }
+
+    .select2-results__option[aria-selected="true"] {
+        background-color: @color-blue-10 !important;
+    }
+
+    .select2-results__option--highlighted {
+        background-color: @dropdown-link-hover-bg !important;
+        color: @color-text !important;
+    }
+}
+
+// -------------------------------------
+//   List - title, logo, meta
+// -------------------------------------
+
+.select2-aclist-list {
+    .select2-aclist-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        padding: 0 @spacing-unit;
+        overflow: hidden;
+        min-height: @autocomplete-item-height;
+
+        &.select2-aclist-item-hover {
+            background-color: @color-gray-30;
+        }
+    }
+}
+
+.select2-aclist-item-figure {
+    width: 31px;
+    height: 31px;
+    line-height: 31px;
+}
+
+.select2-aclist-item-img {
+    width: @avatar-micro;
+    height: @avatar-micro;
+    object-fit: contain;
+}
+
+.select2-aclist-item-title {
+    display: block;
+    margin: 0;
+    font-size: @cs-font-size-default;
+    font-weight: @font-weight-semi;
+    line-height: 1.25;
+    .text-truncate();
+}
+
+.select2-aclist-item-meta.select2-aclist-item-meta {
+    display: block;
+    margin: 0;
+    color: @mute-color;
+    font-size: @cs-font-size-xsmall;
+    line-height: 1.25;
+    .text-truncate();
+}
+
+.select2-aclist-item-icon {
+    color: @color-hint;
+}
+
+.select2-highlight {
+    color: @color-text;
+    font-weight: @font-weight-semi;
+}

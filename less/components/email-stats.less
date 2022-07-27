@@ -1,0 +1,85 @@
+// *************************************
+//
+//   Email Stats (SendGrid)
+//
+// *************************************
+
+.c-email-stats {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: @spacing-unit--large @spacing-unit--small;
+    list-style: none;
+}
+
+
+// ----- No Grow ----- //
+
+.c-email-stats--no-grow {
+    .c-email-stats__item {
+        flex-grow: 0;
+    }
+}
+
+
+.c-email-stats__item {
+    flex: 1 0 14%;
+    margin: 0;
+    padding: 0 @spacing-unit;
+
+    // 768px and up
+    @media (min-width: @screen-sm-min) {
+        &:not(:last-child) {
+            border-right: 1px solid rgba(0, 0, 0, 0.08);
+        }
+    }
+
+    // less than 768px
+    @media (max-width: @screen-xs-max) {
+        flex-basis: 30%;
+        display: flex;
+    }
+
+    // less than 640px
+    @media (max-width: @palm) {
+        flex-basis: 45%;
+    }
+}
+
+.c-email-stats__title {
+    margin: 0;
+    white-space: nowrap;
+    color: @mute-color;
+
+    // 768px and up
+    @media (min-width: @screen-sm-min) {
+        font-size: 11px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-weight: @font-weight-semi;
+    }
+
+    // less than 768px
+    @media (max-width: @screen-xs-max) {
+        order: 2;
+        font-size: @cs-font-size-large;
+        line-height: inherit;
+    }
+}
+
+.c-email-stats__value {
+    white-space: nowrap;
+    font-weight: @font-weight-semi;
+
+    // 768px and up
+    @media (min-width: @screen-sm-min) {
+        margin-top: 2px;
+        font-size: 18px;
+    }
+
+    // less than 768px
+    @media (max-width: @screen-xs-max) {
+        margin-right: @spacing-unit--small;
+        font-size: @cs-font-size-large;
+    }
+}

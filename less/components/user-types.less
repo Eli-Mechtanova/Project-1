@@ -1,0 +1,103 @@
+// *************************************
+//
+//   User Types
+//
+// *************************************
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+@user-types-gutter: 15px;
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-user-types {
+    display: flex;
+    flex-direction: row;
+    margin: 0 0 0 -@user-types-gutter;
+    padding: 0;
+
+    // < 768px
+    @media (max-width: @screen-xs-max) {
+        margin-top: (-@user-types-gutter * 2);
+        margin-left: -10px;
+    }
+
+    //  < 640px//
+    @media screen and (max-width: @palm) {
+        flex-direction: column;
+        margin-left: 0;
+    }
+}
+
+// -------------------------------------
+//   Cell
+// -------------------------------------
+
+.c-user-types__cell {
+    display: flex;
+    flex-basis: auto;
+    padding: 0 0 0 @user-types-gutter;
+    min-width: 0;
+    width: 33.33%;
+
+    // < 768px
+    @media (max-width: @screen-xs-max) {
+        padding-top: 10px;
+        padding-left: 10px;
+    }
+
+    // < 640px//
+    @media screen and (max-width: @palm) {
+        width: 100%;
+        padding-left: 0;
+    }
+}
+
+// -------------------------------------
+//   Card
+// -------------------------------------
+
+.c-user-types__card {
+    .shadow-2dp;
+    overflow: hidden;
+    display: flex;
+    flex: 1 1 0%;
+    flex-basis: 0%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    background-color: #fff;
+    border-radius: @border-radius-large;
+}
+
+.c-user-types__card-content {
+    padding: 35px 25px;
+
+    // < 768px
+    @media (max-width: @screen-xs-max) {
+        padding: 25px 15px;
+    }
+}
+
+.c-user-types__card-title {
+    margin-bottom: 12.5px;
+}
+
+.c-user-types__card-meta {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.c-user-types__card-action {
+    margin-top: auto;
+    padding: 0 25px;
+
+    // < 768px
+    @media (max-width: @screen-xs-max) {
+        padding: 0 15px;
+    }
+}

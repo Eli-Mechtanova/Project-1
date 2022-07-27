@@ -1,0 +1,165 @@
+// *************************************
+//
+//   Showcase
+//
+// *************************************
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+@showcase-spacing: 60px;
+@showcase-spacing-small: 40px;
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-showcase {
+    &,
+    .container {
+        padding: 0;
+    }
+
+    // < 992px
+    @media (max-width: @screen-sm-max) {
+        &,
+        .container {
+            padding: 0;
+        }
+    }
+}
+
+// -------------------------------------
+//   Hero
+// -------------------------------------
+
+.c-showcase__hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: -30px 0 30px;
+    padding: @showcase-spacing;
+    min-height: 480px;
+    background-size: cover;
+    background-position: center;
+    background-color: @placeholder-bg;
+
+    // < 768px
+    @media (max-width: @screen-xs-max) {
+        margin-bottom: 15px;
+    }
+
+    // < 640px
+    @media (max-width: @palm) {
+        padding: @showcase-spacing-small;
+    }
+}
+
+// Title
+.c-showcase__hero-title {
+    margin: 0;
+    font-size: 64px;
+    line-height: 1.2;
+    font-weight: @font-weight-bold;
+    color: #fff;
+
+    // < 640px
+    @media (max-width: @palm) {
+        font-size: 48px;
+    }
+}
+
+// Text
+.c-showcase__hero-text {
+    margin: 20px 0;
+    font-size: 18px;
+    font-weight: @font-weight-semi;
+    color: #fff;
+    max-width: 60ch;
+}
+
+// -------------------------------------
+//   Cta
+// -------------------------------------
+
+.c-showcase__cta {
+    margin-top: 20px;
+}
+
+// -------------------------------------
+//   Card
+// -------------------------------------
+
+.c-showcase__card {
+    margin: 0;
+    padding: @showcase-spacing;
+    width: 100%;
+    background-color: #fff;
+
+    // < 640px
+    @media (max-width: @palm) {
+        padding: @showcase-spacing-small;
+    }
+}
+
+// Icon
+.c-showcase__card-icon {
+    font-size: 2.6em;
+    margin-bottom: 25px;
+    color: @color-light-blue-50;
+}
+
+// Title
+.c-showcase__card-title {
+    margin: 0;
+    font-size: 32px;
+    line-height: 1.3;
+    font-weight: @font-weight-bold;
+
+    // < 640px
+    @media (max-width: @palm) {
+        font-size: 28px;
+    }
+}
+
+// Text
+.c-showcase__card-text {
+    margin: 12.5px 0 0;
+    font-size: 17px;
+    line-height: 1.45;
+    color: @color-gray-80;
+
+    // < 640px
+    @media (max-width: @palm) {
+        font-size: 16px;
+    }
+}
+
+// -------------------------------------
+//   Footer
+// -------------------------------------
+
+.c-showcase__footer {
+    margin: 0;
+    padding: 90px @showcase-spacing;
+    text-align: center;
+
+    // < 640px
+    @media (max-width: @palm) {
+        padding: @showcase-spacing @showcase-spacing-small;
+    }
+}
+
+// Title
+.c-showcase__footer-title {
+    margin: 0;
+    font-size: 45px;
+    font-weight: @font-weight-bold;
+    line-height: 1.3;
+
+    // < 640px
+    @media (max-width: @palm) {
+        font-size: 40px;
+    }
+}

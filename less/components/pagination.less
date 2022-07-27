@@ -1,0 +1,127 @@
+// *************************************
+//
+//   Pagination
+//
+// *************************************
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+@pagination-size: 32px;
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-top: @spacing-unit--huge;
+    margin-bottom: @spacing-unit;
+    padding: 0;
+}
+
+// -------------------------------------
+//   Item
+// -------------------------------------
+
+.c-pagination__item {
+    margin-right: 4px;
+    margin-left: 4px;
+
+    &:first-child {
+        margin-left: 0;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    @media (max-width: @screen-sm) {
+        display: none;
+    }
+}
+
+// -------------------------------------
+//   Control
+// -------------------------------------
+
+.c-pagination__control {
+    @media (max-width: @screen-sm) {
+        display: block;
+        flex: 1 1 0%;
+    }
+
+    .c-pagination__action {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid @brand-primary;
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        &:active {
+            background-color: @color-blue-5;
+        }
+
+        @media (max-width: @screen-sm) {
+            border-color: @color-gray-30;
+            color: @color-text;
+            min-height: 40px;
+            width: 100%;
+
+            &:active {
+                background-color: @color-gray-30;
+            }
+        }
+    }
+
+    .fa,
+    .fas,
+    .far {
+        @media (max-width: @screen-sm) {
+            color: @mute-color;
+        }
+    }
+}
+
+// -------------------------------------
+//   Action
+// -------------------------------------
+
+.c-pagination__action {
+    display: block;
+    width: 100%;
+    position: relative;
+    padding: 0;
+    width: @pagination-size;
+    height: @pagination-size;
+    line-height: @pagination-size;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    border-radius: (@pagination-size / 2);
+    text-decoration: none;
+    color: @link-color;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+// ----- Active ----- //
+
+.c-pagination__action--active {
+    &,
+    &:focus,
+    &:hover {
+        color: @color-white;
+        cursor: default;
+        background-color: @brand-primary;
+        text-decoration: none;
+    }
+}

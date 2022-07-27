@@ -1,0 +1,73 @@
+// *************************************
+//
+//   Expandable
+//
+// *************************************
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-expandable {
+    position: relative;
+    overflow: hidden;
+    height: 0;
+}
+
+// -------------------------------------
+//   Modifier
+// -------------------------------------
+
+// ----- Tiny ----- //
+
+.c-expandable--tiny {
+    height: 3.5em;
+}
+
+// ----- Small ----- //
+
+.c-expandable--small {
+    height: 7em;
+}
+
+// ----- Large ----- //
+
+.c-expandable--large {
+    height: 14em;
+}
+
+// ----- Huge ----- //
+
+.c-expandable--huge {
+    height: 18.3em;
+}
+
+// ----- Active ----- //
+
+.c-expandable--active {
+    .c-expandable {
+        height: auto;
+    }
+    .c-exapndable__indicator {
+        display: none;
+    }
+}
+
+// -------------------------------------
+//   Indicator
+// -------------------------------------
+
+.c-exapndable__indicator {
+    position: absolute;
+    z-index: 20;
+    width: 100%;
+    height: 3em;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.9) 50%,
+        rgba(255, 255, 255, 0.9) 50%,
+        @color-white 100%
+    );
+}

@@ -1,0 +1,35 @@
+// *************************************
+//
+//   Article Tile
+//
+// *************************************
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-article-tile {
+    padding: @spacing-unit;
+
+    &:not(:last-child) {
+        border-bottom: 1px solid @color-divider;
+    }
+
+    &:hover {
+        background-color: @color-hover;
+    }
+}
+
+
+// -------------------------------------
+//   Title
+// -------------------------------------
+
+.c-article-tile__title {
+    margin: 0;
+    color: @color-text;
+    font-size: @cs-font-size-title;
+    line-height: 1.2;
+    font-weight: @font-weight-semi;
+}

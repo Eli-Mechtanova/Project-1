@@ -1,0 +1,152 @@
+// *************************************
+//
+//   Flag
+//
+// *************************************
+
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+@flag-gutter:               @spacing-unit;
+@flag-gutter--large:        @spacing-unit--large;
+@flag-gutter--small:        @spacing-unit--small;
+@flag-gutter--huge:         @spacing-unit--huge;
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.o-flag {
+    display: table;
+    width: 100%;
+}
+
+    // ----- Large ----- //
+
+    .o-flag--large {
+        > .o-flag__img {
+            padding-right: @flag-gutter--large;
+        }
+
+        &.o-flag--rev {
+            > .o-flag__img {
+                padding-right: 0;
+                padding-left:  @flag-gutter--large;
+            }
+        }
+    }
+
+    // ----- Small ----- //
+
+    .o-flag--small {
+        > .o-flag__img {
+            padding-right: @flag-gutter--small;
+        }
+        &.o-flag--rev {
+            > .o-flag__img {
+                padding-right: 0;
+                padding-left:  @flag-gutter--small;
+            }
+        }
+    }
+
+    // ----- Huge ----- //
+
+    .o-flag--huge {
+        > .o-flag__img {
+            padding-right: @flag-gutter--huge;
+        }
+        &.o-flag--rev {
+            > .o-flag__img {
+                padding-right: 0;
+                padding-left: @flag-gutter--huge;
+            }
+        }
+
+    }
+
+    // ----- Top ----- //
+
+    .o-flag--top {
+        > .o-flag__img,
+        > .o-flag__body {
+            vertical-align: top;
+        }
+    }
+
+    // ----- Bottom ----- //
+
+    .o-flag--bottom {
+        > .o-flag__img,
+        > .o-flag__body {
+            vertical-align: bottom;
+        }
+    }
+
+    // ----- Reverse ----- //
+
+    // Reversed flag objects have their image-content to the right, and
+    // text-content to the left.
+    //
+    // 1. Swap the rendered direction of the object…
+    // 2. …and reset it.
+    // 3. Reassign margins to the correct sides.
+
+    .o-flag--rev {
+        direction: rtl; // [1]
+
+        > .o-flag__img,
+        > .o-flag__body {
+            direction: ltr; // [2]
+        }
+
+        > .o-flag__img {
+            padding-right: 0; // [3]
+            padding-left: @flag-gutter; // [3]
+        }
+
+    }
+
+
+
+// -------------------------------------
+//   Shared
+// -------------------------------------
+
+.o-flag__img,
+.o-flag__body {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+// -------------------------------------
+//   Img
+// -------------------------------------
+
+.o-flag__img {
+    padding-right: @flag-gutter;
+
+    > img {
+        display: block;
+        max-width: none;
+    }
+
+}
+
+
+// -------------------------------------
+//   Body
+// -------------------------------------
+
+.o-flag__body {
+    width: 100%;
+
+    &,
+    > :last-child {
+        margin-bottom: 0;
+    }
+
+}

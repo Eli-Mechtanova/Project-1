@@ -1,0 +1,33 @@
+// *************************************
+//
+//   Gallery
+//
+// *************************************
+
+.c-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 13px;
+
+    &:after {
+        content: "";
+        flex-grow: 999999999;
+    }
+}
+
+.c-gallery__item {
+    margin: 2px;
+    background-color: @placeholder-bg;
+    position: relative;
+}
+
+.c-gallery__img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    vertical-align: bottom;
+}
+
+.c-gallery__helper {
+    display: block;
+}

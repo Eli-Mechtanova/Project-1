@@ -1,0 +1,120 @@
+// *************************************
+//
+//   Bootstrap toggle
+//   > http://www.bootstraptoggle.com/ (bootstrap-toggle.css v2.2.0)
+//
+// *************************************
+
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+@toggle-height: 25px;
+@toggle-handle-size: (@toggle-height - 2);
+@toggle-handle-position: (@toggle-height / 2);
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.toggle-label.toggle-label {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-left: 0;
+    align-items: center;
+    min-height: @toggle-height;
+}
+
+.toggle-title {
+    flex: 1;
+}
+
+.checkbox label .toggle,
+.checkbox-inline .toggle {
+	margin-left: -20px;
+}
+
+.toggle {
+	position: relative;
+	overflow: hidden;
+
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    &.btn {
+        width: 55px !important;
+        height: @toggle-height !important;
+    }
+
+    &.off {
+        .toggle-group {
+            left: -100%;
+        }
+    }
+}
+
+.toggle-group {
+	position: absolute;
+	width: 200%;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	transition: left 0.2s;
+	-webkit-transition: left 0.2s;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+
+.toggle-on {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 50%;
+	margin: 0;
+	border: 0;
+	border-radius: 0;
+}
+
+.toggle-off {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 50%;
+	right: 0;
+	margin: 0;
+	border: 0;
+	border-radius: 0;
+}
+
+.toggle-handle {
+	position: relative;
+	margin: 0 auto;
+    height: @toggle-handle-size;
+    width: @toggle-handle-size;
+    padding: 0;
+    border: 0;
+}
+
+.toggle-on,
+.toggle-off {
+    &.btn {
+        font-size: @cs-font-size-xsmall;
+        line-height: @toggle-height;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+.toggle-on.btn {
+    padding-left: @spacing-unit--small;
+    padding-right: @spacing-unit--large;
+}
+
+.toggle-off.btn {
+    padding-right: @spacing-unit--small;
+    padding-left: @spacing-unit--large;
+}

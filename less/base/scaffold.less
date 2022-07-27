@@ -1,0 +1,62 @@
+// *************************************
+//
+//   Scaffolding
+//
+// *************************************
+
+// -------------------------------------
+//   Body
+// -------------------------------------
+
+body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-y: scroll;
+}
+
+// -------------------------------------
+//   Textarea
+// -------------------------------------
+
+textarea {
+    resize: vertical;
+}
+
+// -------------------------------------
+//   Semi
+// -------------------------------------
+
+b,
+dt,
+optgroup,
+strong {
+    font-weight: @font-weight-semi;
+}
+
+// -------------------------------------
+//   Shared
+// -------------------------------------
+
+dl,
+dd {
+    margin: 0;
+    padding: 0;
+}
+
+// -------------------------------------
+//   Button
+// -------------------------------------
+
+.btn,
+button {
+    &:focus {
+        outline: none;
+    }
+}
+
+// 1. Add the correct display in all browsers
+
+summary {
+    display: list-item; // 1
+    cursor: pointer;
+}

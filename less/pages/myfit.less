@@ -1,0 +1,57 @@
+// *************************************
+//
+//   How Do I Fit page
+//
+// *************************************
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.p-myfit {
+    margin: 0;
+    padding: 0;
+}
+
+// -------------------------------------
+//   Banner
+// -------------------------------------
+
+.p-myfit__banner {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+    gap: 25px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 15px;
+    z-index: 11;
+    background-color: @color-blue-80;
+    color: #fff;
+    .shadow-4dp;
+
+    .c-title {
+        font-size: 16px;
+    }
+
+    p {
+        margin: 2px 0 0;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    // 768px >
+    @media (min-width: @screen-sm-min) {
+        .c-title {
+            font-size: 18px;
+        }
+
+        p {
+            margin: 4px 0 0;
+            font-size: 14px;
+        }
+    }
+}

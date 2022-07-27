@@ -1,0 +1,78 @@
+// *************************************
+//
+//   State
+//
+// *************************************
+
+// -------------------------------------
+//   Hidden
+// -------------------------------------
+
+.u-is-hidden {
+	display: none !important;
+}
+
+// 640px and less
+@media (max-width: @palm) {
+	.u-is-hidden\@palm {
+		display: none !important;
+	}
+}
+
+// 768px and down
+@media (max-width: @screen-xs-max) {
+	.u-is-hidden\@xs {
+		display: none !important;
+	}
+}
+
+// 992px and up
+@media (min-width: @screen-md-min) {
+	.u-is-hidden\@md {
+		display: none !important;
+	}
+}
+
+.js-hidden {
+	display: none;
+}
+
+// -------------------------------------
+//   Hidden Visually
+//   > Completely remove from the flow but leave available to screen readers.
+// -------------------------------------
+
+.u-is-hidden-visually {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+}
+
+// -------------------------------------
+//   Invisible
+// -------------------------------------
+
+.u-is-invisible {
+	visibility: hidden !important;
+}
+
+// -------------------------------------
+//   Actionable
+// -------------------------------------
+
+.u-is-actionable {
+	cursor: pointer !important;
+}
+
+// -------------------------------------
+//   Helpable
+// -------------------------------------
+
+.u-is-helpable {
+	cursor: help !important;
+}

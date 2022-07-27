@@ -1,0 +1,78 @@
+// *************************************
+//
+//   Result File
+//
+// *************************************
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-result-file {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border-radius: @border-radius-large;
+    background-color: #fff;
+    .shadow-2dp();
+}
+
+// -------------------------------------
+//   Header
+// -------------------------------------
+
+.c-result-file__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    border-bottom: 1px solid @color-divider;
+    background-color: @color-gray-5;
+}
+
+// -------------------------------------
+//   Actions
+// -------------------------------------
+
+.c-result-file__actions {
+    padding: 16px;
+}
+
+// -------------------------------------
+//   Title
+// -------------------------------------
+
+.c-result-file__title {
+    display: flex;
+    align-items: center;
+}
+
+// -------------------------------------
+//   Dl
+// -------------------------------------
+
+.c-result-file__dl {
+    padding: 8px 16px;
+    border-top: 1px solid @color-divider;
+
+    @media (min-width: @palm) {
+        display: grid;
+        grid-template-columns: 192px 1fr;
+        column-gap: 16px;
+    }
+}
+
+.c-result-file__dt {
+    margin-bottom: 4px;
+    color: @mute-color;
+    font-size: 14px;
+    font-weight: @font-weight-normal;
+
+    @media (min-width: @palm) {
+        margin-bottom: 0;
+    }
+}
+
+.c-result-file__dd {
+    font-size: 14px;
+}

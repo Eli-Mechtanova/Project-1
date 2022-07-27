@@ -1,0 +1,331 @@
+// *************************************
+//
+//   Label
+//   -> A label displays content classification
+//
+// *************************************
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+// ----- Color ----- //
+
+@label-color: @color-white;
+
+// ----- Danger ----- //
+
+@label-danger-bg: @brand-danger;
+
+// ----- Neutral ----- //
+
+@label-neutral-bg: @brand-neutral;
+@label-neutral-color: @color-gray-80;
+
+// ----- Primary ----- //
+
+@label-primary-bg: @brand-primary;
+
+// ----- Info ----- //
+
+@label-info-bg: @brand-info;
+
+// ----- Royal ----- //
+
+@label-royal-bg: @brand-royal;
+
+// ----- Success ----- //
+
+@label-success-bg: @brand-success;
+
+// ----- Warning ----- //
+
+@label-warning-bg: @brand-warning;
+
+// ----- Energized ----- //
+
+@label-energized-bg: @brand-energized;
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-label {
+    display: inline-block;
+    padding: 2px 6px;
+    font-size: @cs-font-size-xsmall;
+    font-weight: @font-weight-normal;
+    line-height: 1.1;
+    color: @label-color;
+    vertical-align: middle;
+    border-radius: @border-radius-base;
+    border: 1px solid transparent;
+    white-space: nowrap;
+
+    // Empty labels collapse automatically
+    &:empty {
+        display: none;
+    }
+}
+
+// ----- Large ----- //
+
+.c-label--large {
+    padding: @spacing-unit--small @spacing-unit;
+    font-size: @cs-font-size-small;
+    line-height: 15px;
+}
+
+// ----- Block ----- //
+
+.c-label--block {
+    display: block;
+    width: 100%;
+}
+
+// ----- Primary ----- //
+
+.c-label--primary {
+    background-color: @label-primary-bg;
+}
+
+// ----- Neutral ----- //
+
+.c-label--neutral {
+    background-color: @label-neutral-bg;
+    color: @label-neutral-color;
+    border-color: @label-neutral-bg;
+}
+
+// ----- Success ----- //
+
+.c-label--success,
+.c-label--a-cut {
+    background-color: @label-success-bg;
+}
+
+// ----- Info ----- //
+
+.c-label--info,
+.c-label--pb {
+    background-color: @label-info-bg;
+}
+
+// ----- Warning ----- //
+
+.c-label--warning,
+.c-label--b-cut {
+    background-color: @label-warning-bg;
+}
+
+// ----- Danger ----- //
+
+.c-label--danger {
+    background-color: @label-danger-bg;
+}
+
+// ----- Royal ----- //
+
+.c-label--royal,
+.c-label--sb {
+    background-color: @label-royal-bg;
+}
+
+// ----- Energized ----- //
+
+.c-label--energized {
+    background-color: @label-energized-bg;
+    color: @color-text;
+}
+
+// -------------------------------------
+//   Outline
+// -------------------------------------
+
+.c-label--outline {
+    background-color: transparent;
+
+    // Outline Neutral
+    &.c-label--neutral {
+        color: @label-neutral-color;
+    }
+
+    // Outline Primary
+    &.c-label--primary {
+        border-color: @label-primary-bg;
+        color: @label-primary-bg;
+    }
+
+    // Outline Success
+    &.c-label--success,
+    &.c-label--a-cut {
+        border-color: @label-success-bg;
+        color: @label-success-bg;
+    }
+
+    // Outline Info
+    &.c-label--info,
+    &.c-label--pb {
+        border-color: @label-info-bg;
+        color: @label-info-bg;
+    }
+
+    // Outline Warning
+    &.c-label--warning,
+    &.c-label--b-cut {
+        border-color: @label-warning-bg;
+        color: @label-warning-bg;
+    }
+
+    // Outline Danger
+    &.c-label--danger {
+        border-color: @label-danger-bg;
+        color: @label-danger-bg;
+    }
+
+    // Outline Royal
+    &.c-label--royal,
+    &.c-label--sb {
+        border-color: @label-royal-bg;
+        color: @label-royal-bg;
+    }
+}
+
+// -------------------------------------
+//   Flat
+// -------------------------------------
+
+.c-label--flat {
+    background-color: transparent;
+
+    // Flat Success
+    &.c-label--success {
+        color: @label-success-bg;
+    }
+}
+
+// -------------------------------------
+//   Link
+// -------------------------------------
+
+.c-label--link {
+    // Link Neutral
+    &.c-label--neutral {
+        &:hover,
+        &:focus {
+            background-color: darken(@label-neutral-bg, 7%);
+            color: darken(@label-neutral-color, 7%);
+        }
+    }
+
+    // Link Primary
+    &.c-label--primary {
+        &:hover,
+        &:focus {
+            background-color: darken(@label-primary-bg, 5%);
+            color: @label-color;
+        }
+    }
+
+    // Link Success
+    &.c-label--success {
+        &:hover,
+        &:focus {
+            background-color: darken(@label-success-bg, 5%);
+            color: @label-color;
+        }
+    }
+
+    // Link Info
+    &.c-label--info {
+        &:hover,
+        &:focus {
+            background-color: darken(@label-info-bg, 5%);
+            color: @label-color;
+        }
+    }
+
+    // Link Warning
+    &.c-label--warning {
+        &:hover,
+        &:focus {
+            background-color: darken(@label-warning-bg, 5%);
+            color: @label-color;
+        }
+    }
+
+    // Link Danger
+    &.c-label--danger {
+        &:hover,
+        &:focus {
+            background-color: darken(@label-danger-bg, 5%);
+            color: @label-color;
+        }
+    }
+
+    // Link Royal
+    &.c-label--royal {
+        &:hover,
+        &:focus {
+            background-color: darken(@label-royal-bg, 5%);
+            color: @label-color;
+        }
+    }
+
+    // Link Outline
+    &.c-label--outline {
+        // Link Outline Neutral
+        &.c-label--neutral {
+            &:hover,
+            &:focus {
+                background-color: @label-neutral-bg;
+                color: @label-neutral-color;
+            }
+        }
+
+        // Link Outline Success
+        &.c-label--success {
+            &:hover,
+            &:focus {
+                background-color: @label-success-bg;
+                color: @label-color;
+            }
+        }
+
+        // Link Outline Info
+        &.c-label--info {
+            &:hover,
+            &:focus {
+                background-color: @label-info-bg;
+                color: @label-color;
+            }
+        }
+
+        // Link Outline Warning
+        &.c-label--warning {
+            &:hover,
+            &:focus {
+                background-color: @label-warning-bg;
+                color: @label-color;
+            }
+        }
+
+        // Link Outline Danger
+        &.c-label--danger {
+            &:hover,
+            &:focus {
+                background-color: @label-danger-bg;
+                color: @label-color;
+            }
+        }
+
+        // Link Outline Royal
+        &.c-label--royal {
+            &:hover,
+            &:focus {
+                background-color: @label-royal-bg;
+                color: @label-color;
+            }
+        }
+    }
+}

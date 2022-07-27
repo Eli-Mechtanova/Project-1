@@ -1,0 +1,852 @@
+// *************************************
+//
+//   Bootstrap shame
+//   -> override, extend bootstrap
+//
+// *************************************
+
+// -------------------------------------
+//   Mixin
+// -------------------------------------
+
+// ----- Button Close (alert/modal) ----- //
+
+.button-close() {
+    width: @spacing-unit--giga;
+    height: @spacing-unit--giga;
+    position: absolute;
+    top: @spacing-unit--small;
+    right: @spacing-unit--small;
+    margin-top: 0;
+    font-size: @cs-font-size-headline;
+}
+
+// -------------------------------------
+//   Container
+//   > override bootstrap grid container
+// -------------------------------------
+
+.container {
+    max-width: @container-width;
+    width: 100%;
+    padding-left: @grid-gutter-width;
+    padding-right: @grid-gutter-width;
+}
+
+.container-large {
+    .container();
+
+    max-width: @container-large-width;
+}
+
+.container-fluid {
+    width: 100%;
+    padding-right: @grid-gutter-width;
+    padding-left: @grid-gutter-width;
+}
+
+// -------------------------------------
+//   Navbar
+// -------------------------------------
+
+.navbar {
+    border-width: 0;
+}
+
+.navbar-compact {
+    .shadow-2dp();
+    min-height: 40px;
+    line-height: 40px;
+}
+
+// ----- Brand ----- //
+
+.navbar-brand {
+    min-width: 47px;
+
+    > img {
+        height: 100%;
+    }
+}
+
+// ----- Toogle ----- //
+
+.navbar-toggle {
+    float: left;
+}
+
+// -------------------------------------
+//   Button
+// -------------------------------------
+
+.btn {
+    padding-left: @spacing-unit--large;
+    padding-right: @spacing-unit--large;
+
+    &:active,
+    &.active {
+        box-shadow: none;
+    }
+
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        opacity: 0.2;
+    }
+}
+
+// ----- Default ----- //
+
+.btn-default {
+    &:focus,
+    &.focus,
+    &:hover {
+        background-color: @color-white;
+    }
+}
+
+// ----- Small ----- //
+
+.btn-sm {
+    padding-left: @spacing-unit;
+    padding-right: @spacing-unit;
+}
+
+// ----- Large ----- //
+
+.btn-lg {
+    padding: 9px 27px;
+    border-radius: @border-radius-base;
+}
+
+// ----- Link ----- //
+
+.btn-link {
+    border: 0;
+    padding: 0 @spacing-unit--small;
+
+    &.disabled,
+    &[disabled] {
+        opacity: 0.2;
+        cursor: not-allowed;
+    }
+}
+
+// ----- Checkbox ----- //
+
+.btn-checkbox {
+    position: relative;
+    padding-left: (@spacing-unit--huge * 2);
+
+    input[type="checkbox"] {
+        margin-top: 0;
+        left: @spacing-unit--large;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &.btn-sm {
+        padding-left: (@spacing-unit--huge * 1.7);
+
+        input[type="checkbox"] {
+            left: @spacing-unit;
+        }
+    }
+}
+
+// -----Button Group Stretch ----- //
+
+.btn-group-stretch {
+    display: flex;
+    flex-flow: row nowrap;
+
+    > * {
+        flex-basis: 100%;
+    }
+}
+
+// -----Button Group ----- //
+
+.btn-group {
+    .btn.active {
+        z-index: 3;
+    }
+}
+
+@btn-group-color: darken(@brand-primary, 1%);
+
+.btn-group-primary {
+    border: 1px solid @color-blue-fadeout-75;
+    border-radius: @border-radius-base;
+    background-color: #fff;
+    overflow: hidden;
+
+    .btn-primary {
+        color: @mute-color;
+        border: none !important;
+        background-color: transparent;
+        border-radius: 0;
+
+        &:focus,
+        &:hover {
+            color: @mute-color;
+        }
+
+        &:focus {
+            outline: none !important;
+        }
+
+        &:active {
+            background-color: @color-blue-fadeout-95 !important;
+        }
+
+        &:active,
+        &.active {
+            background-color: @color-blue-fadeout-85;
+            color: @btn-group-color;
+
+            &:hover,
+            &:focus {
+                color: @btn-group-color;
+            }
+        }
+    }
+}
+
+@media (max-width: @screen-xs-max) {
+    .btn-group\@xs {
+        display: block;
+        width: 100%;
+
+        > .btn,
+        > .btn-group,
+        > .btn-group > .btn {
+            display: block;
+            float: none;
+            width: 100%;
+            max-width: 100%;
+            text-align: left;
+        }
+
+        // Clear floats so dropdown menus can be properly placed
+        > .btn-group {
+            &:extend(.clearfix all);
+            > .btn {
+                float: none;
+            }
+        }
+
+        > .btn + .btn,
+        > .btn + .btn-group,
+        > .btn-group + .btn,
+        > .btn-group + .btn-group {
+            margin-top: -1px;
+            margin-left: 0;
+        }
+    }
+}
+
+// ----- Block (less than 768px) ----- //
+
+@media (max-width: @screen-xs-max) {
+    .btn-block\@xs-max {
+        display: block;
+        width: 100%;
+    }
+}
+
+// -------------------------------------
+//   Dropdown
+// -------------------------------------
+
+.dropdown-menu {
+    .shadow-8dp();
+    margin: 0;
+    padding: @spacing-unit 0;
+    min-width: 168px;
+    max-height: 520px;
+    overflow: hidden;
+    overflow-y: auto;
+    border: 0;
+
+    > li > a {
+        padding: 0 @spacing-unit;
+        height: @nav-item-height;
+        line-height: @nav-item-height;
+    }
+
+    .active {
+        .dropdown-menu-button {
+            &,
+            &:hover,
+            &:focus {
+                color: @dropdown-link-active-color;
+                text-decoration: none;
+                background-color: @dropdown-link-active-bg;
+                outline: 0;
+            }
+        }
+
+        .u-color-mute {
+            color: @mute-color-inverted !important;
+        }
+    }
+
+    .dropdown-header {
+        padding: @spacing-unit--small @spacing-unit;
+    }
+
+    .divider {
+        margin: (@spacing-unit - 1) 0;
+    }
+}
+
+.dropdown-menu-block {
+    width: 100%;
+}
+
+.dropdown-menu-button {
+    display: block;
+    width: 100%;
+    padding: 0 @spacing-unit;
+    height: @nav-item-height;
+    line-height: @nav-item-height;
+    border: 0;
+    white-space: nowrap;
+    clear: both;
+    text-align: left;
+    color: @dropdown-link-color;
+    font-weight: @font-weight-normal;
+    background-color: @color-white;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        color: @dropdown-link-hover-color;
+        background-color: @dropdown-link-hover-bg;
+        border-radius: 0;
+    }
+
+    &:focus {
+        .tab-focus();
+    }
+}
+
+// ----- Icon (custom) ----- //
+
+.dropdown-menu-icon {
+    margin-right: @spacing-unit;
+    width: 1.25em;
+    line-height: normal;
+    text-align: center;
+    color: @mute-color;
+}
+
+// ----- Image (custom) ----- //
+
+.dropdown-menu-image {
+    margin-right: @spacing-unit;
+    max-height: 30px;
+    width: 25px;
+}
+
+// ----- Subheader (custom) ----- //
+
+.dropdown-subheader {
+    margin: 0;
+    padding: 0 @spacing-unit;
+    display: block;
+    height: @nav-item-height;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: @font-weight-semi;
+    line-height: @nav-item-height;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+
+    &:not(a) {
+        color: @mute-color;
+    }
+}
+
+// ----- Open state ----- //
+
+.open {
+    .caret {
+        &.u-color-mute-invert {
+            color: @color-white !important;
+        }
+    }
+    .caret.u-color-hint {
+        color: @mute-color !important;
+    }
+}
+
+// ----- Fit ----- //
+
+.dropdown-menu-fit {
+    right: 0;
+}
+
+// ----- @palm  ----- //
+
+@media (max-width: @palm) {
+    .dropdown-menu-left\@palm {
+        left: 0;
+        right: auto;
+    }
+}
+
+// -------------------------------------
+//   Forms
+// -------------------------------------
+
+// ----- Form control ----- //
+
+// 1. Override `box-shadow`
+// 2. Override `border-width`
+// 3. Override `border-radius`
+// 4. Override `font-size` for touch devices
+.form-control {
+    box-shadow: none; // [1]
+    border-width: @input-border-width; // [2]
+    border-radius: @input-border-radius; // [3]
+
+    &:focus {
+        box-shadow: none; // [1]
+    }
+
+    @media (hover: none) {
+        font-size: 16px; // [4]
+    }
+}
+
+// ----- Form Control Clear ----- //
+
+.form-control-clear {
+    background-color: transparent;
+    border-color: transparent;
+    cursor: pointer;
+
+    &:focus {
+        background-color: @color-white;
+        border-color: @brand-primary;
+        cursor: default;
+    }
+}
+
+// ----- Form Control Minimal ----- //
+
+.form-control-minimal {
+    background-color: transparent;
+    border-color: transparent;
+    transition: none;
+
+    &:hover {
+        border-color: @input-border;
+    }
+
+    &:focus {
+        border-color: @brand-primary;
+    }
+
+    select& {
+        appearance: none;
+        @supports (-moz-appearance: none) {
+            text-indent: -2px;
+        }
+    }
+}
+
+// ----- Form Control Minimal Bold ----- //
+
+.form-control-minimal-bold {
+    border: none;
+    background-color: inherit;
+    color: #000;
+    display: inline-block;
+    font-weight: 500;
+    outline: 0;
+    padding: 3px 0;
+}
+
+// ----- Form group ----- //
+
+.form-group-mb0 {
+    .form-group {
+        margin-bottom: 0;
+    }
+}
+
+// ----- Label ----- //
+
+label {
+    color: @color-gray-80;
+    font-weight: @font-weight-semi;
+}
+
+// ----- Help block ----- //
+
+.help-block {
+    color: @mute-color;
+
+    &:before {
+        font: var(--fa-font-solid);
+        content: @fa-var-circle-info;
+        font-style: normal;
+        margin-right: @spacing-unit--small;
+    }
+}
+
+// -------------------------------------
+//   Table
+// -------------------------------------
+
+.table {
+    margin-bottom: 0;
+
+    > thead > tr > th {
+        border-bottom-width: 1px;
+    }
+
+    // Remove background on hover (less than 992px)
+    @media (max-width: @screen-sm-max) {
+        > tbody > tr:hover {
+            background-color: transparent;
+        }
+    }
+
+    > tbody + tbody {
+        border-top: 0;
+    }
+}
+
+// -------------------------------------
+//   Radio
+// -------------------------------------
+
+.radio--large {
+    font-size: 26px;
+
+    input[type="radio"] {
+        top: 8px;
+    }
+
+    @media (max-width: @palm) {
+        font-size: 18px;
+
+        input[type="radio"] {
+            top: 2px;
+        }
+    }
+}
+
+// -------------------------------------
+//   Checkboxes and radios
+// -------------------------------------
+
+.radio,
+.checkbox {
+    margin-top: 0;
+}
+
+// -------------------------------------
+//   Progress bar
+// -------------------------------------
+
+.progress {
+    margin-bottom: 0;
+    height: @spacing-unit;
+    box-shadow: none;
+}
+
+.progress-bar {
+    line-height: @spacing-unit;
+}
+
+// -------------------------------------
+//   Alert
+// -------------------------------------
+
+.alert-global {
+    margin-top: -@spacing-unit--large;
+    margin-bottom: @spacing-unit--large;
+    text-align: center;
+}
+
+.alert {
+    a {
+        &:not(.btn):not(.close) {
+            text-decoration: underline;
+            color: @color-text;
+        }
+    }
+
+    .fa {
+        color: @mute-color;
+    }
+}
+
+// ----- Neutral ----- //
+
+.alert-neutral {
+    .alert-variant(
+        @alert-neutral-bg; @alert-neutral-border; @alert-neutral-text
+    );
+}
+
+// ----- Close Button ----- //
+
+.alert-dismissible {
+    position: relative;
+
+    .close {
+        .button-close();
+    }
+}
+
+// ----- Title ----- //
+
+.alert-title {
+    margin-bottom: @spacing-unit--small;
+    font-size: @cs-font-size-default;
+    font-weight: @font-weight-semi;
+    line-height: 1.45;
+}
+
+// ----- Sticky ----- //
+
+.alert-sticky {
+    .shadow-4dp();
+    position: fixed;
+    bottom: 0;
+    right: @spacing-unit;
+    z-index: @zindex-dropdown;
+    margin: 0;
+    width: 420px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: @color-white;
+
+    // @palm (less than 640px)
+    @media (max-width: @palm) {
+        width: 100%;
+        left: 0;
+        right: 0;
+        border-radius: 0;
+        border-top: 1px solid @color-divider;
+    }
+}
+
+// -------------------------------------
+//   Tooltip
+// -------------------------------------
+
+.tooltip {
+    white-space: inherit;
+}
+
+.tooltip-inner {
+    max-width: inherit;
+    padding: @spacing-unit--small @spacing-unit;
+    border-radius: @border-radius-base;
+    white-space: inherit;
+    text-align: left;
+}
+
+.tooltip-arrow {
+    display: none;
+}
+
+// -------------------------------------
+//   Modal
+// -------------------------------------
+
+// ----- Scrollable ----- //
+
+.modal-scrollable {
+    display: flex; // IE10/11
+    max-height: calc(100% - (30px * 2));
+
+    .modal-content {
+        max-height: calc(100vh - (30px * 2)); // IE10/11
+        overflow: hidden;
+    }
+
+    .modal-header,
+    .modal-footer {
+        flex-shrink: 0;
+    }
+
+    .modal-body {
+        overflow-y: auto;
+    }
+}
+
+// ----- Content ----- //
+
+.modal-content {
+    .shadow-24dp();
+    display: flex;
+    flex-direction: column;
+    width: 100%; // Ensure `.modal-content` extends the full width of the parent `.modal-dialog`
+    pointer-events: auto;
+    // Remove focus outline from opened modal
+    outline: 0;
+    text-align: left;
+}
+
+// ----- Header ----- //
+
+.modal-header {
+    position: relative;
+
+    @media (max-width: @palm) {
+        padding: @spacing-unit;
+    }
+
+    // ----- Close Button ----- //
+
+    > .close {
+        display: none;
+    }
+}
+
+// ----- Title ----- //
+
+.modal-title {
+    .c-title();
+}
+
+// ----- Body ----- //
+
+.modal-body {
+    padding-top: 0;
+    // Enable `flex-grow: 1` so that the body take up as much space as possible
+    // when should there be a fixed height on `.modal-dialog`.
+    flex: 1 1 auto;
+
+    @media (max-width: @palm) {
+        padding: @spacing-unit;
+    }
+}
+
+// ----- Footer ----- //
+
+.modal-footer {
+    @media (max-width: @palm) {
+        padding: @spacing-unit;
+    }
+
+    .btn + .btn {
+        margin-left: @spacing-unit;
+    }
+}
+
+// -------------------------------------
+//   Popovers
+// -------------------------------------
+
+.popover {
+    .shadow-8dp();
+    padding: 0;
+    border: 0;
+}
+
+.popover-content {
+    padding: @spacing-unit;
+}
+
+// -------------------------------------
+//   Screenreaders
+// -------------------------------------
+
+.sr-only {
+    margin: -1px !important;
+}
+
+// -------------------------------------
+//   Row
+// -------------------------------------
+
+// ----- Tiny ----- //
+
+.row--tiny {
+    margin-right: (@grid-gutter-width / -4);
+    margin-left: (@grid-gutter-width / -4);
+
+    > [class*="col-"] {
+        padding-right: (@grid-gutter-width / 4);
+        padding-left: (@grid-gutter-width / 4);
+    }
+}
+
+// ----- Large ----- //
+
+.row--large {
+    margin-right: (@grid-gutter-width / -1);
+    margin-left: (@grid-gutter-width / -1);
+
+    > [class*="col-"] {
+        padding-right: (@grid-gutter-width);
+        padding-left: (@grid-gutter-width);
+    }
+}
+
+// ----- Table ----- //
+
+// 768px and up
+@media (min-width: @screen-sm-min) {
+    .row--table\@sm {
+        display: table;
+        table-layout: fixed;
+        width: calc(~"100% + " @grid-gutter-width);
+    }
+
+    .row--table-large\@sm {
+        display: table;
+        table-layout: fixed;
+        width: calc(~"100% + " (@grid-gutter-width * 2));
+    }
+}
+
+// -------------------------------------
+//   Column
+// -------------------------------------
+
+// ----- Middle----- //
+
+// Tablets, 768px and up)
+@media (min-width: @screen-sm-min) {
+    .col--middle\@sm {
+        float: none;
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+
+// ----- Bottom ----- //
+
+// Tablets, 768px and up)
+@media (min-width: @screen-sm-min) {
+    .col--bottom\@sm {
+        float: none;
+        display: table-cell;
+        vertical-align: bottom;
+    }
+}
+
+// -------------------------------------
+//   Palm
+// -------------------------------------
+
+// Generate custom `palm`  columns
+//
+// Columns, offsets, pushes, and pulls for the small device range, from phones
+// to tablets.
+
+@media (max-width: @palm) {
+    .make-grid(palm);
+}

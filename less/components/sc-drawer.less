@@ -1,0 +1,104 @@
+// *************************************
+//
+//   DRAWER ( Swimcloud )
+//
+// *************************************
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+@sc-drawer-width: 240px;
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-sc-drawer {
+    display: flex;
+    flex-direction: column;
+    max-width: @sc-drawer-width;
+    width: 100%;
+    padding: 0;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+    transition: margin-left 0.25s linear;
+    .animation-default();
+}
+
+// -------------------------------------
+//   Desktop
+// -------------------------------------
+
+.c-sc-drawer--desktop {
+    position: sticky;
+    top: @header-height;
+    height: ~"calc(100vh - @{header-height})";
+    // < 1460px
+    @media (max-width: @drawer-breakpoint-small) {
+        display: none;
+    }
+
+    &.is-hidden {
+        margin-left: -@sc-drawer-width;
+    }
+}
+
+// -------------------------------------
+//   Mobile
+// -------------------------------------
+
+.c-sc-drawer--mobile {
+    position: fixed;
+    top: 0;
+    right: auto;
+    bottom: 0;
+    left: 0;
+    margin-left: -@sc-drawer-width;
+    z-index: @zindex-drawer;
+    background-color: @color-white;
+
+    &.is-open {
+        .shadow-16dp();
+        margin-left: 0;
+    }
+
+    // 1460px >
+    @media (min-width: @drawer-breakpoint) {
+        display: none;
+    }
+}
+
+// Header
+.c-sc-drawer__header-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 @spacing-unit 0 @spacing-unit--huge;
+    min-height: @header-height;
+}
+
+// Backdrop mobile
+.c-sc-drawer__backdrop-mobile {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-color: transparent;
+    visibility: hidden;
+    opacity: 0;
+    z-index: @zindex-drawer-backdrop;
+
+    &.is-open {
+        background-color: @modal-backdrop-bg;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    // 1460px >
+    @media (min-width: @drawer-breakpoint) {
+        display: none;
+    }
+}

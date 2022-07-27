@@ -1,0 +1,121 @@
+// *************************************
+//
+//   Link Boxes
+//
+// *************************************
+
+// -------------------------------------
+//  Variables
+// -------------------------------------
+
+@link-boxes-height: 48px;
+
+// -------------------------------------
+//  Base
+// -------------------------------------
+
+.c-link-boxes {
+    margin: 0;
+    padding: 0;
+    border: 1px solid @color-divider;
+    border-radius: @border-radius-base;
+    overflow: hidden;
+}
+
+// -------------------------------------
+//  Inline
+// -------------------------------------
+
+.c-link-boxes--inline {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+    column-gap: 5px;
+    row-gap: 5px;
+    border: 0;
+    border-radius: 0;
+
+    .c-link-boxes-item {
+        border: 1px solid @color-divider;
+        border-radius: @border-radius-base;
+
+        &:hover,
+        &:focus {
+            border-color: @color-gray-60;
+            outline: none;
+            background-color: #fff;
+        }
+    }
+}
+
+// -------------------------------------
+//  Header
+// -------------------------------------
+
+.c-link-boxes__header {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 10px;
+    min-height: @link-boxes-height;
+    border-bottom: 1px solid @color-divider;
+    font-size: 16px;
+    font-weight: @font-weight-normal;
+    background-color: #fff;
+}
+
+// -------------------------------------
+//  Item
+// -------------------------------------
+
+.c-link-boxes-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: @link-boxes-height;
+    margin: 0;
+    padding: 10px;
+    background-color: #fff;
+
+    &:hover {
+        background-color: @color-hover;
+    }
+
+    &:active {
+        background-color: @color-gray-30;
+    }
+}
+
+// -------------------------------------
+//  Number
+// -------------------------------------
+
+.c-link-boxes-item__number {
+    margin-left: auto;
+    padding-left: 15px;
+    color: @mute-color;
+}
+
+// -------------------------------------
+//  Img
+// -------------------------------------
+
+.c-link-boxes-item__img {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+    margin-right: 15px;
+}
+
+// -------------------------------------
+//  Primary Text
+// -------------------------------------
+
+.c-link-boxes-item__primary-text {
+    display: block;
+    margin: 0;
+    font-size: 14px;
+    font-weight: @font-weight-normal;
+    line-height: normal;
+    color: @color-text;
+    .u-text-truncate();
+}

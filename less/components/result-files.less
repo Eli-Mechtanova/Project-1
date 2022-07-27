@@ -1,0 +1,134 @@
+// *************************************
+//
+//   Result Files
+//
+// *************************************
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-result-files {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border: 1px solid @color-divider;
+    border-radius: @border-radius-base;
+    background-color: #fff;
+}
+
+// -------------------------------------
+//   Elevated
+// -------------------------------------
+
+.c-result-files--elevated {
+    border: 0;
+    border-radius: @border-radius-large;
+    .shadow-2dp();
+}
+
+// -------------------------------------
+//   Cols
+// -------------------------------------
+
+.c-result-files--cols-4 {
+    .c-result-files-item {
+        grid-template-columns: 1fr 272px 72px 72px;
+    }
+}
+
+// -------------------------------------
+//   Header
+// -------------------------------------
+
+.c-result-files__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 10px 15px;
+    min-height: 44px;
+    border-top-right-radius: @border-radius-large;
+    border-top-left-radius: @border-radius-large;
+    border-bottom: 1px solid @color-divider;
+    background-color: @color-gray-5;
+}
+
+// -------------------------------------
+//   Title
+// -------------------------------------
+
+.c-result-files__title {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font-weight: @font-weight-semi;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: @color-gray-80;
+}
+
+// -------------------------------------
+//   File
+// -------------------------------------
+
+.c-result-files-item {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 272px 72px 72px auto;
+    align-items: flex-start;
+    column-gap: 30px;
+    padding: 15px;
+
+    &:not(:last-child) {
+        border-bottom: 1px solid @color-divider;
+    }
+}
+
+.c-result-files-item__title {
+    margin: 0 0 2.5px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: inherit;
+    font-weight: @font-weight-normal;
+
+    a {
+        .u-text-truncate;
+    }
+}
+
+.c-result-files-item__media {
+    display: flex;
+    align-items: flex-start;
+    overflow: hidden;
+}
+
+.c-result-files-item__icon {
+    margin: 4px 15px 0 1px;
+    color: @mute-color;
+    font-size: 18px;
+}
+
+.c-result-files-item__content {
+    flex: 1;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+// -------------------------------------
+//   Size
+// -------------------------------------
+
+.c-result-files-item__size {
+    text-align: right;
+}
+
+// -------------------------------------
+//   Actions
+// -------------------------------------
+
+.c-result-files-item__actions {
+    top: -3px;
+}

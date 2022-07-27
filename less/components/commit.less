@@ -1,0 +1,194 @@
+// *************************************
+//
+//  COMMIT
+//
+// *************************************
+
+// -------------------------------------
+//   Row
+// -------------------------------------
+
+.c-commit-row-homepage {
+    margin: -15px;
+    padding: 15px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    column-gap: 30px;
+
+    // < 992px
+    @media (max-width: @screen-sm-max) {
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-x: none;
+        scrollbar-width: none;
+        grid-auto-columns: 330px;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    // < 768px
+    @media (max-width: @screen-xs-max) {
+        column-gap: 15px;
+    }
+}
+
+// Campus visits
+.c-commit-row-campus-visits {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min-content, 350px));
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 15px;
+}
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-commit {
+    .shadow-2dp();
+    margin-bottom: @spacing-unit;
+    padding: 0;
+    border-radius: @border-radius-large;
+    width: 100%;
+    background-color: #fff;
+}
+
+// ----- Vertical ----- //
+
+.c-commit--vertical {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0;
+    position: relative;
+    border-radius: 18px;
+
+    .c-commit__header {
+        padding: 25px;
+        color: inherit;
+    }
+
+    .c-title {
+        margin: 15px 0 0;
+    }
+
+    .c-commit__location {
+        margin-bottom: 0;
+    }
+
+    .c-commit__stats {
+        margin: 30px 0 0;
+        color: @color-text;
+    }
+
+    .c-commit__footer {
+        margin-top: auto;
+    }
+
+    .c-commit__team {
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+
+    .c-commit__action {
+        position: absolute;
+        top: 10px;
+        right: 8px;
+    }
+}
+
+// -------------------------------------
+//   Header
+// -------------------------------------
+
+.c-commit__header {
+    padding: @spacing-unit--large;
+}
+
+// -------------------------------------
+//   Location
+// -------------------------------------
+
+.c-commit__location {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: @mute-color;
+}
+
+// -------------------------------------
+//   Quote
+// -------------------------------------
+
+.c-commit__quote {
+    margin: 0;
+    padding: @spacing-unit--large 0 0;
+    border: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: normal;
+    text-align: left;
+    color: @color-text;
+}
+
+// -------------------------------------
+//   Footer
+// -------------------------------------
+
+.c-commit__footer {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: 10px 0;
+    border-top: 1px solid @color-divider;
+    text-align: left;
+}
+
+// -------------------------------------
+//   Team
+// -------------------------------------
+
+.c-commit__team {
+    display: flex;
+    align-items: center;
+    padding: 5px @spacing-unit--large;
+    flex-flow: row nowrap;
+    flex-grow: 1;
+    font-size: 15px;
+    color: @color-text;
+}
+
+// -------------------------------------
+//   Team Logo
+// -------------------------------------
+
+.c-commit__team-logo {
+    margin-right: @spacing-unit--large;
+}
+
+// -------------------------------------
+//   Considered
+// -------------------------------------
+
+.c-commit__considered {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 5px @spacing-unit--large;
+    font-size: 13px;
+}
+
+// -------------------------------------
+//   Label
+// -------------------------------------
+
+.c-commit__label {
+    display: inline-block;
+    color: @mute-color;
+    margin-right: 5px;
+}

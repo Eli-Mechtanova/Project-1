@@ -1,0 +1,100 @@
+// *************************************
+//
+//   #CKEDITOR
+//
+// *************************************
+
+
+//  Apply style to editor content. It should reflect the CSS used in the target
+//  pages where the content is to be displayed.
+//
+//  http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-contentsCss
+
+
+//   #SETTINGS
+// *************************************
+
+@import "node_modules/bootstrap/less/variables.less";
+@import "./bootstrap/bootstrap-main.less";
+@import "node_modules/bootstrap/less/mixins.less";
+@import "settings/variables";
+
+
+//   #TOOLS
+// *************************************
+
+@import "tools/clearfix";
+
+
+//   #BASE
+// *************************************
+
+@import "node_modules/bootstrap/less/normalize.less";
+@import "node_modules/bootstrap/less/scaffolding.less";
+@import "node_modules/bootstrap/less/type.less";
+@import "base/scaffold";
+@import "base/images";
+
+
+//   #OBJECTS
+// *************************************
+
+@import "object/ratio";
+
+
+//   #COMPONENTS
+// *************************************
+
+@import "components/article";
+
+
+//   #VENDOR
+// *************************************
+
+.cke_editable {
+    background-color: @color-white;
+
+    &.c-article__body {
+        margin: @article-line-height;
+    }
+
+	strong {
+		font-weight: bold;
+	}
+}
+
+.c-article__body {
+	img,
+	.c-article__figure,
+	.c-article__embed {
+		padding: @spacing-unit;
+	}
+}
+
+.cke_widget_wrapper {
+	clear: both;
+
+	&:hover {
+		.cke_widget_editable,
+		> .cke_widget_element {
+			outline: 2px solid @brand-warning !important;
+		}
+	}
+
+	.cke_widget_editable.cke_widget_editable_focused,
+	&.cke_widget_focused > .cke_widget_element {
+		outline: 2px solid @brand-info !important;
+	}
+}
+
+.cke_image_nocaption {
+	display: block !important;
+}
+
+.marker {
+	background-color: @brand-warning;
+}
+
+span[lang] {
+	font-style: italic;
+}

@@ -1,0 +1,67 @@
+// *************************************
+//
+//   Guides
+//
+// *************************************
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-guides {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 0 @home-section-gutter--small;
+    pointer-events: none;
+
+    // 992px >
+    @media (min-width: @screen-md-min) {
+        padding-right: @home-section-gutter;
+        padding-left: @home-section-gutter;
+    }
+}
+
+// -------------------------------------
+//   Container
+// -------------------------------------
+
+.c-guides__container {
+    display: grid;
+    grid: 1fr / repeat(3, 1fr);
+    height: 100%;
+    max-width: @container-width;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    padding: 0 @grid-gutter-width;
+
+    // < 992px
+    @media (max-width: @screen-sm-max) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    // < 640px
+    @media (max-width: @palm) {
+        display: none;
+    }
+}
+
+// -------------------------------------
+//   Item
+// -------------------------------------
+
+.c-guides__item {
+    width: 1px;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.2) 50%,
+        transparent 0,
+        transparent
+    );
+    background-size: 1px 8px;
+}

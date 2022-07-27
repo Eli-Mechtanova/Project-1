@@ -1,0 +1,112 @@
+// *************************************
+//
+//   SWIMHERO
+//
+// *************************************
+
+
+.c-swimhero {
+    margin-bottom: 30px;
+}
+
+    .c-swimhero__section {
+        margin-bottom: 90px;
+
+        // less than 768px
+        @media (max-width: @screen-xs-max) {
+            margin-bottom: 60px;
+        }
+    }
+
+        .c-swimhero__title {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 28px;
+            font-weight: @font-weight-semi;
+            line-height: 1.168;
+
+            // 768px and up
+            @media (min-width: @screen-sm-min) {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+        }
+
+
+    .c-swimhero__article {
+        // 768px and up
+        @media (min-width: @screen-sm-min) {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    }
+
+        .c-swimhero__lead {
+            font-size: 16px;
+            margin-bottom: 0;
+        }
+
+
+    .c-swimhero__plans {
+        margin:  0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+
+        // less than 768px
+        @media (max-width: @screen-xs-max) {
+            flex-direction: column;
+
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+
+        .c-swimhero__plan {
+            flex: 1 1 0%;
+
+            &:not(:last-child) {
+                margin-bottom: 40px;
+                // 768px and up
+                @media (min-width: @screen-sm-min) {
+                    margin-right: 30px;
+                }
+            }
+        }
+
+            .c-swimhero__price {
+                margin: 5px 0;
+                font-size: 16px;
+                font-weight: @font-weight-semi;
+
+                & + & {
+                    margin-top: 0;
+                }
+            }
+
+            .c-swimhero__store-badge {
+                display: inline-block;
+                transition-property: opacity, transform;
+                transition-duration: 200ms;
+
+                &:hover {
+                    opacity: .8;
+                    transform: translateY(-1px);
+                }
+            }
+
+
+    .c-swimhero__login {
+        max-width: 350px;
+        padding: 15px;
+        margin: 0 auto;
+        border: 1px solid @color-divider;
+        border-radius: @border-radius-base;
+    }
+
+        .c-swimhero__logo {
+            margin: 0 auto;
+            display: block;
+            height: 80px;
+        }

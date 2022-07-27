@@ -1,0 +1,163 @@
+// *************************************
+//
+//   Swim Graph
+//
+// *************************************
+
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+@swimgraph-gray-10: #f2f2f2;
+@swimgraph-gray-20: #bfbfc2;
+@swimgraph-red: #ff0000;
+@swimgraph-yellow: #d7d51b;
+@swimgraph-orange: #d7831b;
+@swimgraph-blue: #1285b2;
+@swimgraph-aqua: #96d2ee;
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-swimgraph {
+    font-size: @cs-font-size-small;
+}
+
+
+// -------------------------------------
+//   Item
+// -------------------------------------
+
+.c-swimgraph__item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+
+// -------------------------------------
+//   Body
+// -------------------------------------
+
+.c-swimgraph__body {
+    margin-top: @spacing-unit--small;
+}
+
+
+// -------------------------------------
+//   Svg
+// -------------------------------------
+
+.c-swimgraph__svg {
+    background-color: @swimgraph-gray-10;
+
+    .domain {
+        stroke: transparent;
+    }
+
+    .tick {
+        line {
+            stroke: @swimgraph-gray-20;
+            stroke-width: 1;
+            shape-rendering: crispEdges;
+        }
+        text {
+            fill: @swimgraph-gray-20;
+            font-family: @font-family-base;
+            font-size: @cs-font-size-small;
+        }
+    }
+}
+
+
+// -------------------------------------
+//   Line
+// -------------------------------------
+
+.c-swimgraph__line {
+    fill: none;
+    stroke: @color-text;
+    stroke-width: 2;
+}
+
+.c-swimgraph__line-dot {
+    stroke: @color-text;
+    stroke-width: 4;
+    fill: @color-text;
+}
+
+.c-swimgraph__line-text {
+    fill: @swimgraph-blue;
+}
+
+
+// -------------------------------------
+//   Headup
+// -------------------------------------
+
+.c-swimgraph__headup {
+    fill: @swimgraph-aqua;
+    font-weight: @font-weight-semi;
+}
+
+
+// -------------------------------------
+//   Turn
+// -------------------------------------
+
+.c-swimgraph__turn {
+    fill: @swimgraph-yellow;
+    font-weight: @font-weight-semi;
+}
+
+
+// -------------------------------------
+//   Breakout
+// -------------------------------------
+
+.c-swimgraph__breakout {
+    fill: @swimgraph-blue;
+    font-weight: @font-weight-semi;
+}
+
+
+// -------------------------------------
+//   Lap Tick / Time
+// -------------------------------------
+
+.c-swimgraph__lap-tick {
+    stroke: @swimgraph-red;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+
+.c-swimgraph__lap-time {
+    fill: @swimgraph-red;
+}
+
+// -------------------------------------
+//   Five Meters / Fifteen Meters
+// -------------------------------------
+
+.c-swimgraph__meters {
+    stroke: @swimgraph-orange;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+
+.c-swimgraph__meters-text {
+    fill: @swimgraph-orange;
+}
+
+// -------------------------------------
+//   Time Marker
+// -------------------------------------
+
+.c-swimgraph__time-marker {
+    stroke: @swimgraph-aqua;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}

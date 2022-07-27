@@ -1,0 +1,72 @@
+// *************************************
+//
+//   Explore
+//
+// *************************************
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-explore {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+    gap: 60px;
+    color: @color-gray-70;
+
+    // < 768px
+    @media (max-width: @screen-xs-max) {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+// -------------------------------------
+//   Media
+// -------------------------------------
+
+.c-explore__media {
+    padding: 15px;
+    border-radius: @border-radius-large;
+
+    @media (hover: hover) {
+        transition: transform 0.2s ease-out;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+
+// -------------------------------------
+//   Figure
+// -------------------------------------
+
+.c-explore__figure {
+    background-color: transparent;
+    .u-shadow-4dp;
+}
+
+// -------------------------------------
+//   Image
+// -------------------------------------
+
+.c-explore__img {
+    overflow: hidden;
+    border-radius: @border-radius-base;
+}
+
+// -------------------------------------
+//   Title
+// -------------------------------------
+
+.c-explore__title {
+    margin: 0 0 10px;
+    font-weight: @font-weight-semi;
+    font-size: @cs-font-size-headline;
+    color: @color-text;
+}

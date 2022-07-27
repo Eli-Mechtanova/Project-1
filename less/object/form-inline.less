@@ -1,0 +1,23 @@
+// *************************************
+//
+//   Form inline
+//
+// *************************************
+
+
+.o-form-inline {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+    // Inline-block all the things for "inline"
+    .form-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0;
+
+        &:not(:last-child) {
+            margin-right: @spacing-unit--small;
+        }
+    }
+}

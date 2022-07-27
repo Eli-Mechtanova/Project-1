@@ -1,0 +1,30 @@
+// *************************************
+//
+//   Button Follow
+//
+// *************************************
+
+.c-btn-follow.c-btn-follow {
+    min-width: 93px;
+
+    &:hover {
+        background-color: @brand-danger;
+        border-color: @brand-danger;
+        color: @color-white;
+
+        .c-btn-follow__text--following {
+            display: none;
+        }
+        .c-btn-follow__text--unfollow {
+            display: block;
+        }
+    }
+}
+
+.c-btn-follow__text {
+    display: none;
+}
+
+.c-btn-follow__text--following {
+    display: block;
+}

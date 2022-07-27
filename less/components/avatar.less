@@ -1,0 +1,104 @@
+// *************************************
+//
+//   Avatar
+//
+// *************************************
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+@avatar-micro: 30px;
+@avatar-tiny: 38px;
+@avatar-small: 54px;
+@avatar-default: 88px;
+@avatar-large: 220px;
+
+@avatar-bg: @color-gray-10;
+@avatar-text-color: @color-gray-70;
+
+// -------------------------------------
+//   Mixin
+// -------------------------------------
+
+// ----- Size ----- //
+
+.avatar-size(@size) {
+    width: @size;
+    max-width: @size;
+    height: @size;
+
+    &.has-initials {
+        font-size: (@size / 2.5);
+        line-height: @size;
+    }
+
+    &.has-icon {
+        font-size: @size;
+        color: @color-gray-40;
+    }
+}
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-avatar {
+    .avatar-size(@avatar-default);
+    display: block;
+    border-radius: @border-radius-base;
+    overflow: hidden;
+
+    &.has-initials {
+        color: @avatar-text-color;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 30px;
+    }
+
+    &.has-bg,
+    &.has-initials {
+        background-color: @avatar-bg;
+    }
+}
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+// ----- Micro ----- //
+
+.c-avatar--micro {
+    .avatar-size(@avatar-micro);
+}
+
+// ----- Tiny ----- //
+
+.c-avatar--tiny {
+    .avatar-size(@avatar-tiny);
+}
+
+// ----- Small ----- //
+
+.c-avatar--small {
+    .avatar-size(@avatar-small);
+}
+
+// ----- Large ----- //
+
+.c-avatar--large {
+    .avatar-size(@avatar-large);
+}
+
+// ----- Circle ----- //
+
+.c-avatar--circle {
+    border-radius: 100%;
+}
+
+// 992px and up
+@media screen and (min-width: @screen-md-min) {
+    .c-avatar--large\@md {
+        .avatar-size(@avatar-large);
+    }
+}

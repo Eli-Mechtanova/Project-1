@@ -1,0 +1,205 @@
+// *************************************
+//
+//   Plans
+//
+// *************************************
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin: 0;
+    justify-content: flex-start;
+
+    // < 768px
+    @media (max-width: @screen-xs-max) {
+        gap: 15px;
+    }
+}
+
+// ----- Elevate ----- //
+
+.c-plans--elevate {
+    .c-plans__card {
+        border-radius: @border-radius-large;
+        .shadow-2dp();
+    }
+}
+
+// ----- Center ----- //
+
+.c-plans--center {
+    justify-content: center;
+}
+
+// ----- Stack ----- //
+
+.c-plans--stack {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    border-radius: @border-radius-large;
+    overflow: hidden;
+
+    // < 640px
+    @media (max-width: @palm) {
+        grid-template-columns: 1fr;
+    }
+
+    .c-plans__card {
+        &:first-child {
+            border-right: 1px solid @color-divider;
+            // < 640px
+            @media (max-width: @palm) {
+                border-right: 0;
+                border-bottom: 1px solid @color-divider;
+            }
+        }
+    }
+}
+
+// -------------------------------------
+//   Card
+// -------------------------------------
+
+.c-plans__card {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 35px;
+    text-align: left;
+    background-color: #fff;
+    font-size: 15px;
+}
+
+// -------------------------------------
+//   Header
+// -------------------------------------
+
+.c-plans__card-header {
+    margin: 0 0 30px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 10px;
+}
+
+// -------------------------------------
+//   Title
+// -------------------------------------
+
+.c-plans__card-title {
+    margin: 0;
+    font-size: 22px;
+    font-weight: @font-weight-bold;
+    line-height: 1.35;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+// -------------------------------------
+//   Body
+// -------------------------------------
+
+.c-plans__card-body {
+    margin: 0 0 40px;
+    flex-grow: 1;
+
+    a {
+        color: inherit;
+        border-bottom: 1px solid @brand-primary;
+
+        &:hover {
+            color: @link-color;
+        }
+    }
+}
+
+// -------------------------------------
+//   Subtitle
+// -------------------------------------
+
+.c-plans__card-subtitle {
+    margin: 0;
+    font-size: 16px;
+    font-weight: @font-weight-semi;
+    line-height: inherit;
+
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+}
+
+// -------------------------------------
+//   Features
+// -------------------------------------
+
+.c-plans__card-features {
+    margin: 0;
+    padding-left: 15px;
+    list-style: disc;
+    color: @color-gray-80;
+
+    li {
+        a {
+            color: inherit;
+            text-decoration: underline !important;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+// -------------------------------------
+//   Footer
+// -------------------------------------
+
+.c-plans__card-footer {
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    color: @color-gray-80;
+}
+
+// -------------------------------------
+//   Price
+// -------------------------------------
+
+.c-plans__card-price {
+    font-size: 32px;
+    font-weight: @font-weight-bold;
+    color: @color-light-blue-50;
+    line-height: 1.3;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    .c-plans__card-interval {
+        color: inherit;
+        font-size: 15px;
+        font-weight: @font-weight-semi;
+    }
+
+    del {
+        font-size: 18px;
+        color: @color-gray-80;
+        font-weight: @font-weight-normal;
+    }
+}
+
+// -------------------------------------
+//   Interval
+// -------------------------------------
+
+.c-plans__card-interval {
+    margin: 0;
+    padding: 0;
+    display: block;
+    font-weight: @font-weight-normal;
+    color: @mute-color;
+}

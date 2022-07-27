@@ -1,0 +1,37 @@
+// *************************************
+//
+//   Data
+//
+// *************************************
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-data {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 0 -@spacing-unit;
+    padding: 0;
+    list-style: none;
+}
+
+    .c-data__item {
+        display: flex;
+        align-items: flex-start;
+        margin-left: @spacing-unit;
+    }
+
+        .c-data__value {
+            white-space: nowrap;
+            font-size: 14px;
+        }
+
+        .c-data__label {
+            margin-left: @spacing-unit--tiny;
+            font-size: 11px;
+            letter-spacing: .5px;
+            text-transform: uppercase;
+            color: rgba(0, 0, 0, .65);
+        }

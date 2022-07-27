@@ -1,0 +1,66 @@
+// *************************************
+//
+//   Color Picker
+//
+// *************************************
+
+
+@color-picker-size: 20px;
+
+
+.c-color-picker {
+    width: 100%;
+    display: block;
+}
+
+    .c-color-picker__btn {
+        display: inline-block;
+        position: relative;
+        width: @color-picker-size;
+        height: @color-picker-size;
+        border: 0;
+        background-color: transparent;
+        border-radius: 2px;
+        cursor: pointer;
+        margin: 4px;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            bottom: -4px;
+            left: -4px;
+            border: 2px solid transparent;
+            border-radius: 2px;
+        }
+
+        &.is-primary {
+            background-color: @label-primary-bg;
+        }
+
+        &.is-success {
+            background-color: @label-success-bg;
+        }
+
+        &.is-warning {
+            background-color: @label-warning-bg;
+        }
+
+        &.is-danger {
+            background-color: @label-danger-bg;
+        }
+
+        &.is-royal {
+            background-color: @label-royal-bg;
+        }
+
+        &.is-active {
+            &:after {
+                content: '';
+                border-color: @color-text;
+            }
+        }
+    }
+
+

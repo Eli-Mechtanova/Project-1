@@ -1,0 +1,96 @@
+// *************************************
+//
+//   Tile
+//
+// *************************************
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-tile {
+    margin:  0;
+    padding: 0;
+    list-style: none;
+}
+
+    // ----- Small ----- //
+
+    .c-tile--small {
+        .c-tile__item {
+            &:not(:last-child) {
+                margin-bottom: @spacing-unit--small;
+                padding-bottom: @spacing-unit--small;
+            }
+        }
+
+    }
+
+    // ----- Fixed ----- //
+
+    .c-tile--fixed {
+
+        .c-tile__desc {
+            text-align: left;
+        }
+
+        // (768px and up)
+        @media (min-width: @screen-sm-min) {
+            .c-tile__title {
+                width: 180px;
+            }
+        }
+
+        // (less than 768px)
+        @media (max-width: @screen-xs-max) {
+            .c-tile__title {
+                float: none;
+            }
+        }
+
+    }
+
+
+// -------------------------------------
+//   List
+// -------------------------------------
+
+.c-tile__list {
+    .u-clearfix();
+    font-size: @cs-font-size-default;
+}
+
+
+// -------------------------------------
+//   Item
+// -------------------------------------
+
+.c-tile__item {
+    &:not(:last-child) {
+        margin-bottom: @spacing-unit;
+        padding-bottom: @spacing-unit;
+        border-bottom: 1px solid @border-divider-color;
+    }
+}
+
+
+// -------------------------------------
+//   Title
+// -------------------------------------
+
+.c-tile__title {
+    float: left;
+    font-weight: @font-weight-normal;
+}
+
+
+// -------------------------------------
+//   Desc
+// -------------------------------------
+
+.c-tile__desc {
+    overflow: hidden;
+    display: block;
+    text-align: right;
+}

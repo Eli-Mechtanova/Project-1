@@ -1,0 +1,170 @@
+// *************************************
+//
+//   Table Plan
+//
+// *************************************
+
+@table-plan-color-divider: @color-gray-30;
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-table-plan {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+
+    th,
+    td {
+        padding: 10px 15px;
+    }
+
+    th {
+        font-weight: @font-weight-normal;
+        text-align: center;
+    }
+
+    thead,
+    tfoot {
+        th {
+            border: 1px solid @table-plan-color-divider;
+            vertical-align: top;
+
+            &:first-child {
+                border: 0;
+                border-left: 0;
+                width: 100%;
+            }
+
+            &:not(:first-child) {
+                width: auto;
+                min-width: 190px;
+                background-color: #fff;
+            }
+        }
+    }
+
+    tbody {
+        tr:hover {
+            td,
+            th {
+                background-color: @table-bg-hover;
+            }
+        }
+
+        th {
+            text-align: left;
+
+            &:not([scope="row"]) {
+                background-color: @color-gray-10;
+                border: 1px solid @table-plan-color-divider;
+            }
+        }
+
+        td {
+            text-align: center;
+        }
+
+        th,
+        td {
+            border-left: 1px solid @table-plan-color-divider;
+            border-right: 1px solid @table-plan-color-divider;
+            background-color: #fff;
+            // less than 640px
+            @media (max-width: @palm) {
+                font-size: 13px;
+            }
+        }
+    }
+
+    tfoot {
+        border-top: 1px solid @table-plan-color-divider;
+    }
+}
+
+// -------------------------------------
+//   Name
+// -------------------------------------
+
+.c-table-plan__name {
+    margin: 5px 0 10px;
+    font-size: 20px;
+    font-weight: @font-weight-semi;
+    // less than 640px
+    @media (max-width: @palm) {
+        font-size: 18px;
+    }
+}
+
+// -------------------------------------
+//   Description
+// -------------------------------------
+
+.c-table-plan__description {
+    font-size: 15px;
+    color: @mute-color;
+    // less than 640px
+    @media (max-width: @palm) {
+        font-size: 14px;
+    }
+}
+
+// -------------------------------------
+//   Price
+// -------------------------------------
+
+.c-table-plan__price {
+    font-size: 42px;
+    font-weight: @font-weight-semi;
+    line-height: 1.28;
+    display: block;
+    // less than 640px
+    @media (max-width: @palm) {
+        font-size: 34px;
+    }
+}
+
+// -------------------------------------
+//   Subheader
+// -------------------------------------
+
+.c-table-plan__subheader {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    font-weight: @font-weight-semi;
+
+    // less than 640px
+    @media (max-width: @palm) {
+        font-size: 14px;
+    }
+}
+
+// -------------------------------------
+//   Actions
+// -------------------------------------
+
+.c-table-plan__actions {
+    margin: 0 0 30px;
+    text-align: center;
+    display: none;
+
+    // less than 640px
+    @media (max-width: @palm) {
+        display: block;
+    }
+}
+
+// -------------------------------------
+//   Helpers
+// -------------------------------------
+
+.js-table-plan-hidden {
+    // less than 640px
+    @media (max-width: @palm) {
+        display: none;
+    }
+}

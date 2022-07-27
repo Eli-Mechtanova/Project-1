@@ -1,0 +1,71 @@
+// *************************************
+//
+//   Legend
+//
+// *************************************
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-legend {
+    margin:  0;
+    padding: 0;
+    list-style: none;
+}
+
+
+// -------------------------------------
+//   Item
+// -------------------------------------
+
+.c-legend__item {
+    display: inline-block;
+
+    &:not(:last-child) {
+        margin-right: @spacing-unit--large;
+    }
+}
+
+
+// -------------------------------------
+//   Circle
+// -------------------------------------
+
+.c-legend__circle {
+    width: @spacing-unit;
+    height: @spacing-unit;
+    display: inline-block;
+    border-radius: 100%;
+    vertical-align: middle;
+    margin-right: @spacing-unit--tiny;
+    background-color: @brand-royal;
+}
+
+    .c-legend__circle--success {
+        background: @brand-success;
+    }
+
+    .c-legend__circle--warning {
+        background: @brand-warning;
+    }
+
+    .c-legend__circle--danger {
+        background: @brand-danger;
+    }
+
+    .c-legend__circle--neutral {
+        background: @mute-color;
+    }
+
+
+// -------------------------------------
+//   Title
+// -------------------------------------
+
+.c-legend__title {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: @cs-font-size-small;
+}

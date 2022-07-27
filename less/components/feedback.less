@@ -1,0 +1,104 @@
+// *************************************
+//
+//   FEEDBACK
+//   Feedback blocks are used to give feedback
+//   to the user about an action or state.
+//
+// *************************************
+
+// -------------------------------------
+//   Mixin
+// -------------------------------------
+
+.feedback-variant(@color, @icon) {
+    &:before {
+        background-color: @color;
+    }
+
+    .c-feedback__icon {
+        color: @color;
+        &:before {
+            content: @icon;
+        }
+    }
+}
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-feedback {
+    .shadow-0dp;
+    position: relative;
+    overflow: hidden;
+    margin: 0 0 15px 0;
+    padding: 15px 15px 15px 18px;
+    background-color: #fff;
+    display: flex;
+    flex-flow: row nowrap;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 3px;
+        height: 100%;
+        background-color: @brand-primary;
+    }
+}
+
+// ----- Success ----- //
+
+.c-feedback--success {
+    .feedback-variant(@brand-success, @fa-var-check-circle);
+}
+
+// ----- Warning ----- //
+
+.c-feedback--warning {
+    .feedback-variant(@brand-warning, @fa-var-exclamation-triangle);
+}
+
+// ----- Danger ----- //
+
+.c-feedback--danger {
+    .feedback-variant(@brand-danger, @fa-var-info-circle);
+}
+
+// -------------------------------------
+//   Icon
+// -------------------------------------
+
+.c-feedback__icon {
+    .fa-icon;
+    .fas;
+    color: @brand-primary;
+    margin-right: 10px;
+    line-height: inherit;
+    &:before {
+        content: @fa-var-info-circle;
+    }
+}
+
+// -------------------------------------
+//   Body
+// -------------------------------------
+
+.c-feedback__body {
+    flex: 1 1 0%;
+    > p {
+        margin-bottom: 0;
+    }
+}
+
+.c-feedback__title {
+    margin: 0;
+    font-size: 15px;
+    line-height: @line-height-base;
+    font-weight: @font-weight-semi;
+}
+
+.c-feedback__actions {
+    margin-top: 10px;
+}

@@ -1,0 +1,159 @@
+// *************************************
+//
+//   Ion Range Skin
+//   -> @see https://github.com/IonDen/ion.rangeSlider
+//
+// *************************************
+
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+@irs-item-height:    6px;
+@irs-item-top:       37px;
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.irs {
+    height: 55px;
+}
+
+.irs-with-grid {
+    height: 75px;
+}
+
+.irs-line {
+    height: @irs-item-height;
+    top: @irs-item-top;
+    background-color: @color-gray-30;
+}
+
+.irs-line-left {
+    height: @irs-item-height;
+}
+
+.irs-line-mid {
+    height: @irs-item-height;
+}
+
+.irs-line-right {
+    height: @irs-item-height;
+}
+
+.irs-bar {
+    height: @irs-item-height;
+    top: @irs-item-top;
+    background-color: @brand-primary;
+}
+
+.irs-bar-edge {
+    height: @irs-item-height;
+    top: @irs-item-top;
+    width: 14px;
+    background-color: @brand-primary;
+}
+
+.irs-shadow {
+    height: 2px;
+    top: 38px;
+    background: #000;
+    opacity: .3;
+    border-radius: 5px;
+}
+
+.lt-ie9 .irs-shadow {
+    filter: alpha(opacity=30);
+}
+
+.irs-slider {
+    top: 26px;
+    width: 27px;
+    height: 27px;
+    border: 2px solid @brand-primary;
+    background-color: @color-white;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.irs-slider.state_hover,
+.irs-slider:hover {
+    background: @color-white;
+}
+
+.irs-min,
+.irs-max {
+    color: @mute-color;
+    top: 0;
+}
+
+.irs-from,
+.irs-to,
+.irs-single {
+    color: @text-color;
+    font-size: 14px;
+    font-weight: @font-weight-semi;
+}
+
+.irs-grid {
+    height: 25px;
+}
+
+.irs-grid-pol {
+    opacity: 0.5;
+    background: #428bca;
+}
+
+.irs-grid-pol.small {
+    background: #999;
+}
+
+.irs-grid-text {
+    bottom: 5px;
+    color: #99a4ac;
+}
+
+
+// -------------------------------------
+//   Container
+// -------------------------------------
+
+.irs-container {
+    .form-group {
+        margin-bottom: @spacing-unit--large;
+    }
+
+    .control-label {
+        margin-bottom: 0;
+        font-weight: @font-weight-semi;
+    }
+
+    .help-block {
+        padding-bottom: @spacing-unit--small;
+    }
+}
+
+
+// -------------------------------------
+//   States
+// -------------------------------------
+
+// ----- Single hidden ----- //
+
+.irs-single-hidden {
+    .irs-single {
+        display: none;
+    }
+}
+
+// ----- Min/Max Visible ----- //
+
+.irs-min-max-visible {
+    .irs-min,
+    .irs-max {
+        visibility: visible !important;
+    }
+}

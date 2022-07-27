@@ -1,0 +1,90 @@
+// *************************************
+//
+//   Facilities
+//
+// *************************************
+
+// -------------------------------------
+//   Grid
+// -------------------------------------
+
+.c-facilities {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+// -------------------------------------
+//   Card
+// -------------------------------------
+
+.c-facilities-card {
+    margin: 0;
+    padding: 0;
+    border-radius: @border-radius-large;
+    overflow: hidden;
+    background-color: #fff;
+    .shadow-2dp();
+}
+
+.c-facilities-card--flat {
+    border: 1px solid @color-gray-30;
+    box-shadow: none;
+}
+
+.c-facilities-card__media {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    padding-top: 56.25%; // 16:9
+    background-color: @color-gray-40;
+
+    > img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .empty {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 3em;
+        color: @color-gray-70;
+    }
+}
+
+.c-facilities-card__text-section {
+    padding: 15px;
+
+    & + & {
+        padding-top: 0;
+    }
+}
+
+.c-facilities-card__title {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.35;
+    font-weight: @font-weight-semi;
+    .u-text-truncate();
+
+    a {
+        color: @text-color;
+    }
+}
+
+.c-facilities-card__actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 @spacing-unit @spacing-unit;
+}

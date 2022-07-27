@@ -1,0 +1,153 @@
+// *************************************
+//
+//   #AUTOCOMPLETE
+//
+// *************************************
+
+
+//   Variables
+// *************************************
+
+@autocomplete-item-height: 45px;
+
+
+//   #Section
+// *************************************
+
+.yui3-aclist-section {
+	padding: 0 @spacing-unit;
+	height: @autocomplete-item-height;
+	line-height: @autocomplete-item-height;
+	color: @mute-color;
+	font-size: @cs-font-size-default;
+    font-weight: @font-weight-semi;
+}
+
+
+
+
+
+//   #Height
+// *************************************
+
+.yui3-aclist-height {
+	.yui3-aclist-content {
+		max-height: 400px;
+		overflow-y: auto;
+	}
+}
+
+
+
+//   #Override default autocomplete styles
+// *************************************
+
+// Content
+.yui3-aclist-content.yui3-aclist-content {
+	.shadow-4dp() !important;
+	border: 0 !important;
+}
+
+// Active
+.yui3-skin-sam .yui3-aclist-item-active.yui3-aclist-item-active {
+	background-color: @brand-primary;
+	color: @color-white;
+
+	.yui3-highlight,
+	.yui3-aclist-item-title {
+		color: @color-white;
+	}
+
+	.yui3-aclist-item-icon,
+	.yui3-aclist-item-meta {
+		color: @mute-color-inverted;
+	}
+
+    .yui3-aclist-item-meta {
+        &:after {
+            background-color: @mute-color-inverted;
+        }
+    }
+
+	&:hover {
+		background-color: @brand-primary;
+	}
+}
+
+// List
+.yui3-aclist-list {
+
+	.yui3-aclist-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+		position: relative;
+		padding: 0 @spacing-unit;
+		overflow: hidden;
+        min-height: @autocomplete-item-height;
+
+		&.yui3-aclist-item-hover {
+			background-color: @color-gray-30;
+		}
+	}
+}
+
+.yui3-aclist-item-figure {
+	width: 31px;
+	height: 31px;
+	line-height: 31px;
+}
+
+.yui3-aclist-item-img {
+	max-width: 31px;
+	max-height: 31px;
+}
+
+.yui3-aclist-item-title {
+	display: block;
+    margin: 0;
+    font-size: @cs-font-size-default;
+    font-weight: @font-weight-semi;
+    line-height: 1.25;
+	.text-truncate();
+}
+
+.yui3-aclist-item-meta.yui3-aclist-item-meta {
+    display: block;
+    margin: 0;
+    color: @mute-color;
+    font-size: @cs-font-size-small;
+    line-height: 1.25;
+	.text-truncate();
+}
+
+.yui3-aclist-item-icon {
+	color: @color-hint;
+}
+
+.yui3-highlight {
+	color: @color-text;
+    font-weight: @font-weight-semi;
+}
+
+
+// -------------------------------------
+//   News tags
+// -------------------------------------
+
+.autocomplete-light-widget .deck [data-value] {
+    float: left;
+    margin-right: @spacing-unit;
+    margin-bottom: @spacing-unit;
+    padding: 5px 30px 5px 10px !important;
+    position: relative;
+    background-color: @brand-neutral;
+
+    .remove {
+        right: 5px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+}

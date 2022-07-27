@@ -1,0 +1,68 @@
+// *************************************
+//
+//   Upload Results
+//
+// *************************************
+
+.c-upload-results {
+    .shadow-2dp;
+    margin: 0 0 10px 0;
+    padding: 15px;
+    overflow: hidden;
+    border-radius: @border-radius-large;
+    background-color: #fff;
+}
+
+.c-upload-results__header {
+    margin-bottom: 25px;
+}
+
+.c-upload-results__body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 0;
+    margin: 0;
+
+    // < 768px
+    @media (max-width: @screen-xs-max) {
+        flex-direction: column;
+    }
+}
+
+.c-upload-results__item {
+    flex-basis: 100%;
+    min-width: 0;
+
+    &:not(:last-child) {
+        // 768px >
+        @media (min-width: @screen-sm-min) {
+            margin-right: 25px;
+            padding-right: 25px;
+            border-right: 1px solid @color-divider;
+        }
+        // < 768px
+        @media (max-width: @screen-xs-max) {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid @color-divider;
+        }
+    }
+}
+
+.c-upload-results__title {
+    margin: 0 0 10px;
+    font-size: 14px;
+    line-height: 1.3;
+    font-weight: @font-weight-semi;
+    .u-text-upcase;
+}
+
+.c-upload-results__desc {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.c-upload-results__hytek {
+    max-width: 120px;
+}

@@ -1,0 +1,90 @@
+// *************************************
+//
+//   Top Swimmers
+//
+// *************************************
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-top-swimmers {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    margin: 0;
+    padding: 0;
+    gap: 10px;
+
+    // < 992px
+    @media (max-width: @screen-sm-max) {
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-x: none;
+        scrollbar-width: none;
+        grid-auto-columns: 208px;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+
+// -------------------------------------
+//   Cards
+// -------------------------------------
+
+.c-top-swimmers--cards {
+    margin: -10px;
+    padding: 10px;
+
+    .c-top-swimmers__item {
+        border: 0;
+        .shadow-2dp;
+    }
+}
+
+// -------------------------------------
+//   Item
+// -------------------------------------
+
+.c-top-swimmers__item {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    padding: 25px 15px;
+    border: 1px solid @color-divider;
+    border-radius: @border-radius-large;
+    background-color: #fff;
+
+    a {
+        display: inline-block;
+    }
+}
+
+.c-top-swimmers__media {
+    margin-bottom: 20px;
+}
+
+.c-top-swimmers__team {
+    color: @mute-color;
+    margin-top: 2px;
+    font-size: 13px;
+}
+
+.c-top-swimmers__footer {
+    margin-top: auto;
+}
+
+.c-top-swimmers__points {
+    margin-top: 25px;
+    font-size: 15px;
+    font-weight: @font-weight-semi;
+    color: @mute-color;
+}

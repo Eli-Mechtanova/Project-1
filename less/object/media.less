@@ -1,0 +1,148 @@
+// *************************************
+//
+//   Media
+//   -> place any image and text-like content side-by-side.
+//
+// *************************************
+
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+@media-gutter: @spacing-unit;
+@media-gutter--large: @spacing-unit--large;
+@media-gutter--huge: @spacing-unit--huge;
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.o-media {
+    .u-clearfix();
+    display: block;
+}
+
+    // ----- Reverse ----- //
+
+    .o-media--rev {
+        > .o-media__img {
+            float: right;
+            margin-right: 0;
+            margin-left: @media-gutter;
+        }
+    }
+
+    // ----- Flush (no space between the image- and text-content) ----- //
+
+    .o-media--flush {
+        > .o-media__img {
+            margin-right: 0;
+            margin-left: 0;
+        }
+    }
+
+
+// -------------------------------------
+//   Img
+// -------------------------------------
+
+.o-media__img {
+    float: left;
+    margin-right: @media-gutter;
+
+    > img {
+        display: block;
+    }
+}
+
+
+// -------------------------------------
+//   Body
+// -------------------------------------
+
+.o-media__body {
+    overflow: hidden;
+    display: block;
+
+    &,
+    > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+// -------------------------------------
+//   Large
+// -------------------------------------
+
+.o-media--large {
+    > .o-media__img {
+        margin-right: @media-gutter--large;
+    }
+
+    &.o-media--rev {
+        > .o-media__img {
+            margin-right: 0;
+            margin-left: @media-gutter--large;
+        }
+    }
+}
+
+
+// -------------------------------------
+//   Huge
+// -------------------------------------
+
+.o-media--huge {
+    > .o-media__img {
+        margin-right: @media-gutter--huge;
+    }
+
+    &.o-media--rev {
+        > .o-media__img {
+            margin-right: 0;
+            margin-left: @media-gutter--huge;
+        }
+    }
+}
+
+
+// -------------------------------------
+//   Responsive
+// -------------------------------------
+
+// ----- 992px and up ----- //
+
+@media screen and (min-width: @screen-md-min) {
+    .o-media--responsive\@md {
+        > .o-media__img {
+            float: none;
+            margin-right: 0;
+            margin-bottom: @media-gutter--large;
+            margin-left: 0;
+        }
+    }
+}
+
+// ----- 640px and down ----- //
+
+@media screen and (max-width: @palm) {
+    .o-media--responsive\@palm {
+        > .o-media__img {
+            float: none;
+            margin-right: 0;
+            margin-bottom: @media-gutter;
+            margin-left: 0;
+
+            &.o-media--large {
+                > .o-media__img {
+                    margin-right: 0;
+                    margin-left: 0;
+                    margin-bottom: @media-gutter--large;
+                }
+            }
+        }
+    }
+}

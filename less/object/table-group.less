@@ -1,0 +1,31 @@
+// *************************************
+//
+//   Table Group
+//
+// *************************************
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.o-table-group {
+    > .o-table-group__item {
+        &:not(:last-child) {
+            margin-bottom: @spacing-unit;
+        }
+    }
+}
+
+
+// ----- Responsive (less than 992px)  ----- //
+
+@media (max-width: @screen-sm-max) {
+    .o-table-group\@sm {
+        > .o-table-group__item {
+            &:not(:last-child) {
+                margin-bottom: @spacing-unit;
+            }
+        }
+    }
+}

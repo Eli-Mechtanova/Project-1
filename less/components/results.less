@@ -1,0 +1,249 @@
+// *************************************
+//
+//   Results
+//
+// *************************************
+
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+@results-height: 50px;
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-results {
+    // TODO !!!
+}
+
+
+    // -------------------------------------
+    //   Header
+    // -------------------------------------
+
+    .c-results__header {
+        background-color: @brand-neutral;
+        border-bottom: 1px solid @color-divider;
+    }
+
+        .c-results__header-actions {
+            display: flex;
+            align-items: center;
+            height: @results-height
+        }
+
+            .c-results__header-selection {
+                line-height: 40px;
+
+                // ----- 640px > ----- //
+                @media (min-width: @palm) {
+                    position: absolute;
+                    left: 50%;
+                    transform: translate(-50%);
+                    font-size: @cs-font-size-small;
+                }
+
+                // ----- < 640px ----- //
+                @media (max-width: @palm) {
+                    .shadow-4dp();
+                    position: fixed;
+                    z-index: 1;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    text-align: center;
+                    background-color: @color-white;
+                }
+            }
+
+            .c-results__header-sort {
+                display: flex;
+                align-items: center;
+                margin-left: auto;
+
+                label {
+                    margin: 0;
+                    font-size: @cs-font-size-small;
+                    color: @mute-color;
+                    @media (max-width: @palm) {
+                        display: none;
+                    }
+                }
+
+                .form-control {
+                    width: auto;
+                    margin-left: @spacing-unit--small;
+                    border-width: 1px;
+                }
+            }
+
+
+    // -------------------------------------
+    //   Button / Dropdown
+    // -------------------------------------
+
+    .c-results__button {
+        display: flex;
+        justify-content: space-between;
+        background-color: @color-white !important;
+        align-items: center;
+        font-weight: @font-weight-normal;
+    }
+
+    .c-results__dropdown-header {
+        padding: 0 @spacing-unit;
+        height: @nav-item-height;
+        line-height: @nav-item-height;
+        display: block;
+        font-size: @cs-font-size-default;
+        font-weight: @font-weight-semi;
+        color: @mute-color;
+    }
+
+    .c-results__dropdown-item {
+        display: flex;
+
+        &:hover,
+        &:focus {
+            background-color: @dropdown-link-hover-bg;
+        }
+    }
+
+    .c-results__dropdown-button {
+        .text-truncate();
+        flex: 1 1 0%;
+        display: block;
+        padding: 0 @spacing-unit;
+        height: @nav-item-height;
+        line-height: @nav-item-height;
+        color: @color-text;
+        background-color: transparent;
+        border: 0;
+        text-align: left;
+
+        &:hover,
+        &:focus {
+            color: @dropdown-link-hover-color;
+        }
+    }
+
+    .c-results__dropdown-actions {
+        display: flex;
+        align-items: center;
+        margin-right: @spacing-unit;
+    }
+
+    .c-results__dropdown-button-icon {
+        display: block;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        color: @mute-color;
+        border: 0;
+        background: none;
+    }
+
+    .c-results__dropdown-empty {
+        padding: 0 @spacing-unit;
+        height: @nav-item-height;
+        line-height: @nav-item-height;
+    }
+
+
+    // -------------------------------------
+    //   Item
+    // -------------------------------------
+
+    .c-results__item {
+        position: relative;
+        padding-right: @spacing-unit;
+        padding-left: 35px;
+        min-height: @results-height;
+        background-color: @color-white;
+    }
+
+
+        .c-results__item--large {
+            padding-top: @spacing-unit--huge;
+            padding-bottom: @spacing-unit--huge;
+        }
+
+        .c-results__item--divided {
+            &:not(:last-child) {
+                border-bottom: 1px solid @color-divider;
+            }
+        }
+
+        .c-results__item--hover {
+            &:hover {
+                background-color: @color-gray-5;
+            }
+        }
+
+            .c-results__item-header {
+                display: flex;
+                @media (max-width: @palm) {
+                    display: block;
+                }
+            }
+
+                .c-results__item-main {
+                    flex: 1;
+                }
+
+                    .c-results__item-title {
+                        line-height: 1; // !!! align tags with title
+
+                        @media(min-width: @mobile) {
+                            display: flex;
+                            align-items: center;
+                        }
+                    }
+
+                    .c-results__item-tags {
+                        margin-left: @spacing-unit;
+
+                        @media(max-width: @mobile) {
+                            margin-left: 0;
+                        }
+                    }
+
+
+                .c-results__item-actions {
+                    @media (max-width: @palm) {
+                        display: flex;
+                        flex-direction: row-reverse;
+                        justify-content: flex-end;
+                        margin-top: @spacing-unit;
+                    }
+                }
+
+                .c-results__item-filters {
+                    margin-top: @spacing-unit;
+                }
+
+
+    // -------------------------------------
+    //   Checkbox
+    // -------------------------------------
+
+    .c-results__checkbox {
+        position: absolute;
+        top: 2px;
+        left: 0;
+        height: @results-height;
+        line-height: @results-height;
+        padding: 0 @spacing-unit;
+        margin: 0;
+    }
+
+        .c-results__checkbox--item {
+            top: 8px;
+        }

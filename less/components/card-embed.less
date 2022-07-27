@@ -1,0 +1,44 @@
+// *************************************
+//
+//   Card Embed
+//
+// *************************************
+
+
+.c-card-embed {
+    display: flex;
+    @media (max-width: @palm) {
+        display: block;
+    }
+}
+
+    .c-card-embed__item {
+        flex: 1;
+        padding: @spacing-unit--large;
+
+        @media (max-width: @palm) {
+            & + & {
+                padding-top: @spacing-unit--small;
+            }
+        }
+    }
+
+        .c-card-embed__title {
+            margin-bottom: @spacing-unit--small;
+            color: @color-text;
+        }
+
+        .c-card-embed__img {
+            max-width: 225px;
+            width: 225px;
+            height: 172px;
+            display: block;
+            margin-left: auto;
+            padding: @spacing-unit;
+            border: 1px solid @color-divider;
+            object-fit: contain;
+
+            @media (max-width: @palm) {
+                margin-left: inherit;
+            }
+        }

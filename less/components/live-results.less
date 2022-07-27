@@ -1,0 +1,36 @@
+// *************************************
+//
+//   Live Results
+//
+// *************************************
+
+// -------------------------------------
+//  Base
+// -------------------------------------
+
+.c-live-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @media screen and (max-width: @mobile) {
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    }
+}
+
+.c-live-results--single {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+
+// -------------------------------------
+//  Item
+// -------------------------------------
+
+.c-live-results__item {
+    padding: 25px;
+    border: 1px solid @color-divider;
+    border-radius: @border-radius-base;
+}

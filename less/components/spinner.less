@@ -1,0 +1,86 @@
+// *************************************
+//
+//   Spinner
+//   > Loading spinner
+//
+// *************************************
+
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+@spinner-dimensions: 40px;
+@spinner-border-width: 4px;
+@spinner-border-color: lighten(@color-blue-10, 5%);
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-spinner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, .95);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+// ----- Fixed ----- //
+
+.c-spinner--fixed {
+    position: fixed;
+}
+
+
+// -------------------------------------
+//   Item
+// -------------------------------------
+
+.c-spinner__item {
+    animation: spin-animate 800ms infinite linear;
+    width: @spinner-dimensions;
+    height: @spinner-dimensions;
+    border: @spinner-border-width solid @spinner-border-color;
+    display: inline-block;
+    border-radius: 50%;
+    position: relative;
+
+    &::before {
+        content: '';
+        width: @spinner-dimensions;
+        height: @spinner-dimensions;
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        left: -(@spinner-border-width);
+        top: -(@spinner-border-width);
+        border-width: @spinner-border-width;
+        border-style: solid;
+        border-right-color: @spinner-border-color;
+        border-top-color: @spinner-border-color;
+        border-left-color: @brand-info;
+        border-bottom-color: @spinner-border-color;
+    }
+}
+
+@keyframes spin-animate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+// -------------------------------------
+//   Text
+// -------------------------------------
+
+.c-spinner__text {
+    margin-top: @spacing-unit;
+}

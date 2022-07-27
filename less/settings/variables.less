@@ -1,0 +1,326 @@
+// *************************************
+//
+//   Variables
+//
+// *************************************
+
+// -------------------------------------
+//   Bootstrap
+// -------------------------------------
+
+// ----- Breakpoints ----- //
+
+@import "../bootstrap/bootstrap-custom-breakpoints-variables.less";
+
+// -------------------------------------
+//   Colors
+// -------------------------------------
+
+// ----- Base ----- //
+
+@color-text: rgba(0, 0, 0, 0.87);
+@color-body: @color-gray-5;
+@color-hover: @color-gray-20;
+
+// ----- Brand ----- //
+
+@brand-primary: @color-blue-80;
+
+@brand-secondary: #00adef;
+
+@brand-info: @color-blue-80;
+
+@brand-warning: @color-orange-90;
+
+@brand-success: @color-green-80;
+
+@brand-danger: @color-red-70;
+
+@brand-royal: #9855d4;
+
+@brand-energized: @color-yellow-60;
+
+@brand-neutral: @color-gray-20;
+
+// ----- White ----- //
+
+@color-white: rgb(255, 255, 255);
+@color-white-fadeout-96: fadeout(@color-white, 96%);
+
+// ----- Blue ----- //
+
+@color-blue-5: #e3f2fd;
+@color-blue-10: #bbdefb;
+@color-blue-40: #42a5f5;
+@color-blue-50: #2196f3;
+@color-blue-60: #1e88e5;
+@color-blue-70: #1976d2;
+@color-blue-80: #1565c0; // Primary
+
+@color-blue-fadeout-95: fadeout(@color-blue-80, 95%);
+@color-blue-fadeout-90: fadeout(@color-blue-80, 90%);
+@color-blue-fadeout-85: fadeout(@color-blue-80, 85%);
+@color-blue-fadeout-75: fadeout(@color-blue-80, 75%);
+@color-blue-fadeout-70: fadeout(@color-blue-80, 70%);
+
+// ----- Light Blue ----- //
+
+@color-light-blue-50: #03a9f4;
+@color-light-blue-60: #039be5;
+@color-light-blue-80: #0277bd;
+
+// ----- Logo ----- //
+
+@color-logo-dark-blue: #004374;
+@color-logo-light-blue: #00adef;
+
+// ----- Teal ----- //
+
+@color-teal-5: #e0f2f1;
+@color-teal-80: #00695c;
+@color-teal-A100: #a7ffeb;
+
+// ----- Purple ----- //
+
+@color-purple-80: #6a1b9a;
+
+// ----- Red ----- //
+
+@color-red-10: #ffcdd2;
+@color-red-70: #d32f2f;
+@color-red-A200: #ff5252;
+@color-red-fadeout-96: fadeout(@color-red-70, 96%);
+
+// ----- Orange ----- //
+
+@color-orange-5: #fff3e0;
+@color-orange-40: #ffa726;
+@color-orange-90: #e65100;
+@color-orange-A100: #ffd180;
+
+// ----- Green ----- //
+
+@color-green-5: #e8f5e9;
+@color-green-10: #c8e6c9;
+@color-green-20: #a5d6a7;
+@color-green-40: #66bb6a;
+@color-green-80: #2e7d32;
+@color-green-A100: #b9f6ca;
+@color-green-A700: #00c853;
+
+// ----- Gray ----- //
+
+@color-gray-5: #fafafa;
+@color-gray-10: #f5f5f5;
+@color-gray-20: #eeeeee;
+@color-gray-30: #e0e0e0;
+@color-gray-40: #bdbdbd;
+@color-gray-50: #9e9e9e;
+@color-gray-60: #757575;
+@color-gray-70: #616161;
+@color-gray-80: #424242;
+@color-gray-90: #212121;
+@color-gray-fadeout-96: fadeout(@color-gray-90, 96%);
+
+// ----- Yellow ----- //
+
+@color-yellow-20: #fff59d;
+@color-yellow-60: #fdd835;
+
+// ----- Mute ----- //
+
+@mute-color: rgba(0, 0, 0, 0.54);
+@mute-color-inverted: rgba(255, 255, 255, 0.7);
+
+// ----- State ----- //
+
+@color-disabled: rgba(0, 0, 0, 0.38);
+@color-disabled-invert: rgba(255, 255, 255, 0.5);
+
+// ----- Hint ----- //
+
+@color-hint: @color-disabled;
+
+// ----- Divider ----- //
+
+@color-divider: rgba(0, 0, 0, 0.12);
+
+// -------------------------------------
+//   Spacing
+// -------------------------------------
+
+@spacing-unit--tiny: (@spacing-unit--small / 2); // 2.5px
+@spacing-unit--small: (@spacing-unit / 2); // 5px
+@spacing-unit: 10px;
+@spacing-unit--large: 15px;
+@spacing-unit--huge: (@spacing-unit * 2); // 20px
+@spacing-unit--giga: (@spacing-unit * 3); // 30px;
+
+// -------------------------------------
+//   Container
+// -------------------------------------
+
+@container-width: 1100px;
+@container-large-width: 1400px;
+
+// -------------------------------------
+//   Typography
+// -------------------------------------
+
+// ----- Size ----- //
+
+@cs-font-size-xsmall: 12px;
+@cs-font-size-small: 13px;
+@cs-font-size-default: 14px;
+@cs-font-size-large: 16px;
+@cs-font-size-huge: 18px;
+@cs-font-size-title: 20px;
+@cs-font-size-headline: 24px;
+@cs-font-size-display1: 34px;
+@cs-font-size-display2: 48px;
+
+// ----- Weight ----- //
+
+@font-weight-normal: 400;
+@font-weight-semi: 500;
+@font-weight-bold: 700;
+
+// -------------------------------------
+//   Button
+// -------------------------------------
+
+// ----- Neutral ----- //
+
+@btn-neutral-bg: @color-gray-30;
+@btn-neutral-border: @btn-neutral-bg;
+@btn-neutral-color: @color-gray-80;
+
+// ----- Gray ----- //
+
+@btn-gray-bg: @color-gray-60;
+@btn-gray-border: @btn-gray-bg;
+@btn-gray-color: @color-white;
+
+// ----- Dark ----- //
+
+@btn-dark-bg: @color-gray-90;
+@btn-dark-border: @btn-dark-bg;
+@btn-dark-color: @color-white;
+
+// ----- Secondary ----- //
+
+@btn-secondary-bg: @brand-danger;
+@btn-secondary-border: @btn-secondary-bg;
+@btn-secondary-color: @color-white;
+
+// -------------------------------------
+//   Nav
+// -------------------------------------
+
+@nav-item-height: 40px;
+@nav-item-height-compact: 35px;
+@nav-item-height-dense: 30px;
+@nav-item-color: darken(@color-gray-80, 4%);
+
+// -------------------------------------
+//   Chip
+// -------------------------------------
+
+@chip-size: 30px;
+@chip-action-size: 20px;
+
+@chip-size--small: 25px;
+@chip-action-size--small: 16px;
+
+@chip-size--tiny: 18px;
+@chip-action-size--tiny: 9px;
+
+@chip-bg-color: @brand-neutral;
+
+// -------------------------------------
+//   Forms
+// -------------------------------------
+
+@input-border-width: 1px;
+@input-border-radius: 2px;
+@input-border-color: @color-gray-40;
+
+// -------------------------------------
+//   Alert
+// -------------------------------------
+
+// ----- Neutral ----- //
+
+@alert-neutral-bg: @brand-neutral;
+@alert-neutral-border: @brand-neutral;
+@alert-neutral-text: @color-text;
+
+// -------------------------------------
+//   Breakpoint
+// -------------------------------------
+
+@palm: 640px;
+@mobile: 480px;
+
+// -------------------------------------
+//   Drawer
+// -------------------------------------
+
+@drawer-breakpoint: 1360px;
+@drawer-breakpoint-small: (@drawer-breakpoint - 1px);
+
+// -------------------------------------
+//   Z-index
+// -------------------------------------
+
+@zindex-select2-dropdown: 1125;
+@zindex-modal: 1120;
+@zindex-modal-background: 1110;
+@zindex-drawer: 1100;
+@zindex-drawer-backdrop: 1090;
+@zindex-btn-fab: 1080;
+@zindex-snackbar: 1085;
+@zindex-pikaday: 10001;
+@zindex-header: 1000;
+@zindex-accordion: 15;
+@zindex-feature-limited: 10;
+@zindex-react-select: 3;
+
+// -------------------------------------
+//   Border
+// -------------------------------------
+
+@border-divider-color: @color-gray-30;
+
+// -------------------------------------
+//   Animation
+// -------------------------------------
+
+@animation-curve-fast-out-slow-in: cubic-bezier(0.4, 0, 0.2, 1);
+@animation-curve-default: @animation-curve-fast-out-slow-in;
+
+// -------------------------------------
+//   Placeholder
+// -------------------------------------
+
+@placeholder-bg: @color-gray-20;
+
+// -------------------------------------
+//   Footer
+// -------------------------------------
+
+@footer-top-spacing: 40px;
+
+// -------------------------------------
+//   Event status colors
+// -------------------------------------
+
+@event-status-colors: {
+    unattached: @color-red-10;
+    upcoming: @color-gray-5;
+    not-seeded: @color-gray-10;
+    seeded: @color-gray-30;
+    in-progress: @color-yellow-20;
+    completed: @color-green-10;
+    scored: @color-green-20;
+};

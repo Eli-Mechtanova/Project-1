@@ -1,0 +1,65 @@
+// *************************************
+//
+//   Feature Limited
+//
+// *************************************
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-feature-limited {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: @zindex-feature-limited;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, @color-white 65%);
+}
+
+    // ----- Tint ----- //
+
+    .c-feature-limited--tint {
+        background: @color-disabled-invert;
+    }
+
+    // ----- Center ----- //
+
+    .c-feature-limited--center {
+        > .c-feature-limited__item {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    // ----- Bottom ----- //
+
+    .c-feature-limited--bottom {
+        > .c-feature-limited__item {
+            bottom: 0;
+        }
+    }
+
+
+// -------------------------------------
+//   Item
+// -------------------------------------
+
+.c-feature-limited__item {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+
+// -------------------------------------
+//   Text
+// -------------------------------------
+
+.c-feature-limited__text {
+    margin: 0;
+    line-height: 1;
+}

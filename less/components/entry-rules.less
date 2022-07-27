@@ -1,0 +1,71 @@
+// *************************************
+//
+//   Entry Rules (read only)
+//
+// *************************************
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-entry-rules {
+    margin: 0;
+    padding: 0;
+}
+
+// -------------------------------------
+//   Section
+// -------------------------------------
+
+.c-entry-rules__section {
+    display: block;
+
+    &:not(:last-child) {
+        margin-bottom: 25px;
+        padding-bottom: 25px;
+        border-bottom: 1px solid @color-divider;
+    }
+}
+
+// -------------------------------------
+//   Title
+// -------------------------------------
+
+.c-entry-rules__title {
+    margin: 0 0 @spacing-unit--large;
+    font-size: 20px;
+    font-weight: @font-weight-semi;
+    line-height: 1.4;
+}
+
+// -------------------------------------
+//   List
+// -------------------------------------
+
+.c-entry-rules-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: @color-gray-80;
+}
+
+// Item
+
+.c-entry-rules-list__item {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: baseline;
+
+    &:not(:last-child) {
+        margin-bottom: @spacing-unit--large;
+    }
+}
+
+// Icon
+
+.c-entry-rules-list__icon {
+    width: 1.25em;
+    font-size: 16px;
+    text-align: center;
+    margin-right: @spacing-unit;
+}

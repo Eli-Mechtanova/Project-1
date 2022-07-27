@@ -1,0 +1,21 @@
+// *************************************
+//
+//   Spacer
+//
+// *************************************
+
+.o-spacer {
+    display: flex;
+
+    > * {
+        margin-right: @spacing-unit !important;
+
+        &:last-child {
+            margin-right: 0 !important;
+        }
+    }
+}
+
+.o-spacer--align-items-center {
+    align-items: center;
+}

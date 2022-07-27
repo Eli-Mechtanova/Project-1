@@ -1,0 +1,88 @@
+// *************************************
+//
+//   Match Score
+//
+// *************************************
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-match-score {
+    display: grid;
+    row-gap: 20px;
+}
+
+// -------------------------------------
+//   Item
+// -------------------------------------
+
+.c-match-score__item {
+    margin: 0;
+    padding: 0;
+}
+
+// -------------------------------------
+//   Content
+// -------------------------------------
+
+.c-match-score__content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    color: @color-gray-80;
+}
+
+// -------------------------------------
+//   Icon
+// -------------------------------------
+
+.c-match-score__icon {
+    font-size: 16px;
+    width: 23px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+// -------------------------------------
+//   Text
+// -------------------------------------
+
+.c-match-score__text {
+    font-size: 16px;
+}
+
+// -------------------------------------
+//   Line
+// -------------------------------------
+
+.c-match-score__line {
+    display: grid;
+    grid-template-columns: 1fr min(55px);
+    align-items: center;
+
+    svg {
+        width: 100%;
+        height: 15px;
+        border-radius: 15px;
+        border: 1px solid #e3e3e3;
+    }
+}
+
+// -------------------------------------
+//   Points
+// -------------------------------------
+
+.c-match-score__points {
+    font-size: 15px;
+    line-height: 1;
+    font-weight: @font-weight-semi;
+    text-align: right;
+    white-space: nowrap;
+
+    .fa-lock {
+        display: flex;
+        justify-content: center;
+        font-size: 14px;
+    }
+}

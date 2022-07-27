@@ -1,0 +1,71 @@
+// *************************************
+//
+//   Event Status
+//
+// *************************************
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-event-status {
+    display: inline-block;
+    padding: 2px 6px;
+    font-size: @cs-font-size-xsmall;
+    font-weight: @font-weight-normal;
+    line-height: 1.1;
+    color: @color-text;
+    border-radius: @border-radius-base;
+    vertical-align: middle;
+    white-space: nowrap;
+    border: 1px solid transparent;
+}
+
+// ----- Unattached ----- //
+
+.c-event-status--unattached {
+    background-color: @event-status-colors[unattached];
+    border-color: darken(@event-status-colors[unattached], 3%);
+}
+
+// ----- Upcoming ----- //
+
+.c-event-status--upcoming {
+    background-color: @event-status-colors[upcoming];
+    border-color: darken(@event-status-colors[upcoming], 5%);
+}
+
+// ----- Not seeded ----- //
+
+.c-event-status--not-seeded {
+    background-color: @event-status-colors[not-seeded];
+    border-color: darken(@event-status-colors[not-seeded], 5%);
+}
+
+// -----Seeded ----- //
+
+.c-event-status--seeded {
+    background-color: @event-status-colors[seeded];
+    border-color: darken(@event-status-colors[seeded], 5%);
+}
+
+// ----- In progress ----- //
+
+.c-event-status--in-progress {
+    background-color: @event-status-colors[in-progress];
+    border-color: darken(@event-status-colors[in-progress], 15%);
+}
+
+// ----- Completed ----- //
+
+.c-event-status--completed {
+    background-color: @event-status-colors[completed];
+    border-color: darken(@event-status-colors[completed], 5%);
+}
+
+// ----- Scored ----- //
+
+.c-event-status--scored {
+    background-color: @event-status-colors[scored];
+    border-color: darken(@event-status-colors[scored], 5%);
+}

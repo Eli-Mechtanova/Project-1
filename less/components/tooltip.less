@@ -1,0 +1,49 @@
+// *************************************
+//
+//   Tooltip
+//
+// *************************************
+
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+@tooltip-zindex: 1030;
+@tooltip-bg-color: @color-white;
+
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+.c-tooltip {
+    .shadow-2dp();
+    position: absolute;
+    max-width: 175px;
+    z-index: @tooltip-zindex;
+    display: block;
+    opacity: 0;
+    padding: 4px 8px;
+    will-change: transform, opacity;
+    background-color: @tooltip-bg-color;
+
+    &.in { opacity: 1; }
+}
+
+
+//   #Large
+// *************************************
+
+.c-tooltip--large {
+    max-width: 440px;
+    width: 440px;
+}
+
+
+//   #Right
+// *************************************
+
+.c-tooltip--right {
+    right: 0;
+}

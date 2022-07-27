@@ -1,0 +1,105 @@
+// *************************************
+//
+//   PICC RANGE
+//
+// *************************************
+
+// -------------------------------------
+//   Variables
+// -------------------------------------
+
+@picc-range-height: 20px;
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+picc-range {
+    background-color: @color-gray-10;
+    display: block;
+    position: relative;
+    height: @picc-range-height;
+    margin: 10px 0 40px;
+    border-radius: @picc-range-height;
+    border: 1px solid #e3e3e3;
+
+    &[lower],
+    &[upper] {
+        .picc-range-bar {
+            background-color: @brand-primary;
+        }
+    }
+
+    // -------------------------------------
+    //   Bar
+    // -------------------------------------
+
+    .picc-range-bar {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        border-radius: @picc-range-height;
+    }
+
+    // -------------------------------------
+    //   Label
+    // -------------------------------------
+
+    .picc-range-label {
+        position: absolute;
+
+        span {
+            position: absolute;
+            line-height: 1.3;
+        }
+
+        &.picc-range-label-max,
+        &.picc-range-label-lower {
+            span {
+                right: 0;
+            }
+        }
+
+        &.picc-range-label-lower,
+        &.picc-range-label-upper {
+            font-weight: @font-weight-semi;
+            color: @color-light-blue-50;
+            top: @picc-range-height + 3;
+        }
+
+        &.picc-range-label-min,
+        &.picc-range-label-max,
+        &.picc-range-label-middle {
+            font-size: 14px;
+            color: @color-hint;
+            top: 0;
+        }
+
+        &.picc-range-label-swimmer_score {
+            top: -(@picc-range-height + 3);
+            color: @color-orange-90;
+
+            span {
+                font-weight: @font-weight-semi;
+                background-color: rgba(255, 255, 255, 0.9);
+
+                &:before {
+                    content: attr(data-name);
+                    position: absolute;
+                    top: -15px;
+                    font-weight: @font-weight-normal;
+                    white-space: nowrap;
+                }
+            }
+        }
+
+        &.picc-range-label-middle {
+            span {
+                margin-left: -(5em / 2);
+                text-align: center;
+            }
+        }
+    }
+}

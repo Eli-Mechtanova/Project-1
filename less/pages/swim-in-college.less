@@ -1,6 +1,7 @@
 //vars//
 @font:'Roboto', sans-serif;
 @box-shadow: 0 3px 16px rgb(0 0 0 / 10%);
+@speed: 90s;
 
 .header{
     overflow: hidden;
@@ -123,6 +124,33 @@
     margin-top: 100px!important;
     margin-bottom: 100px !important;
 }
+.logos-ticker{
+    background-color: #fff;
+    padding: 2em 0;
+    gap: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    position: relative;
+    -webkit-mask-image: linear-gradient(90deg,rgba(0,0,0,0) 0,#000 15%,#000 85%,rgba(0,0,0,0) 100%);
+}
+.logos-ticker__container{
+    width: max-content;
+    display: flex;
+    gap: 30px;
+    animation: slide 10s linear infinite;
+    animation-iteration-count: infinite;
+}
+@keyframes slide {
+    0% {
+      transform: translate3d(0,0,0);
+    }
+    100% {
+      transform: translate3d(-100%,0,0);
+    }
+  }
 @media (max-width: 1350px){
     .w-container--eli{
         margin-bottom: 40px !important;
